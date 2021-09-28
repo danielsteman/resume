@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+$spacing: 8px;
+$body2: 'Roboto Condensed', sans-serif;
+
+.nav {
+  text-align: right;
+  margin-right: calc(#{$spacing} * 5);
+  margin-top: calc(#{$spacing} * 5);
+  .item {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    font-family: $body2;
+    color: #DEDEDE;
+
+    li {
+      padding: calc(#{$spacing} * 2);
+      display: inline;
+    }
+  }
+}
