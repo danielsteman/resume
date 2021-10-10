@@ -2,6 +2,9 @@
 
 body {
   background-color: black;
+
+  /* font color */
+  color: white;
 }
 
 /* reset styling of a-tag */

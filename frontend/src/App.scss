@@ -1,6 +1,68 @@
 .grid {
   display: grid;
-  height: auto;
+  height: 100vh;
   grid-template-columns: 46% 46% 8%;
-  grid-template-rows: ;
+  // make sure that row height fits content
+  grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "hd hd hd"
+    "tp tp tp"
+    "about about soc"
+    "pd1 pi1 soc"
+    "exp exp soc"
+    "ft ft ft"
+  ;
+}
+
+.header {
+  grid-area: hd;
+
+}
+.titlePage {
+  grid-area: tp;
+
+}
+.about {
+  grid-area: about;
+
+}
+.projectDescription {
+  grid-area: pd1; 
+
+}
+.projectImage {
+  grid-area: pi1; 
+
+}
+.experience {
+  grid-area: exp;
+
+}
+.socials {
+  grid-area: soc;
+
+}
+.footer{
+  grid-area: ft;
+
+}
+
+// iphone 10 has 812px in landscape
+@media only screen and (max-device-width: 812px) { 
+  .grid {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "hd"
+      "tp"
+      "about"
+      "pd1"
+      "pi1"
+      "exp"
+      "soc"
+      "ft"
+    ;
+  }
 }
