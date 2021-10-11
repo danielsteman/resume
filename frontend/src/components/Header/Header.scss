@@ -5,7 +5,9 @@ $body2: 'Roboto Condensed', sans-serif;
 
 .nav {
   text-align: right;
-  margin: calc(#{$spacing} * 5);
+  margin-right: calc(#{$spacing} * 5);
+  margin-top: calc(#{$spacing} * 4);
+  margin-bottom: calc(#{$spacing} * 4);
   .item {
     list-style-type: none;
     margin: 0;

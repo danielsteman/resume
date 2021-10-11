@@ -2,9 +2,16 @@
 
 $spacing: 8px;
 
+.page {
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  height: calc(100vh - calc(#{$spacing} * 10));
+}
+
 .title {
-  margin-left: calc(#{$spacing} * 27);
-  margin-top: calc(#{$spacing} * 0);
+  margin-left: calc(#{$spacing} * 32);
+  margin-top: calc(#{$spacing} * 8);
   h1 {
     color: #DEDEDE;
     font-family: 'Roboto Condensed', sans-serif;
@@ -16,4 +23,9 @@ $spacing: 8px;
     font-weight: 300;
     font-size: 34pt;
   }
+}
+
+.pageDivider {
+  position: absolute;
+  bottom: 0;
 }
