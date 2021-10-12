@@ -2,11 +2,12 @@ import './App.scss';
 // import Header from './components/Header/Header'
 // import Title from './components/Title/Title'
 // import About from './components/About/About'
-import Socials from './components/Socials/Socials'
+// import Socials from './components/Socials/Socials'
+import SpotifyPD from './components/Projects/SpotifyProject/SpotifyPD'
 
 const App = () => {
   return (
-    <Socials/>
+    <SpotifyPD/>
     // <div className="grid">
     //   <div className="header">
     //     <Header/>
