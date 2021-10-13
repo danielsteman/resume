@@ -1,8 +1,10 @@
 import "./SpotifyPD.scss";
+import Skills from "../../../reusables/Skills/Skills"
 
 const SpotifyPD = () => {
 
   const skills: string[] = ['CELERY', 'RABBITMQ', 'SCIKIT-LEARN', 'PLOTLY.JS']
+  const columns: number = 1
 
   return (
     <div className="container">
@@ -18,15 +20,10 @@ const SpotifyPD = () => {
           space and create new playlists. <br/><br/>By building this I learned how the use
           new technologies such as but not limited to:
         </div>
-        <div className="skillsContainer">
-          {skills.map(skill => (
-            <div className="row">
-              <div className="column">
-                <div className="skill">{skill}</div>
-              </div>
-            </div>  
-          ))}
-        </div>
+        <Skills 
+          skills={skills}
+          columns={columns}
+        />
       </div>
     </div>
   );
