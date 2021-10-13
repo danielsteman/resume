@@ -4,6 +4,6 @@ export function sliceArray(array: any[], chunks: number) {
   for (let i = 0; i < array.length; i += chunks) {
     restructuredArray.push(array.slice(i, i + chunks));
   }
-  console.log(restructuredArray)
+  
   return restructuredArray
 }

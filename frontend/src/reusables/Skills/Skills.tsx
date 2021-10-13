@@ -2,7 +2,7 @@ import { FC } from "react";
 import "./Skills.scss"
 import { sliceArray } from "../../utils/sliceArray"
 
-interface SkillsProps {
+export interface SkillsProps {
   skills: string[],
   columns: number
 }
