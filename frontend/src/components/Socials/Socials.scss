@@ -1,0 +1,19 @@
+// use this to calculate filter: https://codepen.io/sosuke/pen/Pjoqqp
+
+$logo-size: 32px;
+
+@mixin purple-filter() {
+  filter: invert(58%) sepia(28%) saturate(4492%) hue-rotate(231deg) brightness(95%) contrast(99%);
+}
+
+.logoContainer {
+  width: $logo-size;
+  flex-direction: column;
+}
+
+.logo {
+  height: $logo-size;
+  width: $logo-size;
+  margin-bottom: $logo-size;
+  @include purple-filter()
+}
