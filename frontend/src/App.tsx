@@ -1,17 +1,16 @@
 import './App.scss';
 // import Header from './components/Header/Header'
 // import Title from './components/Title/Title'
-import About from './components/About/About'
-import SpotifyPD from './components/Projects/SpotifyProject/SpotifyPD';
+// import About from './components/About/About'
+// import SpotifyPD from './components/Projects/SpotifyProject/SpotifyPD';
 // import Socials from './components/Socials/Socials'
 // import SpotifyPD from './components/Projects/SpotifyProject/SpotifyPD'
-// import Experience from './components/Experience/Experience';
+import Experience from './components/Experience/Experience';
 
 const App = () => {
   return (
     <div>
-      <About/>
-      <SpotifyPD/>
+      <Experience/>
     </div>
     // <Experience/>
     // <SpotifyPD/>
