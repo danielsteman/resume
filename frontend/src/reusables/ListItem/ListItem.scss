@@ -13,30 +13,10 @@
 
 $spacing: 8px;
 
-.container {
-  width: fit-content;
-  height: auto;
-}
-
-.title {
-  @include overline-font(10px, 1.5px, left);
-  margin-bottom: calc(#{$spacing} * 2);
-}
-
-.underline {
-  height: 1px;
-  background-color: #BC6FF1;
-  margin-bottom: calc(#{$spacing} * 1);
-}
-
-.card {
-  position: relative;
-  background-color: #111111;
-  padding: calc(#{$spacing} * 3);
+.itemBox {
+  @include overline-font(10px, 1.5px, center);
+  width: 150px;
+  background-color: #1C1C1C;
   border-radius: 5px;
-}
-
-.text {
-  @include overline-font(14px, 0.25px, left);
-  white-space: pre-line;
+  padding: calc(#{$spacing} * 1) 0;
 }

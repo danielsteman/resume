@@ -18,17 +18,17 @@ $spacing: 8px;
   background-color: #1C1C1C;
   margin-top: calc(#{$spacing} * 3);
   padding: calc(#{$spacing} * 3);
+  width: fit-content;
 }
 
 .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
-}
-
-.row:not(:last-child) {
-  margin-bottom: calc(#{$spacing} * 3);
+  width: fit-content;
+  &:not(:last-child) {
+    margin-bottom: calc(#{$spacing} * 3);
+  }
 }
 
 .column {
@@ -36,14 +36,14 @@ $spacing: 8px;
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
-}
-
-.column:not(:first-child) {
-  margin-left: calc(#{$spacing} * 3);
+  &:not(:first-child) {
+    margin-left: calc(#{$spacing} * 3);
+  }
 }
 
 .skill {
   @include overline-font(10px, 1.5px, center);
+  width: 150px;
   background-color: #242424;
   border-radius: 5px;
   padding: calc(#{$spacing} * 1) 0;
