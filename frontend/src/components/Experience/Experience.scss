@@ -13,6 +13,7 @@
 
 $spacing: 8px;
 $scrollbar-width: 5px;
+$component-max-width: 700px;
 
 .title {
   @include overline-font(10px, 1.5px, left);
@@ -21,6 +22,7 @@ $scrollbar-width: 5px;
 
 .underline {
   height: 1px;
+  max-width: calc(#{$component-max-width} + calc(#{$spacing} * 6));
   background-color: #BC6FF1;
   margin-bottom: calc(#{$spacing} * 1);
 }
@@ -28,7 +30,7 @@ $scrollbar-width: 5px;
 .container {
   background-color: #111111;
   border-radius: 5px;
-  width: fit-content;
+  max-width: $component-max-width;
   display: flex;
   flex-direction: row;
   padding: calc(#{$spacing} * 3);
@@ -64,12 +66,18 @@ $scrollbar-width: 5px;
   height: calc(1em + #{$spacing} * 2);
   border-radius: 5px;
   background-color: #BC6FF1;
+  transition: all 0.3s;
 }
+
+.moveSlider1 {transform: translateY(calc(1em + #{$spacing} * 3));}
+.moveSlider2 {transform: translateY(calc(2em + #{$spacing} * 6));}
+.moveSlider3 {transform: translateY(calc(3em + #{$spacing} * 9));}
+.moveSlider4 {transform: translateY(calc(4em + #{$spacing} * 12));}
 
 .employerList {
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  // width: fit-content;
   padding: calc(#{$spacing} * 3);
   padding-left: calc(#{$spacing} * 1);
   @media screen and (max-width: 375px) {

@@ -8,11 +8,6 @@ const Experience: FC = () => {
 
   const [index, setIndex] = useState(0)
 
-  const changeIndex = (index: number) => {
-    setIndex(index)
-    console.log(index)
-  }
-
   return (
     <div>
       <div className="title">{title}</div>
@@ -20,11 +15,15 @@ const Experience: FC = () => {
       <div className="container">
         <div className="employerContainer">
           <div className="scrollBar">
-            <div className="slider"/>
+            <div className={`slider moveSlider${index}`} />
           </div>
           <div className="employerList">
             {employers.map((employer, index) => (
-              <div className="employer" onClick={() => changeIndex(index)}>
+              <div 
+                className="employer"
+                onClick={() => setIndex(index)}
+                key={index}
+              >
                 {employer}
               </div>
             ))}
