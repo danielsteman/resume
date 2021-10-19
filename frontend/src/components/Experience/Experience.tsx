@@ -3,7 +3,7 @@ import { useState, FC } from 'react'
 
 const Experience: FC = () => {
 
-  const title: string = "EXPERIENCES"
+  const title: string = "EXPERIENCE"
   const employers: string[] = ["A.S.R.", "A.S.R.", "VIRTUAGYM", "MSC. FIN-TECH", "BSC. INT. BUS."]
 
   const [index, setIndex] = useState(0)

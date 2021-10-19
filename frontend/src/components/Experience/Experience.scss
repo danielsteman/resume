@@ -14,10 +14,16 @@
 $spacing: 8px;
 $scrollbar-width: 5px;
 $component-max-width: 700px;
+$iphone-width: 375px;
 
 .title {
-  @include overline-font(10px, 1.5px, left);
+  @include overline-font(10px, 2px, left);
   margin-bottom: calc(#{$spacing} * 2);
+  @media screen and (max-width: $iphone-width) {
+    margin-left: 40px;
+    margin-bottom: calc(#{$spacing} * 1);
+    @include overline-font(14px, 2px, left);
+  }
 }
 
 .underline {
@@ -25,6 +31,11 @@ $component-max-width: 700px;
   max-width: calc(#{$component-max-width} + calc(#{$spacing} * 6));
   background-color: #BC6FF1;
   margin-bottom: calc(#{$spacing} * 1);
+  @media screen and (max-width: $iphone-width) {
+    margin-bottom: 0;
+    margin-left: 40px;
+    max-width: calc(375px - 40px - 40px);
+  }
 }
 
 .container {
@@ -34,8 +45,10 @@ $component-max-width: 700px;
   display: flex;
   flex-direction: row;
   padding: calc(#{$spacing} * 3);
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: $iphone-width) {
     flex-direction: column;
+    padding: 40px;
+    max-width: calc(100% - 40px - 40px);
     background-color: #000000;
   }
 }
@@ -45,7 +58,7 @@ $component-max-width: 700px;
   flex-direction: row;
   background-color: #171717;
   border-radius: 5px;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: $iphone-width) {
     background-color: #000000;
     flex-direction: column-reverse;
   }
@@ -57,9 +70,10 @@ $component-max-width: 700px;
   margin-left: calc(#{$spacing} * 2 - #{$scrollbar-width});
   background-color: #292929;
   border-radius: 5px;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: $iphone-width) {
     height: $scrollbar-width;
     width: 100%;
+    margin-left: 0;
   }
 }
 
@@ -69,20 +83,46 @@ $component-max-width: 700px;
   border-radius: 5px;
   background-color: #BC6FF1;
   transition: all 0.3s;
+  @media screen and (max-width: $iphone-width) {
+    height: $scrollbar-width;
+    width: calc(1em + #{$spacing} * 2);
+  }
 }
 
-.moveSlider1 {transform: translateY(calc(1em + #{$spacing} * 3));}
-.moveSlider2 {transform: translateY(calc(2em + #{$spacing} * 6));}
-.moveSlider3 {transform: translateY(calc(3em + #{$spacing} * 9));}
-.moveSlider4 {transform: translateY(calc(4em + #{$spacing} * 12));}
+.moveSlider1 {
+  transform: translateY(calc(1em + #{$spacing} * 3));
+  @media screen and (max-width: $iphone-width) {
+    transform: translateX(calc(1em + #{$spacing} * 3));
+  }
+}
+.moveSlider2 {
+  transform: translateY(calc(2em + #{$spacing} * 6));
+  @media screen and (max-width: $iphone-width) {
+    transform: translateX(calc(2em + #{$spacing} * 6));
+  }
+}
+.moveSlider3 {
+  transform: translateY(calc(3em + #{$spacing} * 9));
+  @media screen and (max-width: $iphone-width) {
+    transform: translateX(calc(3em + #{$spacing} * 9));
+  }
+}
+.moveSlider4 {
+  transform: translateY(calc(4em + #{$spacing} * 12));
+  @media screen and (max-width: $iphone-width) {
+    transform: translateX(calc(4em + #{$spacing} * 12));
+  }
+}
 
 .employerList {
   display: flex;
   flex-direction: column;
-  // width: fit-content;
   padding: calc(#{$spacing} * 3);
   padding-left: calc(#{$spacing} * 1);
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: $iphone-width) {
+    padding-left: 0;
+    position: absolute;
+    top: 22px;
     flex-direction: row;
   }
 }
@@ -97,8 +137,15 @@ $component-max-width: 700px;
   &:not(:last-child) {
     margin-bottom: calc(#{$spacing} * 1);
   }
-  @media screen and (max-width: 375px) {
-    margin-bottom: calc(#{$spacing} * 1);
+  @media screen and (max-width: $iphone-width) {
+    @include overline-font(12px, 2px, center);
+    height: 40px;
+    width: 100px;
+    padding: 0;
+    margin-right: calc(#{$spacing} * 2);
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
   }
 }
 
@@ -107,11 +154,15 @@ $component-max-width: 700px;
   border-radius: 5px;
   margin-left: calc(#{$spacing} * 3);
   padding: calc(#{$spacing} * 3);
+  @media screen and (max-width: $iphone-width) {
+    margin-left: 0;
+  }
 }
 
 .jobTitleContainer {
   background-color: #1F1F1F;
   padding: calc(#{$spacing} * 1) calc(#{$spacing} * 2);
+  border-radius: 5px;
 }
 
 .jobTitle {
@@ -128,4 +179,5 @@ $component-max-width: 700px;
   background-color: #1F1F1F;
   margin-top: calc(#{$spacing} * 1);
   padding: calc(#{$spacing} * 1) calc(#{$spacing} * 2);
+  border-radius: 5px;
 }
