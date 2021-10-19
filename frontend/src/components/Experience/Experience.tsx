@@ -19,7 +19,7 @@ const Experience: FC = () => {
           </div>
           <div className="employerList">
             {employers.map((employer, index) => (
-              <div 
+              <div
                 className="employer"
                 onClick={() => setIndex(index)}
                 key={index}
