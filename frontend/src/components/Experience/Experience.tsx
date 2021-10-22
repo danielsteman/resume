@@ -9,10 +9,10 @@ const Experience: FC = () => {
   const [index, setIndex] = useState(0)
 
   return (
-    <div className="componentContainer">
-      <div className="title">{title}</div>
+    <div className="experienceComponent">
+      <div className="experienceTitle">{title}</div>
       <div className="underline"/>
-      <div className="container">
+      <div className="experienceContainer">
         <div className="employerContainer">
           <div className="scrollBar">
             <div className={`slider moveSlider${index}`} />

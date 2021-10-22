@@ -1,4 +1,13 @@
 :root {
+
+  --column-1: 46%;
+  --column-2: 46%;
+  --column-3: 8%;
+
   --spacing: 8px;
-  --iphonewidth: 375px;
+
+  --iphone-width: 375px;
+  
+  --component-max-width: 700px;
+  --vertical-component-spacing: calc(var(--spacing)* 14)
 }

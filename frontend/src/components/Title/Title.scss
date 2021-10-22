@@ -1,26 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap');
 
-.page {
+.titleComponent {
   position: relative;
   overflow-x: hidden;
   width: 100%;
   height: calc(100vh - calc(#{var(--spacing)} * 10));
 }
 
-.title {
-  margin-left: calc(#{var(--spacing)} * 32);
-  margin-top: calc(#{var(--spacing)} * 8);
-  h1 {
-    color: #DEDEDE;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 96pt;
-  }
-  h4 {
-    color: #DEDEDE;
-    font-family: 'Roboto Condensed';
-    font-weight: 300;
-    font-size: 34pt;
-  }
+.mainTitle {
+  display: block;
+}
+
+h1 {
+  height: 1em;
+  color: #DEDEDE;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 96pt;
+  bottom: 0px;
+}
+
+h4 {
+  height: 1em;
+  color: #DEDEDE;
+  font-family: 'Roboto Condensed';
+  font-weight: 300;
+  font-size: 34pt;
 }
 
 .pageDivider {

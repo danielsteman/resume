@@ -1,50 +1,41 @@
 .grid {
   display: grid;
   height: 100vh;
-  grid-template-columns: 46% 46% 8%;
+  grid-template-columns: var(--column-1) var(--column-2) var(--column-3);
   // make sure that row height fits content
   grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas:
     "hd hd hd"
     "tp tp tp"
     "about about soc"
-    "pd1 pi1 soc"
+    "sp sp soc"
     "exp exp soc"
     "ft ft ft"
   ;
 }
 
-.header {
+.headerComponent {
   grid-area: hd;
-
 }
-.titlePage {
+.titleComponent {
   grid-area: tp;
 
 }
-.about {
+.aboutComponent {
   grid-area: about;
-
 }
-.projectDescription {
-  grid-area: pd1; 
-
+.spotifyProjectComponent {
+  grid-area: sp; 
 }
-.projectImage {
-  grid-area: pi1; 
-
-}
-.experience {
+.experienceComponent {
   grid-area: exp;
 
 }
-.socials {
+.socialsComponent {
   grid-area: soc;
-
 }
-.footer{
+.footerComponent{
   grid-area: ft;
-
 }
 
 // iphone 10 has 812px in landscape

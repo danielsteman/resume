@@ -12,18 +12,17 @@
 }
 
 $scrollbar-width: 5px;
-$component-max-width: 700px;
 
-.componentContainer {
+.experienceComponent {
   position: relative;
-  margin-top: calc(#{var(--spacing)} * 10);
+  margin-top: var(--vertical-component-spacing);
   @media screen and (max-width: 375px) {
     margin-left: 40px;
     width: 295px;
   }
 }
 
-.title {
+.experienceTitle {
   @include overline-font(10px, 2px, left);
   margin-bottom: calc(#{var(--spacing)} * 2);
   @media screen and (max-width: 375px) {
@@ -35,7 +34,7 @@ $component-max-width: 700px;
 
 .underline {
   height: 1px;
-  max-width: calc(#{$component-max-width} + calc(#{var(--spacing)} * 6));
+  max-width: calc(#{var(--component-max-width)} + calc(#{var(--spacing)} * 6));
   background-color: #BC6FF1;
   margin-bottom: calc(#{var(--spacing)} * 1);
   @media screen and (max-width: 375px) {
@@ -45,10 +44,10 @@ $component-max-width: 700px;
   }
 }
 
-.container {
+.experienceContainer {
   background-color: #111111;
   border-radius: 5px;
-  max-width: $component-max-width;
+  max-width: var(--component-max-width);
   display: flex;
   flex-direction: row;
   padding: calc(#{var(--spacing)} * 3);
