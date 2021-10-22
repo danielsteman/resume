@@ -9,7 +9,7 @@ const Experience: FC = () => {
   const [index, setIndex] = useState(0)
 
   return (
-    <div>
+    <div className="componentContainer">
       <div className="title">{title}</div>
       <div className="underline"/>
       <div className="container">
@@ -21,7 +21,10 @@ const Experience: FC = () => {
             {employers.map((employer, index) => (
               <div
                 className="employer"
-                onClick={() => setIndex(index)}
+                onClick={() => {
+                  setIndex(index)
+                  console.log(index)
+                }}
                 key={index}
               >
                 {employer}

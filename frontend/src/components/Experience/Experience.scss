@@ -14,11 +14,20 @@
 $scrollbar-width: 5px;
 $component-max-width: 700px;
 
+.componentContainer {
+  position: relative;
+  margin-top: calc(#{var(--spacing)} * 10);
+  @media screen and (max-width: 375px) {
+    margin-left: 40px;
+    width: 295px;
+  }
+}
+
 .title {
   @include overline-font(10px, 2px, left);
   margin-bottom: calc(#{var(--spacing)} * 2);
-  @media screen and (max-width: var(--iphone-width)) {
-    margin-left: 40px;
+  @media screen and (max-width: 375px) {
+    position: relative;
     margin-bottom: calc(#{var(--spacing)} * 1);
     @include overline-font(14px, 2px, left);
   }
@@ -29,9 +38,9 @@ $component-max-width: 700px;
   max-width: calc(#{$component-max-width} + calc(#{var(--spacing)} * 6));
   background-color: #BC6FF1;
   margin-bottom: calc(#{var(--spacing)} * 1);
-  @media screen and (max-width: var(--iphone-width)) {
+  @media screen and (max-width: 375px) {
+    position: relative;
     margin-bottom: 0;
-    margin-left: 40px;
     max-width: calc(375px - 40px - 40px);
   }
 }
@@ -43,11 +52,12 @@ $component-max-width: 700px;
   display: flex;
   flex-direction: row;
   padding: calc(#{var(--spacing)} * 3);
-  @media screen and (max-width: var(--iphone-width)) {
+  @media screen and (max-width: 375px) {
+    position: relative;
+    overflow: hidden;
     flex-direction: column;
-    padding: 40px;
-    max-width: calc(100% - 40px - 40px);
     background-color: #000000;
+    padding: 0;
   }
 }
 
@@ -56,7 +66,8 @@ $component-max-width: 700px;
   flex-direction: row;
   background-color: #171717;
   border-radius: 5px;
-  @media screen and (max-width: var(--iphone-width)) {
+  @media screen and (max-width: 375px) {
+    position: relative;
     background-color: #000000;
     flex-direction: column-reverse;
   }
@@ -68,10 +79,13 @@ $component-max-width: 700px;
   margin-left: calc(#{var(--spacing)} * 2 - #{$scrollbar-width});
   background-color: #292929;
   border-radius: 5px;
-  @media screen and (max-width: var(--iphone-width)) {
+  @media screen and (max-width: 375px) {
+    position: relative;
+    margin-left: 0;
     height: $scrollbar-width;
     width: 100%;
-    margin-left: 0;
+    margin-bottom: calc(#{var(--spacing)} * 2);
+    margin-top: calc(#{var(--spacing)} * 10);
   }
 }
 
@@ -81,33 +95,34 @@ $component-max-width: 700px;
   border-radius: 5px;
   background-color: #BC6FF1;
   transition: all 0.3s;
-  @media screen and (max-width: var(--iphone-width)) {
+  @media screen and (max-width: 375px) {
+    position: relative;
     height: $scrollbar-width;
-    width: calc(1em + #{var(--spacing)} * 2);
+    width: 100px;
   }
 }
 
 .moveSlider1 {
   transform: translateY(calc(1em + #{var(--spacing)} * 3));
-  @media screen and (max-width: var(--iphone-width)) {
-    transform: translateX(calc(1em + #{var(--spacing)} * 3));
+  @media screen and (max-width: 375px) {
+    transform: translateX(calc(100px + #{var(--spacing)} * 2));
   }
 }
 .moveSlider2 {
   transform: translateY(calc(2em + #{var(--spacing)} * 6));
-  @media screen and (max-width: var(--iphone-width)) {
-    transform: translateX(calc(2em + #{var(--spacing)} * 6));
+  @media screen and (max-width: 375px) {
+    transform: translateX(calc(200px + #{var(--spacing)} * 4));
   }
 }
 .moveSlider3 {
   transform: translateY(calc(3em + #{var(--spacing)} * 9));
-  @media screen and (max-width: var(--iphone-width)) {
+  @media screen and (max-width: 375px) {
     transform: translateX(calc(3em + #{var(--spacing)} * 9));
   }
 }
 .moveSlider4 {
   transform: translateY(calc(4em + #{var(--spacing)} * 12));
-  @media screen and (max-width: var(--iphone-width)) {
+  @media screen and (max-width: 375px) {
     transform: translateX(calc(4em + #{var(--spacing)} * 12));
   }
 }
@@ -117,10 +132,9 @@ $component-max-width: 700px;
   flex-direction: column;
   padding: calc(#{var(--spacing)} * 3);
   padding-left: calc(#{var(--spacing)} * 1);
-  @media screen and (max-width: var(--iphone-width)) {
+  @media screen and (max-width: 375px) {
     padding-left: 0;
     position: absolute;
-    top: 22px;
     flex-direction: row;
   }
 }
@@ -128,18 +142,17 @@ $component-max-width: 700px;
 .employer {
   @include overline-font(10px, 1.5px, left);
   width: 150px;
-  padding: calc(#{var(--spacing)} * 1);
   background-color: #1F1F1F;
   border-radius: 5px;
   cursor: pointer;
+  padding: calc(#{var(--spacing)} * 1);
   &:not(:last-child) {
     margin-bottom: calc(#{var(--spacing)} * 1);
   }
-  @media screen and (max-width: var(--iphone-width)) {
+  @media screen and (max-width: 375px) {
     @include overline-font(12px, 2px, center);
     height: 40px;
     width: 100px;
-    padding: 0;
     margin-right: calc(#{var(--spacing)} * 2);
     display: flex;
     justify-content: center; /* align horizontal */
@@ -152,7 +165,7 @@ $component-max-width: 700px;
   border-radius: 5px;
   margin-left: calc(#{var(--spacing)} * 3);
   padding: calc(#{var(--spacing)} * 3);
-  @media screen and (max-width: var(--iphone-width)) {
+  @media screen and (max-width: 375px) {
     margin-left: 0;
   }
 }
