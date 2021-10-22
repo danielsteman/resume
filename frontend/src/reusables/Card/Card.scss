@@ -11,8 +11,6 @@
   opacity: 0.87;
 }
 
-$spacing: 8px;
-
 .container {
   width: fit-content;
   height: auto;
@@ -20,19 +18,19 @@ $spacing: 8px;
 
 .title {
   @include overline-font(10px, 1.5px, left);
-  margin-bottom: calc(#{$spacing} * 2);
+  margin-bottom: calc(#{var(--spacing)} * 2);
 }
 
 .underline {
   height: 1px;
   background-color: #BC6FF1;
-  margin-bottom: calc(#{$spacing} * 1);
+  margin-bottom: calc(#{var(--spacing)} * 1);
 }
 
 .card {
   position: relative;
   background-color: #111111;
-  padding: calc(#{$spacing} * 3);
+  padding: calc(#{var(--spacing)} * 3);
   border-radius: 5px;
 }
 

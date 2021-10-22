@@ -11,13 +11,11 @@
   opacity: 0.87;
 }
 
-$spacing: 8px;
-
 .skillsContainer {
   border-radius: 5px;
   background-color: #1C1C1C;
-  margin-top: calc(#{$spacing} * 3);
-  padding: calc(#{$spacing} * 3);
+  margin-top: calc(#{var(--spacing)} * 3);
+  padding: calc(#{var(--spacing)} * 3);
   width: fit-content;
 }
 
@@ -27,7 +25,7 @@ $spacing: 8px;
   flex-wrap: wrap;
   width: fit-content;
   &:not(:last-child) {
-    margin-bottom: calc(#{$spacing} * 3);
+    margin-bottom: calc(#{var(--spacing)} * 3);
   }
 }
 
@@ -37,7 +35,7 @@ $spacing: 8px;
   flex-basis: 100%;
   flex: 1;
   &:not(:first-child) {
-    margin-left: calc(#{$spacing} * 3);
+    margin-left: calc(#{var(--spacing)} * 3);
   }
 }
 
@@ -46,5 +44,5 @@ $spacing: 8px;
   width: 150px;
   background-color: #242424;
   border-radius: 5px;
-  padding: calc(#{$spacing} * 1) 0;
+  padding: calc(#{var(--spacing)} * 1) 0;
 }

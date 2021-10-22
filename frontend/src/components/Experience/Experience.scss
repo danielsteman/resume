@@ -11,27 +11,25 @@
   opacity: 0.87;
 }
 
-$spacing: 8px;
 $scrollbar-width: 5px;
 $component-max-width: 700px;
-$iphone-width: 375px;
 
 .title {
   @include overline-font(10px, 2px, left);
-  margin-bottom: calc(#{$spacing} * 2);
-  @media screen and (max-width: $iphone-width) {
+  margin-bottom: calc(#{var(--spacing)} * 2);
+  @media screen and (max-width: var(--iphone-width)) {
     margin-left: 40px;
-    margin-bottom: calc(#{$spacing} * 1);
+    margin-bottom: calc(#{var(--spacing)} * 1);
     @include overline-font(14px, 2px, left);
   }
 }
 
 .underline {
   height: 1px;
-  max-width: calc(#{$component-max-width} + calc(#{$spacing} * 6));
+  max-width: calc(#{$component-max-width} + calc(#{var(--spacing)} * 6));
   background-color: #BC6FF1;
-  margin-bottom: calc(#{$spacing} * 1);
-  @media screen and (max-width: $iphone-width) {
+  margin-bottom: calc(#{var(--spacing)} * 1);
+  @media screen and (max-width: var(--iphone-width)) {
     margin-bottom: 0;
     margin-left: 40px;
     max-width: calc(375px - 40px - 40px);
@@ -44,8 +42,8 @@ $iphone-width: 375px;
   max-width: $component-max-width;
   display: flex;
   flex-direction: row;
-  padding: calc(#{$spacing} * 3);
-  @media screen and (max-width: $iphone-width) {
+  padding: calc(#{var(--spacing)} * 3);
+  @media screen and (max-width: var(--iphone-width)) {
     flex-direction: column;
     padding: 40px;
     max-width: calc(100% - 40px - 40px);
@@ -58,7 +56,7 @@ $iphone-width: 375px;
   flex-direction: row;
   background-color: #171717;
   border-radius: 5px;
-  @media screen and (max-width: $iphone-width) {
+  @media screen and (max-width: var(--iphone-width)) {
     background-color: #000000;
     flex-direction: column-reverse;
   }
@@ -66,11 +64,11 @@ $iphone-width: 375px;
 
 .scrollBar {
   width: $scrollbar-width;
-  margin: calc(#{$spacing} * 3) 0;
-  margin-left: calc(#{$spacing} * 2 - #{$scrollbar-width});
+  margin: calc(#{var(--spacing)} * 3) 0;
+  margin-left: calc(#{var(--spacing)} * 2 - #{$scrollbar-width});
   background-color: #292929;
   border-radius: 5px;
-  @media screen and (max-width: $iphone-width) {
+  @media screen and (max-width: var(--iphone-width)) {
     height: $scrollbar-width;
     width: 100%;
     margin-left: 0;
@@ -79,47 +77,47 @@ $iphone-width: 375px;
 
 .slider {
   width: $scrollbar-width;
-  height: calc(1em + #{$spacing} * 2);
+  height: calc(1em + #{var(--spacing)} * 2);
   border-radius: 5px;
   background-color: #BC6FF1;
   transition: all 0.3s;
-  @media screen and (max-width: $iphone-width) {
+  @media screen and (max-width: var(--iphone-width)) {
     height: $scrollbar-width;
-    width: calc(1em + #{$spacing} * 2);
+    width: calc(1em + #{var(--spacing)} * 2);
   }
 }
 
 .moveSlider1 {
-  transform: translateY(calc(1em + #{$spacing} * 3));
-  @media screen and (max-width: $iphone-width) {
-    transform: translateX(calc(1em + #{$spacing} * 3));
+  transform: translateY(calc(1em + #{var(--spacing)} * 3));
+  @media screen and (max-width: var(--iphone-width)) {
+    transform: translateX(calc(1em + #{var(--spacing)} * 3));
   }
 }
 .moveSlider2 {
-  transform: translateY(calc(2em + #{$spacing} * 6));
-  @media screen and (max-width: $iphone-width) {
-    transform: translateX(calc(2em + #{$spacing} * 6));
+  transform: translateY(calc(2em + #{var(--spacing)} * 6));
+  @media screen and (max-width: var(--iphone-width)) {
+    transform: translateX(calc(2em + #{var(--spacing)} * 6));
   }
 }
 .moveSlider3 {
-  transform: translateY(calc(3em + #{$spacing} * 9));
-  @media screen and (max-width: $iphone-width) {
-    transform: translateX(calc(3em + #{$spacing} * 9));
+  transform: translateY(calc(3em + #{var(--spacing)} * 9));
+  @media screen and (max-width: var(--iphone-width)) {
+    transform: translateX(calc(3em + #{var(--spacing)} * 9));
   }
 }
 .moveSlider4 {
-  transform: translateY(calc(4em + #{$spacing} * 12));
-  @media screen and (max-width: $iphone-width) {
-    transform: translateX(calc(4em + #{$spacing} * 12));
+  transform: translateY(calc(4em + #{var(--spacing)} * 12));
+  @media screen and (max-width: var(--iphone-width)) {
+    transform: translateX(calc(4em + #{var(--spacing)} * 12));
   }
 }
 
 .employerList {
   display: flex;
   flex-direction: column;
-  padding: calc(#{$spacing} * 3);
-  padding-left: calc(#{$spacing} * 1);
-  @media screen and (max-width: $iphone-width) {
+  padding: calc(#{var(--spacing)} * 3);
+  padding-left: calc(#{var(--spacing)} * 1);
+  @media screen and (max-width: var(--iphone-width)) {
     padding-left: 0;
     position: absolute;
     top: 22px;
@@ -130,19 +128,19 @@ $iphone-width: 375px;
 .employer {
   @include overline-font(10px, 1.5px, left);
   width: 150px;
-  padding: calc(#{$spacing} * 1);
+  padding: calc(#{var(--spacing)} * 1);
   background-color: #1F1F1F;
   border-radius: 5px;
   cursor: pointer;
   &:not(:last-child) {
-    margin-bottom: calc(#{$spacing} * 1);
+    margin-bottom: calc(#{var(--spacing)} * 1);
   }
-  @media screen and (max-width: $iphone-width) {
+  @media screen and (max-width: var(--iphone-width)) {
     @include overline-font(12px, 2px, center);
     height: 40px;
     width: 100px;
     padding: 0;
-    margin-right: calc(#{$spacing} * 2);
+    margin-right: calc(#{var(--spacing)} * 2);
     display: flex;
     justify-content: center; /* align horizontal */
     align-items: center; /* align vertical */
@@ -152,22 +150,22 @@ $iphone-width: 375px;
 .jobContainer {
   background-color: #171717;
   border-radius: 5px;
-  margin-left: calc(#{$spacing} * 3);
-  padding: calc(#{$spacing} * 3);
-  @media screen and (max-width: $iphone-width) {
+  margin-left: calc(#{var(--spacing)} * 3);
+  padding: calc(#{var(--spacing)} * 3);
+  @media screen and (max-width: var(--iphone-width)) {
     margin-left: 0;
   }
 }
 
 .jobTitleContainer {
   background-color: #1F1F1F;
-  padding: calc(#{$spacing} * 1) calc(#{$spacing} * 2);
+  padding: calc(#{var(--spacing)} * 1) calc(#{var(--spacing)} * 2);
   border-radius: 5px;
 }
 
 .jobTitle {
   @include overline-font(16px, 1px, left);
-  margin-bottom: calc(#{$spacing} * 1);
+  margin-bottom: calc(#{var(--spacing)} * 1);
 }
 
 .jobDuration {
@@ -177,7 +175,7 @@ $iphone-width: 375px;
 .jobDescription {
   @include overline-font(12px, 0.5px, left);
   background-color: #1F1F1F;
-  margin-top: calc(#{$spacing} * 1);
-  padding: calc(#{$spacing} * 1) calc(#{$spacing} * 2);
+  margin-top: calc(#{var(--spacing)} * 1);
+  padding: calc(#{var(--spacing)} * 1) calc(#{var(--spacing)} * 2);
   border-radius: 5px;
 }
