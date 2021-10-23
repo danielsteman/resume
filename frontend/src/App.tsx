@@ -15,21 +15,6 @@ const App = () => (
     <Experience />
     <Socials />
   </div>
-  // <SpotifyPD/>
-  // <div className="grid">
-  //   <div className="header">
-  //     <Header/>
-  //   </div>
-  //   <div className="titlePage">
-  //     <Title/>
-  //   </div>
-  //   <div className="about">about</div>
-  //   <div className="projectDescription">projectDescription</div>
-  //   <div className="projectImage">projectImage</div>
-  //   <div className="experience">experience</div>
-  //   <div className="socials">socials</div>
-  //   <div className="footer">footer</div>
-  // </div>
 );
 
 export default App;

@@ -32,7 +32,6 @@ const Experience: FC = () => {
   ];
 
   const [index, setIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState(0);
 
   return (
     <div className="experienceComponent">
@@ -43,16 +42,11 @@ const Experience: FC = () => {
           <div className="scrollBar">
             <div className={`slider moveSlider${index}`} />
           </div>
-          <div className="employerList">
+          <div className={`employerList moveList${index}`}>
             {employers.map((employer, i) => (
               <div
                 className="employer"
-                onClick={() => {
-                  setPrevIndex(index);
-                  setIndex(i);
-                  console.log(index);
-                  console.log(prevIndex);
-                }}
+                onClick={() => setIndex(i)}
                 onKeyDown={() => setIndex(Math.min(0, i - 1))}
                 onKeyUp={() => setIndex(Math.max(4, i + 1))}
                 key={employer.id}
