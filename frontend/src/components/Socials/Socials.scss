@@ -6,14 +6,27 @@ $logo-size: 32px;
   filter: invert(58%) sepia(28%) saturate(4492%) hue-rotate(231deg) brightness(95%) contrast(99%);
 }
 
+.socialsComponent {
+  margin-top: var(--vertical-component-spacing);
+}
+
 .logoContainer {
   width: $logo-size;
   flex-direction: column;
+  @media screen and (max-width: 375px) {
+    flex-direction: row;
+    width: 70%;
+    margin-left: 15%;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .logo {
   height: $logo-size;
   width: $logo-size;
   margin-bottom: $logo-size;
-  @include purple-filter()
+  @include purple-filter();
+  @media screen and (max-width: 375px) {
+  }
 }
