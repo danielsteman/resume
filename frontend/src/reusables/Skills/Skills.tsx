@@ -10,15 +10,14 @@ export interface SkillsProps {
 
 const Skills: FC<SkillsProps> = ({ skills, columns }): JSX.Element => {
   const skillsTable: any = sliceArray(skills, columns);
-  console.log(skillsTable);
 
   return (
     <div className="skillsContainer">
-      {skillsTable.map((skillRow: string[][]) => (
-        <div className="row" key={Math.PI}>
-          {skillRow.map((skill: string[]) => (
-            <div className="column" key={Math.PI}>
-              <div className="skill" key={Math.PI}>{skill}</div>
+      {skillsTable.map((skillRow: SkillProps[]) => (
+        <div className="row" key={skillRow[0].id}>
+          {skillRow.map((skill: SkillProps) => (
+            <div className="column" key={skill.id + 100}>
+              <div className="skill" key={skill.id + 200}>{skill.name}</div>
             </div>
           ))}
         </div>
