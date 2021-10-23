@@ -1,9 +1,7 @@
-import "SpotifyPI.scss"
+import './SpotifyPI.scss';
 
-const SpotifyPI = () => {
-  return (
-    <div></div>
-  )
-}
+const SpotifyPI = () => (
+  <div />
+);
 
-export default SpotifyPI
+export default SpotifyPI;

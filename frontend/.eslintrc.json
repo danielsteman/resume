@@ -20,6 +20,31 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }]
+        "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off",
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+              "js": "never",
+              "jsx": "never",
+              "ts": "never",
+              "tsx": "never"
+            }
+        ],
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error"]
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    },
+    "globals": {
+        "React": true,
+        "JSX": true
     }
 }
