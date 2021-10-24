@@ -8,6 +8,10 @@ trigger:
     include:
     - develop
 
+variables:
+  uiSource: '/frontend'
+  uiBuild: $(uiSource)/build
+
 pool:
   vmImage: ubuntu-latest
 
@@ -18,8 +22,8 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    echo '$(System.DefaultWorkingDirectory)'
+    pushd $(uiSource)
     npm install
     npm run build
-  workingDirectory: $(System.DefaultWorkingDirectory)/frontend
+    popd
   displayName: 'npm install and build'
