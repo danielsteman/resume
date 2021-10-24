@@ -6,6 +6,10 @@
 trigger:
 - develop
 
+variables:
+  uiSource: 'frontend'
+  uiBuild: $(uiSource)/build
+
 pool:
   vmImage: ubuntu-latest
 
@@ -16,8 +20,10 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    cd frontend&&npm install
-    cd frontend&&npm run build
+    pushd $(uiSource)
+    npm install
+    npm run build
+    popd
   displayName: 'npm install and build'
 
 - task: ArchiveFiles@2
