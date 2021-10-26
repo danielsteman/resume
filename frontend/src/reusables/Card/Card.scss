@@ -17,7 +17,7 @@
 }
 
 .title {
-  @include overline-font(10px, 1.5px, left);
+  @include overline-font(14px, 2px, left);
   margin-bottom: calc(#{var(--spacing)} * 2);
 }
 
@@ -35,6 +35,6 @@
 }
 
 .text {
-  @include overline-font(14px, 0.25px, left);
+  @include overline-font(14px, 0.5px, left);
   white-space: pre-line;
 }

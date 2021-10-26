@@ -1,6 +1,7 @@
 .aboutComponent {
   margin-top: var(--vertical-component-spacing);
   max-width: calc(300px + calc(#{var(--spacing)} * 15));
-  left: 50%;
-  // transform: translateX(-50%)
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

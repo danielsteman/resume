@@ -40,7 +40,7 @@
 }
 
 .skill {
-  @include overline-font(10px, 1.5px, center);
+  @include overline-font(12px, 1.5px, center);
   width: 150px;
   background-color: #242424;
   border-radius: 5px;

@@ -16,6 +16,9 @@ $scrollbar-width: 5px;
 $n-experiences: 5;
 
 .experienceComponent {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   margin-top: var(--vertical-component-spacing);
   @media screen and (max-width: 375px) {
@@ -25,7 +28,7 @@ $n-experiences: 5;
 }
 
 .experienceTitle {
-  @include overline-font(10px, 2px, left);
+  @include overline-font(14px, 2px, left);
   margin-bottom: calc(#{var(--spacing)} * 2);
   @media screen and (max-width: 375px) {
     position: relative;
@@ -171,7 +174,7 @@ $n-experiences: 5;
 }
 
 .employer {
-  @include overline-font(10px, 1.5px, left);
+  @include overline-font(12px, 1.5px, left);
   width: 150px;
   background-color: #1F1F1F;
   border-radius: 5px;
@@ -217,7 +220,7 @@ $n-experiences: 5;
 }
 
 .jobDescription {
-  @include overline-font(12px, 0.5px, left);
+  @include overline-font(14px, 0.5px, left);
   background-color: #1F1F1F;
   margin-top: calc(#{var(--spacing)} * 1);
   padding: calc(#{var(--spacing)} * 1) calc(#{var(--spacing)} * 2);
