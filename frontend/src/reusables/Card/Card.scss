@@ -16,17 +16,6 @@
   height: auto;
 }
 
-.title {
-  @include overline-font(10px, 1.5px, left);
-  margin-bottom: calc(#{var(--spacing)} * 2);
-}
-
-.underline {
-  height: 1px;
-  background-color: #BC6FF1;
-  margin-bottom: calc(#{var(--spacing)} * 1);
-}
-
 .card {
   position: relative;
   background-color: #111111;
@@ -35,6 +24,6 @@
 }
 
 .text {
-  @include overline-font(14px, 0.25px, left);
+  @include overline-font(14px, 0.5px, left);
   white-space: pre-line;
 }

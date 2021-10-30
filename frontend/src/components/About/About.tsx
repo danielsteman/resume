@@ -1,6 +1,7 @@
 import './About.scss';
 import Card from '../../reusables/Card/Card';
 import Skills from '../../reusables/Skills/Skills';
+import Title from '../../reusables/Title/Title';
 
 export interface SkillProps {
   name: string,
@@ -41,9 +42,9 @@ const About = () => {
 
   return (
     <div className="aboutComponent">
+      <Title title={title} />
       <Card
         text={text}
-        title={title}
       >
         <Skills skills={skills} columns={columns} />
       </Card>
