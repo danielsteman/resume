@@ -1,4 +1,7 @@
-@import "./global-style/scss-variables";
+@import "./global-style/spacings";
+@import "./global-style/mixins";
+@import "./global-style/size_config";
+@import "./global-style/grid_config";
 
 body {
   background-color: black;
@@ -25,3 +28,4 @@ img {
   margin: 0;
   padding: 0;
 }
+

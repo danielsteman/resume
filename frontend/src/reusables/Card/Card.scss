@@ -16,17 +16,6 @@
   height: auto;
 }
 
-.title {
-  @include overline-font(14px, 2px, left);
-  margin-bottom: calc(#{var(--spacing)} * 2);
-}
-
-.underline {
-  height: 1px;
-  background-color: #BC6FF1;
-  margin-bottom: calc(#{var(--spacing)} * 1);
-}
-
 .card {
   position: relative;
   background-color: #111111;
