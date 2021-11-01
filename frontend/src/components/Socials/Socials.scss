@@ -7,10 +7,14 @@ $logo-size: 32px;
 }
 
 .socialsComponent {
+  position: relative;
   margin-top: var(--vertical-component-spacing);
 }
 
 .logoContainer {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
   width: $logo-size;
   flex-direction: column;
   @media screen and (max-width: 375px) {
