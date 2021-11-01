@@ -3,7 +3,7 @@
   height: 100vh;
   grid-template-columns: var(--column-1) var(--column-2) var(--column-3);
   // make sure that row height fits content
-  grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas:
     "hd hd hd"
     "tp tp tp"

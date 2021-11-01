@@ -32,7 +32,7 @@ const SpotifyPI = () => {
   const layout: Partial<Plotly.Layout> = {
     width,
     height,
-    paper_bgcolor: 'grey',
+    paper_bgcolor: 'black',
     margin: {
       pad: 0,
       t: 0,
@@ -44,7 +44,7 @@ const SpotifyPI = () => {
       yaxis: axesStyle,
       xaxis: axesStyle,
       zaxis: axesStyle,
-      camera: { eye: { x: 1.25, y: 1.25, z: 1.25 } },
+      camera: { eye: { x: 2, y: 2, z: 1.5 } },
     },
   };
 
