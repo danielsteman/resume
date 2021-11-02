@@ -1,7 +1,7 @@
 import Plot from 'react-plotly.js';
 import * as Plotly from 'plotly.js';
 import './SpotifyPI.scss';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 const SpotifyPI = () => {
   const [height, setHeight] = useState(undefined);
@@ -12,6 +12,11 @@ const SpotifyPI = () => {
       setWidth(node.getBoundingClientRect().width);
     }
   }, []);
+
+  useEffect(() => {
+    console.log(`height: ${height}`);
+    console.log(`width: ${width}`);
+  }, [height, width]);
 
   const axesStyle = {
     tick0: 0,
@@ -44,7 +49,7 @@ const SpotifyPI = () => {
       yaxis: axesStyle,
       xaxis: axesStyle,
       zaxis: axesStyle,
-      camera: { eye: { x: 2, y: 2, z: 1.5 } },
+      camera: { eye: { x: 1.5, y: 1.5, z: 1.5 } },
     },
   };
 
@@ -57,7 +62,6 @@ const SpotifyPI = () => {
     <div className="spotifyProjectGraphComponent">
       <div className="plotDiv" ref={plotDiv}>
         <Plot
-          style={{ transform: 'scale(1.3)' }}
           config={{ displayModeBar: false }}
           data={[
             {

@@ -8,4 +8,7 @@
 .spotifyProjectContainer {
   display: flex;
   flex-direction: row;
+  @media screen and (max-width: 375px) {
+    flex-direction: column;
+  }
 }
