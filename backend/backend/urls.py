@@ -1,15 +1,15 @@
-from django.urls import include, path, re_path
+from django.urls import include, path
 from django.conf.urls.static import static
-from django.views.generic.base import RedirectView
 from django.contrib import admin
 from django.conf import settings
-import os.path
 
 from core import views
 
-from wagtail.core import urls as wagtail_urls
 from wagtail.admin import urls as wagtailadmin_urls
+from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
+
+from .api import api_router
 
 urlpatterns = [
     path('django-admin/', admin.site.urls),
@@ -17,19 +17,24 @@ urlpatterns = [
     path('admin/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
 
-    # For anything not caught by a more specific rule above, hand over to
-    # Wagtail's serving mechanism
-    re_path(r'', include(wagtail_urls)),
-
-    # Where React statics can be found
-    # path('', views.index),
+    path('api/v2/', api_router.urls)
 ]
 
 if settings.DEBUG:
+    from django.conf.urls.static import static
     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-    urlpatterns += staticfiles_urlpatterns() # tell gunicorn where static files are in dev mode
-    urlpatterns += static(settings.MEDIA_URL + 'images/', document_root=os.path.join(settings.MEDIA_ROOT, 'images'))
-    urlpatterns += [
-        path('favicon.ico', RedirectView.as_view(url=settings.STATIC_URL + 'myapp/images/favicon.ico'))
-    ]
+    # Serve static and media files from development server
+    urlpatterns += staticfiles_urlpatterns()
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns = urlpatterns + [
+    # For anything not caught by a more specific rule above, hand over to
+    # Wagtail's page serving mechanism. This should be the last pattern in
+    # the list:
+    path("", include(wagtail_urls)),
+
+    # Alternatively, if you want Wagtail pages to be served from a subpath
+    # of your site, rather than the site root:
+    #    path("pages/", include(wagtail_urls)),
+]
