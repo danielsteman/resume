@@ -1,7 +1,7 @@
 import Plot from 'react-plotly.js';
 import * as Plotly from 'plotly.js';
 import './SpotifyPI.scss';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 const SpotifyPI = () => {
   const [height, setHeight] = useState(undefined);
@@ -12,11 +12,6 @@ const SpotifyPI = () => {
       setWidth(node.getBoundingClientRect().width);
     }
   }, []);
-
-  useEffect(() => {
-    console.log(`height: ${height}`);
-    console.log(`width: ${width}`);
-  }, [height, width]);
 
   const axesStyle = {
     tick0: 0,
