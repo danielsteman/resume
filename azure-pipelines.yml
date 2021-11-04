@@ -8,6 +8,9 @@ trigger:
     include:
     - production
     - develop
+    - feature/*
+    exclude:
+    - feature/*-WIP
 
 variables:
   uiSource: '/frontend'
