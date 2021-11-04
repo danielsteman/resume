@@ -1,6 +1,6 @@
 import './App.scss';
 import Header from './components/Header/Header';
-import Title from './components/Title/Title';
+import Home from './components/Home/Home';
 import About from './components/About/About';
 import Socials from './components/Socials/Socials';
 import Experience from './components/Experience/Experience';
@@ -10,7 +10,7 @@ import Footer from './components/Footer/Footer';
 const App = () => (
   <div className="grid">
     <Header />
-    <Title />
+    <Home />
     <About />
     <SpotifyProject />
     <Experience />
