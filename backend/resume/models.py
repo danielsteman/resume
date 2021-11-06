@@ -39,7 +39,7 @@ class Home(ComponentBase):
         FieldPanel('navigation')
     ]
 
-    api_fields = [
+    api_fields = ComponentBase.api_fields + [
         APIField('navigation')
     ]
 
