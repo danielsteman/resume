@@ -1,36 +1,23 @@
 import './Header.scss';
-
-interface HeaderProps {
-  id: number,
-  name: string
-}
+import { useState, useEffect } from 'react';
+import getFields from '../../api/utils';
 
 const Header = () => {
-  const items: HeaderProps[] = [
-    {
-      id: 1,
-      name: 'contact',
-    },
-    {
-      id: 2,
-      name: 'experience',
-    },
-    {
-      id: 3,
-      name: 'projects',
-    },
-    {
-      id: 4,
-      name: 'resume',
-    },
-  ];
+  const [navItems, setNavItems] = useState([]);
+
+  useEffect(() => {
+    (async function getHeaderContent() {
+      const data = await getFields('Home', ['navigation']);
+      setNavItems(data.navigation);
+    }());
+  }, []);
 
   return (
     <div className="headerComponent">
       <div className="nav">
         <ul className="item">
-          {items.map((item: HeaderProps) => (
-            <li key={item.id}><a href="/">{item.name}</a></li>
+          {navItems.map((item: string) => (
+            <li key={item}><a href="/">{item}</a></li>
           ))}
         </ul>
       </div>

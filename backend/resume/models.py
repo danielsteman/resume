@@ -6,8 +6,6 @@ from wagtail.core.models import Page
 from wagtail.admin.edit_handlers import FieldPanel
 from wagtail.api import APIField
 
-# TODO: create ModelFacade
-
 class ComponentBase(Page):
     custom_title = models.CharField(
         max_length=100,

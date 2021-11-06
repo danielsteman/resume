@@ -1,5 +1,4 @@
 import Plot from 'react-plotly.js';
-import * as Plotly from 'plotly.js';
 import './SpotifyPI.scss';
 import { useCallback, useState } from 'react';
 
@@ -29,7 +28,7 @@ const SpotifyPI = () => {
   const labelColors = [1, 2, 3];
   const dataPointLabels = ['1', '2', '3'];
 
-  const layout: Partial<Plotly.Layout> = {
+  const layout = {
     width,
     height,
     paper_bgcolor: 'black',

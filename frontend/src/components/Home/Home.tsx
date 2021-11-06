@@ -1,21 +1,22 @@
 import './Home.scss';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Waves from '../../svg/layered-waves-haikei.svg';
-import getHomePage from '../../api/HomepageAPI';
+import getFields from '../../api/utils';
 
 const Home = () => {
-  // const [title, setTitle] = useState('');
-  // const [navBar, setNavBar] = useState('');
+  const [title, setTitle] = useState('');
 
   useEffect(() => {
-    const data = getHomePage(['Navbar', 'WebsiteTitle']);
-    console.log(data);
+    (async function getHomePageContent() {
+      const data = await getFields('Home', ['custom_title']);
+      setTitle(data.custom_title);
+    }());
   }, []);
 
   return (
     <div className="titleComponent">
       <div className="mainTitle">
-        <h1>Project title.</h1>
+        <h1>{title}</h1>
       </div>
       <img className="pageDivider" src={Waves} alt="PageDivider" />
     </div>
