@@ -31,4 +31,4 @@ steps:
   
 - script: npm build
   workingDirectory: frontend
-  displayName: 'npm build'
+  displayName: 'npm run build'
