@@ -21,7 +21,7 @@ stages:
     - job: SyncRepos
       steps:
       - bash: |
-        git push --prune https://$(GITHUBPAT)@github.com/resume \
+        git push --prune https://$(GITHUBPAT)@github.com/$REPO_NAME \
           +refs/remotes/origin/*:refs/heads/* +refs/tags/*:refs/tags/*
   - stage: BuildReact
     displayName: build frontend
