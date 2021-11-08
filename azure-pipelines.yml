@@ -15,6 +15,14 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
+  - stage: GithubSync
+    display: sync changes
+    jobs:
+    - job: SyncRepos
+      steps:
+      - bash: |
+        git push --prune https://$(GITHUBPAT)@github.com/resume \
+          +refs/remotes/origin/*:refs/heads/* +refs/tags/*:refs/tags/*
   - stage: BuildReact
     displayName: build frontend
     jobs:
