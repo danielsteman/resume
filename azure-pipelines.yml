@@ -39,5 +39,4 @@ stages:
         workingDirectory: backend
         displayName: upgrade pip
       - script: pip install -r requirements.txt
-        workingDirectory: backend
         displayName: pip install -r requirements.txt
