@@ -1,3 +1,6 @@
 .spotifyProjectDescriptionComponent {
   min-width: 420px;
+  @media screen and (max-width: 375px) {
+    width: 295;
+  }
 }
