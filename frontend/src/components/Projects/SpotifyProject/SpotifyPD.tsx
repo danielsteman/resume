@@ -23,7 +23,7 @@ const SpotifyPD = () => {
       id: 4,
     },
   ];
-  const columns: number = 1;
+  const columns: number = 2;
   const text: (string|ReactElement)[] = ['Using Spotify’s ', <a key={Math.PI} href="https://developer.spotify.com/documentation/web-api/reference/#category-tracks"> API </a>, 'to get feature data about songs and creating playlists based on cluster analysis. The web app allows users to login with a Spotify account, select a playlist, see the songs it contains in 3D feature space and create new playlists.\nBy building this I learned how the use new technologies such as but not limited to:'];
 
   return (

@@ -34,3 +34,31 @@ $logo-size: 32px;
   @media screen and (max-width: 375px) {
   }
 }
+
+.linkedin {
+  transition: 0.3s;
+  &:hover {
+    filter: invert(26%) sepia(97%) saturate(1507%) hue-rotate(197deg) brightness(94%) contrast(88%);
+  }
+}
+
+.github {
+  transition: 0.3s;
+  &:hover {
+    filter: invert(100%) sepia(0%) saturate(7491%) hue-rotate(57deg) brightness(117%) contrast(101%);
+  }
+}
+
+.lastfm {
+  transition: 0.3s;
+  &:hover {
+    filter: invert(13%) sepia(58%) saturate(5470%) hue-rotate(354deg) brightness(96%) contrast(117%);
+  }
+}
+
+.stackoverflow {
+  transition: 0.3s;
+  &:hover {
+    filter: invert(100%) sepia(0%) saturate(7491%) hue-rotate(57deg) brightness(117%) contrast(101%);
+  }
+}

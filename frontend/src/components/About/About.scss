@@ -4,4 +4,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  @media screen and (max-width: 375px) {
+    max-width: var(--iphone-component-width);
+  }
 }

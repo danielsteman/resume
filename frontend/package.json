@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8000",
+  "proxy": "http://192.168.2.11:8000/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -12,6 +12,7 @@
     "@types/react-dom": "^17.0.9",
     "axios": "^0.24.0",
     "node-sass": "^4.14.0",
+    "plotly.js": "^2.6.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-plotly.js": "^2.5.1",

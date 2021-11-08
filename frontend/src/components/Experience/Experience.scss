@@ -6,7 +6,7 @@
   color: #FFFFFF;
   letter-spacing: 0.25px;
   text-align: $text-align;
-  line-height: calc(#{$font-size} + 6px);
+  line-height: calc(#{$font-size} + 4px);
   letter-spacing: $letter-spacing;
   opacity: 0.87;
 }
@@ -180,8 +180,12 @@ $n-experiences: 5;
   border-radius: 5px;
   cursor: pointer;
   padding: calc(#{var(--spacing)} * 1);
+  transition: 0.3s;
   &:not(:last-child) {
     margin-bottom: calc(#{var(--spacing)} * 1);
+  }
+  &:hover {
+    background-color: #292929;
   }
   @media screen and (max-width: 375px) {
     @include overline-font(12px, 2px, center);
@@ -225,4 +229,4 @@ $n-experiences: 5;
   margin-top: calc(#{var(--spacing)} * 1);
   padding: calc(#{var(--spacing)} * 1) calc(#{var(--spacing)} * 2);
   border-radius: 5px;
-}
+  }

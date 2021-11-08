@@ -45,4 +45,11 @@
   background-color: #242424;
   border-radius: 5px;
   padding: calc(#{var(--spacing)} * 1) 0;
+  transition: 0.3s;
+  @media screen and (max-width: 375px) {
+    width: 87.5px;
+  }
+  &:hover {
+    background-color: #BC6FF1;
+  }
 }
