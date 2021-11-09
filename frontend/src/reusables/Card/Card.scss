@@ -6,7 +6,7 @@
   color: #FFFFFF;
   letter-spacing: 0.25px;
   text-align: $text-align;
-  line-height: calc(#{$font-size} + 6px);
+  line-height: calc(#{$font-size} + 10px);
   letter-spacing: $letter-spacing;
   opacity: 0.87;
 }
@@ -24,6 +24,6 @@
 }
 
 .text {
-  @include overline-font(14px, 0.5px, left);
+  @include overline-font(var(--body-font-size), 0.5px, left);
   white-space: pre-line;
 }

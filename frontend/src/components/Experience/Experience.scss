@@ -6,7 +6,7 @@
   color: #FFFFFF;
   letter-spacing: 0.25px;
   text-align: $text-align;
-  line-height: calc(#{$font-size} + 4px);
+  line-height: calc(#{$font-size} + #{$line-margin});
   letter-spacing: $letter-spacing;
   opacity: 0.87;
 }
@@ -14,6 +14,7 @@
 $component-width-iphone: 295px;
 $scrollbar-width: 5px;
 $n-experiences: 5;
+$line-margin: 8px;
 
 .experienceComponent {
   max-width: 700px;
@@ -95,7 +96,7 @@ $n-experiences: 5;
 
 .slider {
   width: $scrollbar-width;
-  height: calc(1em + #{var(--spacing)} * 2);
+  height: calc(1em + #{$line-margin} * 2 + 6px);
   border-radius: 5px;
   background-color: #BC6FF1;
   transition: all 0.3s;
@@ -107,28 +108,28 @@ $n-experiences: 5;
 }
 
 .moveSlider1 {
-  transform: translateY(calc(1em * 1 + #{var(--spacing)} * 3 * 1));
+  transform: translateY(calc(1em + 6px * 1 + #{var(--spacing)} * 3 * 1));
   @media screen and (max-width: 375px) {
     transform: translateX(89px);
   }
 }
 
 .moveSlider2 {
-  transform: translateY(calc(1em * 2 + #{var(--spacing)} * 3 * 2));
+  transform: translateY(calc((1em + 6px) * 2 + #{var(--spacing)} * 3 * 2));
   @media screen and (max-width: 375px) {
     transform: translateX(calc(89px));
   }
 }
 
 .moveSlider3 {
-  transform: translateY(calc(1em * 3 + #{var(--spacing)} * 3 * 3));
+  transform: translateY(calc((1em + 6px) * 3 + #{var(--spacing)} * 3 * 3));
   @media screen and (max-width: 375px) {
     transform: translateX(calc(89px));
   }
 }
 
 .moveSlider4 {
-  transform: translateY(calc(1em * 4 + #{var(--spacing)} * 3 * 4));
+  transform: translateY(calc((1em + 6px) * 4 + #{var(--spacing)} * 3 * 4));
   @media screen and (max-width: 375px) {
     transform: translateX(calc(178px));
   }
@@ -174,7 +175,7 @@ $n-experiences: 5;
 }
 
 .employer {
-  @include overline-font(12px, 1.5px, left);
+  @include overline-font(14px, 1.5px, left);
   width: 150px;
   background-color: #1F1F1F;
   border-radius: 5px;
@@ -188,7 +189,7 @@ $n-experiences: 5;
     background-color: #292929;
   }
   @media screen and (max-width: 375px) {
-    @include overline-font(12px, 2px, center);
+    @include overline-font(14px, 2px, center);
     height: 40px;
     width: 100px;
     margin-right: calc(#{var(--spacing)} * 2);
@@ -215,16 +216,16 @@ $n-experiences: 5;
 }
 
 .jobTitle {
-  @include overline-font(16px, 1px, left);
+  @include overline-font(18px, 1px, left);
   margin-bottom: calc(#{var(--spacing)} * 1);
 }
 
 .jobDuration {
-  @include overline-font(12px, 1px, left);
+  @include overline-font(14px, 1px, left);
 }
 
 .jobDescription {
-  @include overline-font(14px, 0.5px, left);
+  @include overline-font(var(--body-font-size), 0.5px, left);
   background-color: #1F1F1F;
   margin-top: calc(#{var(--spacing)} * 1);
   padding: calc(#{var(--spacing)} * 1) calc(#{var(--spacing)} * 2);

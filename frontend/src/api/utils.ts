@@ -1,6 +1,6 @@
 const axios = require('axios').default;
 
-const baseUrl = 'http://192.168.2.11:3000/api/v2';
+const baseUrl = 'http://localhost:3000/api/v2';
 
 const get = async (endpoint: string) => {
   try {
