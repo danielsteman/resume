@@ -106,7 +106,7 @@ DATABASES = {
         "PASSWORD": "password",
         "HOST": "",  # Set to empty string for localhost.
         "PORT": "",  # Set to empty string for default.
-        "CONN_MAX_AGE": 600,  # number of seconds database connections should persist for
+        "CONN_MAX_AGE": 600,
     }
 }
 
@@ -116,7 +116,8 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
+        "NAME": "django.contrib.auth.password_validation.\
+            UserAttributeSimilarityValidator"
     },
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
@@ -184,5 +185,5 @@ TAGGIT_CASE_INSENSITIVE = True
 # STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'frontend', "build", "static"),  # update the STATICFILES_DIRS
+#     os.path.join(BASE_DIR, 'frontend', "build", "static"),
 # )

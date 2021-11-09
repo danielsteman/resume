@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
-from django.db.models.fields import CharField, Field
+from django.db.models.fields import CharField
 
 from wagtail.core.models import Page
 from wagtail.admin.edit_handlers import FieldPanel
@@ -96,7 +96,8 @@ class Experience(ComponentBase):
             max_length=100,
             blank=False,
             null=False,
-            help_text="MONTH-YYYY - MONTH-YYYY or MONTH-YYYY - present (LinkedIn-like notation)",
+            help_text="MONTH-YYYY - MONTH-YYYY or MONTH-YYYY\
+                - present (LinkedIn-like notation)",
         ),
         size=5,
     )
