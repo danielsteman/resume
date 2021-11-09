@@ -1,26 +1,26 @@
 import './Header.scss';
-import { useState, useEffect } from 'react';
-import getFields from '../../api/utils';
+import useFetch from '../../hooks/useFetch';
 
 const Header = () => {
-  const [navItems, setNavItems] = useState([]);
-
-  useEffect(() => {
-    (async function getHeaderContent() {
-      const data = await getFields('Home', ['navigation']);
-      setNavItems(data.navigation);
-    }());
-  }, []);
+  const { data, loading, error } = useFetch('Home', ['navigation']);
 
   return (
     <div className="headerComponent">
+      {data && (
       <div className="nav">
         <ul className="item">
-          {navItems.map((item: string) => (
+          {data.navigation.map((item: string) => (
             <li key={item}><a href="/">{item}</a></li>
           ))}
         </ul>
       </div>
+      )}
+      {loading && (
+        <div>loading...</div>
+      )}
+      {error && (
+        <div>{error}</div>
+      )}
     </div>
 
   );

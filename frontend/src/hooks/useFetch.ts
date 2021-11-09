@@ -1,36 +1,34 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 
-function useFetch(url: string) {
-  const [data, setData] = useState({});
+const axios = require('axios').default;
+
+const baseUrl = 'http://localhost:3000/api/v2';
+
+const useFetch = <T extends any = any>(page: string, fields: string[]) => {
+  const [data, setData] = useState<T | {}>({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    setLoading(true);
-    setData({});
-    setError('');
-    const source = axios.CancelToken.source();
-    axios.get(url, { cancelToken: source.token })
-      .then((res) => {
-        setLoading(false);
-        // eslint-disable-next-line no-console
-        console.log(res);
-        // res.data && setData(res.data);
-        // res && setData(res);
-      })
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.log(err);
-        setLoading(false);
-        setError('An error occurred. Awkward..');
-      });
-    return () => {
-      source.cancel();
-    };
-  }, [url]);
+  const endpoint = `pages/?type=resume.${page}&fields=_,${fields.join()}`;
 
+  useEffect(() => {
+    (async function getContent() {
+      try {
+        setLoading(true);
+        const res = await axios.get(`${baseUrl}/${endpoint}`);
+        setData(res.data.items[0]);
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.log(e);
+        setError('An error occurred. Awkward..');
+      } finally {
+        setLoading(false);
+      }
+    }());
+  }, []);
+
+  if (error) return { errorMessage: `Failed to fetch ${JSON.stringify(fields)} from ${page}` };
   return { data, loading, error };
-}
+};
 
 export default useFetch;
