@@ -9,55 +9,59 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('wagtailcore', '0062_comment_models_and_pagesubscription'),
-        ('resume', '0002_auto_20211104_2040'),
+        ("wagtailcore", "0062_comment_models_and_pagesubscription"),
+        ("resume", "0002_auto_20211104_2040"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='About',
+            name="About",
             fields=[
-                ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.page')),
-                ('sectionTitle', models.CharField(max_length=255)),
-                ('created', models.DateTimeField(auto_now_add=True)),
-                ('updated', models.DateTimeField(auto_now=True)),
-                ('body', models.CharField(max_length=750)),
-                ('skills', django.contrib.postgres.fields.ArrayField(base_field=models.CharField(max_length=25), size=6)),
+                (
+                    "page_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        serialize=False,
+                        to="wagtailcore.page",
+                    ),
+                ),
+                ("sectionTitle", models.CharField(max_length=255)),
+                ("created", models.DateTimeField(auto_now_add=True)),
+                ("updated", models.DateTimeField(auto_now=True)),
+                ("body", models.CharField(max_length=750)),
+                (
+                    "skills",
+                    django.contrib.postgres.fields.ArrayField(
+                        base_field=models.CharField(max_length=25), size=6
+                    ),
+                ),
             ],
-            options={
-                'ordering': ['title'],
-                'abstract': False,
-            },
-            bases=('wagtailcore.page',),
+            options={"ordering": ["title"], "abstract": False},
+            bases=("wagtailcore.page",),
         ),
-        migrations.AlterModelOptions(
-            name='home',
-            options={'ordering': ['title']},
-        ),
+        migrations.AlterModelOptions(name="home", options={"ordering": ["title"]}),
         migrations.RenameField(
-            model_name='home',
-            old_name='NavBar',
-            new_name='navigation',
+            model_name="home", old_name="NavBar", new_name="navigation"
         ),
-        migrations.RemoveField(
-            model_name='home',
-            name='WebsiteTitle',
-        ),
+        migrations.RemoveField(model_name="home", name="WebsiteTitle"),
         migrations.AddField(
-            model_name='home',
-            name='created',
-            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now),
+            model_name="home",
+            name="created",
+            field=models.DateTimeField(
+                auto_now_add=True, default=django.utils.timezone.now
+            ),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='home',
-            name='sectionTitle',
+            model_name="home",
+            name="sectionTitle",
             field=models.CharField(default=django.utils.timezone.now, max_length=255),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='home',
-            name='updated',
-            field=models.DateTimeField(auto_now=True),
+            model_name="home", name="updated", field=models.DateTimeField(auto_now=True)
         ),
     ]

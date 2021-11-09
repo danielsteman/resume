@@ -6,21 +6,14 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('wagtailcore', '0062_comment_models_and_pagesubscription'),
-        ('wagtailforms', '0004_add_verbose_name_plural'),
-        ('wagtailredirects', '0006_redirect_increase_max_length'),
-        ('resume', '0005_alter_home_navigation'),
+        ("wagtailcore", "0062_comment_models_and_pagesubscription"),
+        ("wagtailforms", "0004_add_verbose_name_plural"),
+        ("wagtailredirects", "0006_redirect_increase_max_length"),
+        ("resume", "0005_alter_home_navigation"),
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='home',
-            name='page_ptr',
-        ),
-        migrations.DeleteModel(
-            name='About',
-        ),
-        migrations.DeleteModel(
-            name='Home',
-        ),
+        migrations.RemoveField(model_name="home", name="page_ptr"),
+        migrations.DeleteModel(name="About"),
+        migrations.DeleteModel(name="Home"),
     ]

@@ -12,12 +12,10 @@ from wagtail.documents import urls as wagtaildocs_urls
 from .api import api_router
 
 urlpatterns = [
-    path('django-admin/', admin.site.urls),
-
-    path('admin/', include(wagtailadmin_urls)),
-    path('documents/', include(wagtaildocs_urls)),
-
-    path('api/v2/', api_router.urls)
+    path("django-admin/", admin.site.urls),
+    path("admin/", include(wagtailadmin_urls)),
+    path("documents/", include(wagtaildocs_urls)),
+    path("api/v2/", api_router.urls),
 ]
 
 if settings.DEBUG:
@@ -33,7 +31,6 @@ urlpatterns = urlpatterns + [
     # Wagtail's page serving mechanism. This should be the last pattern in
     # the list:
     path("", include(wagtail_urls)),
-
     # Alternatively, if you want Wagtail pages to be served from a subpath
     # of your site, rather than the site root:
     #    path("pages/", include(wagtail_urls)),

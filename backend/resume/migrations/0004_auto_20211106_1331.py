@@ -5,53 +5,39 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('resume', '0003_auto_20211106_1317'),
-    ]
+    dependencies = [("resume", "0003_auto_20211106_1317")]
 
     operations = [
         migrations.AlterModelOptions(
-            name='about',
-            options={'ordering': ['custom_title']},
+            name="about", options={"ordering": ["custom_title"]}
         ),
         migrations.AlterModelOptions(
-            name='home',
-            options={'ordering': ['custom_title']},
+            name="home", options={"ordering": ["custom_title"]}
         ),
-        migrations.RemoveField(
-            model_name='about',
-            name='created',
-        ),
-        migrations.RemoveField(
-            model_name='about',
-            name='sectionTitle',
-        ),
-        migrations.RemoveField(
-            model_name='about',
-            name='updated',
-        ),
-        migrations.RemoveField(
-            model_name='home',
-            name='created',
-        ),
-        migrations.RemoveField(
-            model_name='home',
-            name='sectionTitle',
-        ),
-        migrations.RemoveField(
-            model_name='home',
-            name='updated',
-        ),
+        migrations.RemoveField(model_name="about", name="created"),
+        migrations.RemoveField(model_name="about", name="sectionTitle"),
+        migrations.RemoveField(model_name="about", name="updated"),
+        migrations.RemoveField(model_name="home", name="created"),
+        migrations.RemoveField(model_name="home", name="sectionTitle"),
+        migrations.RemoveField(model_name="home", name="updated"),
         migrations.AddField(
-            model_name='about',
-            name='custom_title',
-            field=models.CharField(default='about', help_text='Overwrites the default title', max_length=100),
+            model_name="about",
+            name="custom_title",
+            field=models.CharField(
+                default="about",
+                help_text="Overwrites the default title",
+                max_length=100,
+            ),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='home',
-            name='custom_title',
-            field=models.CharField(default='about', help_text='Overwrites the default title', max_length=100),
+            model_name="home",
+            name="custom_title",
+            field=models.CharField(
+                default="about",
+                help_text="Overwrites the default title",
+                max_length=100,
+            ),
             preserve_default=False,
         ),
     ]

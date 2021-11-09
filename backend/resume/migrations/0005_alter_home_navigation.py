@@ -6,14 +6,17 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('resume', '0004_auto_20211106_1331'),
-    ]
+    dependencies = [("resume", "0004_auto_20211106_1331")]
 
     operations = [
         migrations.AlterField(
-            model_name='home',
-            name='navigation',
-            field=django.contrib.postgres.fields.ArrayField(base_field=models.CharField(help_text='Text on navigation buttons', max_length=25), size=4),
-        ),
+            model_name="home",
+            name="navigation",
+            field=django.contrib.postgres.fields.ArrayField(
+                base_field=models.CharField(
+                    help_text="Text on navigation buttons", max_length=25
+                ),
+                size=4,
+            ),
+        )
     ]

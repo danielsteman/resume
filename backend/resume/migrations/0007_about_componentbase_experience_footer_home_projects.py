@@ -10,80 +10,189 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('wagtailcore', '0062_comment_models_and_pagesubscription'),
-        ('resume', '0006_auto_20211106_1448'),
+        ("wagtailcore", "0062_comment_models_and_pagesubscription"),
+        ("resume", "0006_auto_20211106_1448"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ComponentBase',
+            name="ComponentBase",
             fields=[
-                ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.page')),
-                ('custom_title', models.CharField(help_text='Overwrites the default title', max_length=100)),
+                (
+                    "page_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        serialize=False,
+                        to="wagtailcore.page",
+                    ),
+                ),
+                (
+                    "custom_title",
+                    models.CharField(
+                        help_text="Overwrites the default title", max_length=100
+                    ),
+                ),
             ],
-            options={
-                'abstract': False,
-            },
-            bases=('wagtailcore.page',),
+            options={"abstract": False},
+            bases=("wagtailcore.page",),
         ),
         migrations.CreateModel(
-            name='Footer',
+            name="Footer",
             fields=[
-                ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.page')),
-                ('footer_text', models.CharField(help_text='Footer text', max_length=100)),
+                (
+                    "page_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        serialize=False,
+                        to="wagtailcore.page",
+                    ),
+                ),
+                (
+                    "footer_text",
+                    models.CharField(help_text="Footer text", max_length=100),
+                ),
             ],
-            options={
-                'abstract': False,
-            },
-            bases=('wagtailcore.page',),
+            options={"abstract": False},
+            bases=("wagtailcore.page",),
         ),
         migrations.CreateModel(
-            name='About',
+            name="About",
             fields=[
-                ('componentbase_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='resume.componentbase')),
-                ('body', models.CharField(max_length=750)),
-                ('skills', django.contrib.postgres.fields.ArrayField(base_field=models.CharField(help_text='List of general skills', max_length=25), size=6)),
+                (
+                    "componentbase_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        serialize=False,
+                        to="resume.componentbase",
+                    ),
+                ),
+                ("body", models.CharField(max_length=750)),
+                (
+                    "skills",
+                    django.contrib.postgres.fields.ArrayField(
+                        base_field=models.CharField(
+                            help_text="List of general skills", max_length=25
+                        ),
+                        size=6,
+                    ),
+                ),
             ],
-            options={
-                'abstract': False,
-            },
-            bases=('resume.componentbase',),
+            options={"abstract": False},
+            bases=("resume.componentbase",),
         ),
         migrations.CreateModel(
-            name='Experience',
+            name="Experience",
             fields=[
-                ('componentbase_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='resume.componentbase')),
-                ('employers', django.contrib.postgres.fields.ArrayField(base_field=models.CharField(help_text='List of employers or degrees', max_length=25), size=5)),
-                ('employment_title', models.CharField(help_text='Position and employer name separated by @', max_length=25)),
-                ('employment_duration', models.CharField(help_text='MONTH-YYYY - MONTH-YYYY LinkedIn-like notation', max_length=25)),
-                ('employment_description', models.CharField(help_text="Description about the work that I've done", max_length=750)),
+                (
+                    "componentbase_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        serialize=False,
+                        to="resume.componentbase",
+                    ),
+                ),
+                (
+                    "employers",
+                    django.contrib.postgres.fields.ArrayField(
+                        base_field=models.CharField(
+                            help_text="List of employers or degrees", max_length=25
+                        ),
+                        size=5,
+                    ),
+                ),
+                (
+                    "employment_title",
+                    models.CharField(
+                        help_text="Position and employer name separated by @",
+                        max_length=25,
+                    ),
+                ),
+                (
+                    "employment_duration",
+                    models.CharField(
+                        help_text="MONTH-YYYY - MONTH-YYYY LinkedIn-like notation",
+                        max_length=25,
+                    ),
+                ),
+                (
+                    "employment_description",
+                    models.CharField(
+                        help_text="Description about the work that I've done",
+                        max_length=750,
+                    ),
+                ),
             ],
-            options={
-                'abstract': False,
-            },
-            bases=('resume.componentbase',),
+            options={"abstract": False},
+            bases=("resume.componentbase",),
         ),
         migrations.CreateModel(
-            name='Home',
+            name="Home",
             fields=[
-                ('componentbase_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='resume.componentbase')),
-                ('navigation', django.contrib.postgres.fields.ArrayField(base_field=models.CharField(help_text='Text on navigation buttons', max_length=25), size=4)),
+                (
+                    "componentbase_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        serialize=False,
+                        to="resume.componentbase",
+                    ),
+                ),
+                (
+                    "navigation",
+                    django.contrib.postgres.fields.ArrayField(
+                        base_field=models.CharField(
+                            help_text="Text on navigation buttons", max_length=25
+                        ),
+                        size=4,
+                    ),
+                ),
             ],
-            options={
-                'abstract': False,
-            },
-            bases=('resume.componentbase',),
+            options={"abstract": False},
+            bases=("resume.componentbase",),
         ),
         migrations.CreateModel(
-            name='Projects',
+            name="Projects",
             fields=[
-                ('componentbase_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='resume.componentbase')),
-                ('body', models.CharField(help_text='List of skills to complete this project', max_length=750)),
-                ('skills', django.contrib.postgres.fields.ArrayField(base_field=models.CharField(max_length=25), size=4)),
+                (
+                    "componentbase_ptr",
+                    models.OneToOneField(
+                        auto_created=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        parent_link=True,
+                        primary_key=True,
+                        serialize=False,
+                        to="resume.componentbase",
+                    ),
+                ),
+                (
+                    "body",
+                    models.CharField(
+                        help_text="List of skills to complete this project",
+                        max_length=750,
+                    ),
+                ),
+                (
+                    "skills",
+                    django.contrib.postgres.fields.ArrayField(
+                        base_field=models.CharField(max_length=25), size=4
+                    ),
+                ),
             ],
-            options={
-                'abstract': False,
-            },
-            bases=('resume.componentbase',),
+            options={"abstract": False},
+            bases=("resume.componentbase",),
         ),
     ]

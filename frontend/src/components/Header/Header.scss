@@ -35,7 +35,7 @@ $body2: 'Roboto Condensed', sans-serif;
     }
     a {
       color: #fff;
-      
+
       display: inline-block;
       padding: var(--spacing);
       position: relative;
@@ -52,9 +52,9 @@ $body2: 'Roboto Condensed', sans-serif;
       transition: width 0.3s ease 0s, left 0.3s ease 0s;
       width: 0;
     }
-    a:hover:after { 
-      width: 100%; 
-      left: 0; 
+    a:hover:after {
+      width: 100%;
+      left: 0;
     }
   }
 }
