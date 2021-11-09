@@ -11,10 +11,6 @@ variables:
   uiSource: '/frontend'
   uiBuild: $(uiSource)/build
 
-variables:
-  uiSource: 'frontend'
-  uiBuild: $(uiSource)/build
-
 pool:
   vmImage: ubuntu-latest
 
