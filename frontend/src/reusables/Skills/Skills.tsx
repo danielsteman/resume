@@ -1,23 +1,21 @@
 import { FC } from 'react';
 import './Skills.scss';
 import sliceArray from '../../utils/sliceArray';
-import { SkillProps } from '../../components/About/About';
 
 export interface SkillsProps {
-  skills: SkillProps[],
-  columns: number
+  skills_: never[],
+  columns_: number
 }
 
-const Skills: FC<SkillsProps> = ({ skills, columns }): JSX.Element => {
-  const skillsTable: any = sliceArray(skills, columns);
-
+const Skills: FC<SkillsProps> = ({ skills_ = [], columns_ = 1 }): JSX.Element => {
+  const skillsTable = sliceArray(skills_, columns_);
   return (
     <div className="skillsContainer">
-      {skillsTable.map((skillRow: SkillProps[]) => (
-        <div className="row" key={skillRow[0].id}>
-          {skillRow.map((skill: SkillProps) => (
-            <div className="column" key={skill.id + 100}>
-              <div className="skill" key={skill.id + 200}>{skill.name}</div>
+      {skillsTable.map((skillRow: string[]) => (
+        <div className="row" key={skillRow[0]}>
+          {skillRow.map((skill: string) => (
+            <div className="column" key={skill}>
+              <div className="skill" key={skill}>{skill}</div>
             </div>
           ))}
         </div>

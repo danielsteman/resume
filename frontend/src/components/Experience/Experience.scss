@@ -29,9 +29,11 @@ $line-margin: 8px;
   }
 }
 
+// redundant
 .experienceTitle {
   @include overline-font(14px, 2px, left);
   margin-bottom: calc(#{var(--spacing)} * 2);
+  text-transform: uppercase;
   @media screen and (max-width: 375px) {
     position: relative;
     margin-bottom: calc(#{var(--spacing)} * 1);
@@ -182,6 +184,7 @@ $line-margin: 8px;
   cursor: pointer;
   padding: calc(#{var(--spacing)} * 1);
   transition: 0.3s;
+  text-transform: uppercase;
   &:not(:last-child) {
     margin-bottom: calc(#{var(--spacing)} * 1);
   }

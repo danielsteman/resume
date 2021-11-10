@@ -40,12 +40,14 @@
 }
 
 .skill {
-  @include overline-font(12px, 1.5px, center);
+  @include overline-font(14px, 1.5px, center);
   width: 150px;
+  color: white;
   background-color: #242424;
   border-radius: 5px;
   padding: calc(#{var(--spacing)} * 1) 0;
   transition: 0.3s;
+  text-transform: uppercase;
   @media screen and (max-width: 375px) {
     width: 87.5px;
   }

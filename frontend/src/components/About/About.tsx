@@ -2,6 +2,7 @@ import './About.scss';
 import Card from '../../reusables/Card/Card';
 import Skills from '../../reusables/Skills/Skills';
 import Title from '../../reusables/Title/Title';
+import useFetch from '../../hooks/useFetch';
 
 export interface SkillProps {
   name: string,
@@ -9,45 +10,32 @@ export interface SkillProps {
 }
 
 const About = () => {
-  const skills: SkillProps[] = [
-    {
-      name: 'PYTHON',
-      id: 1,
-    },
-    {
-      name: 'DJANGO',
-      id: 2,
-    },
-    {
-      name: 'JAVASCRIPT',
-      id: 3,
-    },
-    {
-      name: 'TYPESCRIPT',
-      id: 4,
-    },
-    {
-      name: 'NODE.JS',
-      id: 5,
-    },
-    {
-      name: 'REACT',
-      id: 6,
-    },
+  const fields = [
+    'custom_title',
+    'body',
+    'skills',
+    'n_skills_columns',
   ];
-
-  const columns: number = 2;
-  const title: string = 'ABOUT';
-  const text: string = ('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\n\nIt was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.');
+  const { data, loading, error } = useFetch('About', fields);
 
   return (
     <div className="aboutComponent">
-      <Title title={title} />
-      <Card
-        text={text}
-      >
-        <Skills skills={skills} columns={columns} />
-      </Card>
+      {data && (
+        <div>
+          <Title title={data.custom_title} />
+          <Card
+            text={data.body}
+          >
+            <Skills skills_={data.skills} columns_={data.n_skills_columns} />
+          </Card>
+        </div>
+      )}
+      {loading && (
+        <div>loading...</div>
+      )}
+      {error && (
+        <div>{error}</div>
+      )}
     </div>
   );
 };

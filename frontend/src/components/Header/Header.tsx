@@ -6,7 +6,7 @@ const Header = () => {
 
   return (
     <div className="headerComponent">
-      {data && (
+      {data && data.navigation && (
       <div className="nav">
         <ul className="item">
           {data.navigation.map((item: string) => (
@@ -22,7 +22,6 @@ const Header = () => {
         <div>{error}</div>
       )}
     </div>
-
   );
 };
 

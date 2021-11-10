@@ -1,24 +1,26 @@
 import './Home.scss';
-import { useState, useEffect } from 'react';
 import Waves from '../../svg/layered-waves-haikei.svg';
-import getFields from '../../api/utils';
+import useFetch from '../../hooks/useFetch';
 
 const Home = () => {
-  const [title, setTitle] = useState('');
-
-  useEffect(() => {
-    (async function getHomePageContent() {
-      const data = await getFields('Home', ['custom_title']);
-      setTitle(data.custom_title);
-    }());
-  }, []);
+  const { data, loading, error } = useFetch('Home', ['custom_title']);
 
   return (
     <div className="titleComponent">
-      <div className="mainTitle">
-        <h1>{title}</h1>
-      </div>
-      <img className="pageDivider" src={Waves} alt="PageDivider" />
+      {data && (
+        <div>
+          <div className="mainTitle">
+            <h1>{data.custom_title}</h1>
+          </div>
+          <img className="pageDivider" src={Waves} alt="PageDivider" />
+        </div>
+      )}
+      {loading && (
+        <div>loading...</div>
+      )}
+      {error && (
+        <div>{error}</div>
+      )}
     </div>
   );
 };

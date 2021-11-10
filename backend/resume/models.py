@@ -44,30 +44,43 @@ class About(ComponentBase):
         ),
         size=6,
     )
+    n_skills_columns = models.IntegerField(default=1)
 
     content_panels = ComponentBase.content_panels + [
         FieldPanel("body"),
         FieldPanel("skills"),
+        FieldPanel("n_skills_columns"),
     ]
 
-    api_fields = ComponentBase.api_fields + [APIField("body"), APIField("skills")]
+    api_fields = ComponentBase.api_fields + [
+        APIField("body"),
+        APIField("skills"),
+        APIField("n_skills_columns"),
+    ]
 
 
 class Projects(ComponentBase):
     body = models.CharField(
-        max_length=750,
-        blank=False,
-        null=False,
+        max_length=750, blank=False, null=False, help_text="Description of project"
+    )
+    skills = ArrayField(
+        models.CharField(max_length=25),
+        size=4,
         help_text="List of skills to complete this project",
     )
-    skills = ArrayField(models.CharField(max_length=25), size=4)
+    n_skills_columns = models.IntegerField(default=1)
 
     content_panels = ComponentBase.content_panels + [
         FieldPanel("body"),
         FieldPanel("skills"),
+        FieldPanel("n_skills_columns"),
     ]
 
-    api_fields = ComponentBase.api_fields + [APIField("body"), APIField("skills")]
+    api_fields = ComponentBase.api_fields + [
+        APIField("body"),
+        APIField("skills"),
+        APIField("n_skills_columns"),
+    ]
 
 
 class Experience(ComponentBase):
@@ -134,4 +147,4 @@ class Footer(Page):
 
     content_panels = Page.content_panels + [FieldPanel("footer_text")]
 
-    api_fields = [APIField("custom_title")]
+    api_fields = [APIField("footer_text")]

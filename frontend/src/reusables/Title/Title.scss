@@ -12,6 +12,7 @@
 .title {
   @include overline-font(14px, 2px, left);
   margin-bottom: calc(#{var(--spacing)} * 2);
+  text-transform: uppercase;
 }
 
 .underline {
