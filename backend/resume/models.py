@@ -140,6 +140,14 @@ class Experience(ComponentBase):
     ]
 
 
+class Socials(Page):
+    social_links = ArrayField(CharField(max_length=250, blank=False, null=False))
+
+    content_panels = Page.content_panels + [FieldPanel("social_links")]
+
+    api_fields = [APIField("social_links")]
+
+
 class Footer(Page):
     footer_text = CharField(
         max_length=100, blank=False, null=False, help_text="Footer text"
