@@ -2,9 +2,9 @@
 
 .titleComponent {
   position: relative;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   width: 100%;
-  height: calc(100vh - calc(#{var(--spacing)} * 10));
+  height: calc(100vh - 200px);
 }
 
 .mainTitle {

@@ -1,4 +1,5 @@
 import './Home.scss';
+// import Waves from '../../svg/stretched-waves.svg';
 import Waves from '../../svg/layered-waves-haikei.svg';
 import useFetch from '../../hooks/useFetch';
 
