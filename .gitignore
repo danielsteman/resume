@@ -273,3 +273,6 @@ coverage
 
 # End of https://www.toptal.com/developers/gitignore/api/strapi
 .DS_Store
+
+# Azure
+.azure
