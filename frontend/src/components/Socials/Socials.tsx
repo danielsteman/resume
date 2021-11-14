@@ -10,7 +10,7 @@ const Socials = () => {
 
   return (
     <div className="socialsComponent">
-      {data.social_links && (
+      {data && data.social_links && (
       <div className="logoContainer">
         <a href={data.social_links[0]}>
           <img className="logo linkedin" src={LinkedIn} alt="LinkedIn Logo" />
