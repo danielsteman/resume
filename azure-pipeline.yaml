@@ -1,0 +1,42 @@
+trigger:
+  branches:
+    include:
+    - production
+    - develop
+    - feature/*
+    exclude:
+    - feature/*-WIP
+
+variables:
+  uiSource: '/frontend'
+  uiBuild: $(uiSource)/build
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: BuildReact
+    displayName: build frontend
+    jobs:
+    - job: FrontendJob
+      steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: '10.x'
+        displayName: 'Install Node.js'
+      - script: npm install
+        workingDirectory: frontend
+        displayName: 'npm install'
+      - script: npm build
+        workingDirectory: frontend
+        displayName: 'npm run build'
+  - stage: BuildDjango
+    displayName: build backend
+    jobs:
+    - job: BackendJob
+      steps:
+      - script: python -m pip install --upgrade pip setuptools wheel
+        workingDirectory: backend
+        displayName: upgrade pip
+      - script: pip install -r requirements.txt
+        displayName: pip install -r requirements.txt

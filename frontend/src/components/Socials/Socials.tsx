@@ -1,18 +1,40 @@
-import "./Socials.scss"
-import LinkedIn from "../../svg/socials/linkedin-icon.svg"
-import Github from "../../svg/socials/github-icon.svg"
-import LastFm from "../../svg/socials/lastfm-icon.svg"
-import StackOverflow from "../../svg/socials/stackoverflow-icon.svg"
+import './Socials.scss';
+import LinkedIn from '../../svg/socials/linkedin-icon.svg';
+import Github from '../../svg/socials/github-icon.svg';
+import LastFm from '../../svg/socials/lastfm-icon.svg';
+import StackOverflow from '../../svg/socials/stackoverflow-icon.svg';
+import useFetch from '../../hooks/useFetch';
 
 const Socials = () => {
-  return (
-    <div className="logoContainer">
-      <img className="logo" src={LinkedIn} alt="LinkedIn Logo"/>
-      <img className="logo" src={Github} alt="Github Logo"/>
-      <img className="logo" src={LastFm} alt="LastFm Logo"/>
-      <img className="logo" src={StackOverflow} alt="StackOverflow Logo"/>
-    </div>
-  )
-}
+  const { data, loading, error } = useFetch('Socials', ['social_links']);
 
-export default Socials
+  return (
+    <div className="socialsComponent">
+      {data && data.social_links && (
+      <div className="logoContainer">
+        <a href={data.social_links[0]}>
+          <img className="logo linkedin" src={LinkedIn} alt="LinkedIn Logo" />
+        </a>
+        <a href={data.social_links[1]}>
+          <img className="logo github" src={Github} alt="Github Logo" />
+        </a>
+        <a href={data.social_links[2]}>
+          <img className="logo lastfm" src={LastFm} alt="LastFm Logo" />
+        </a>
+        <a href={data.social_links[3]}>
+          <img className="logo stackoverflow" src={StackOverflow} alt="StackOverflow Logo" />
+        </a>
+      </div>
+      )}
+      {loading && (
+        <div>loading...</div>
+      )}
+      {error && (
+        <div>{error}</div>
+      )}
+    </div>
+
+  );
+};
+
+export default Socials;

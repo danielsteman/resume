@@ -1,20 +1,28 @@
-import './Header.scss'
+import './Header.scss';
+import useFetch from '../../hooks/useFetch';
 
 const Header = () => {
-
-  const items: string[] = ['contact', 'experience', 'projects', 'resume']
+  const { data, loading, error } = useFetch('Home', ['navigation']);
 
   return (
-    <div className="nav">
-      <ul className="item">
-        {items.map((item: string, index: number) => {
-          return(
-            <li key={index}><a href="/">{item}</a></li>
-          )
-        })}
-      </ul>
+    <div className="headerComponent">
+      {data && data.navigation && (
+      <div className="nav">
+        <ul className="item">
+          {data.navigation.map((item: string) => (
+            <li key={item}><a href="/">{item}</a></li>
+          ))}
+        </ul>
+      </div>
+      )}
+      {loading && (
+        <div>loading...</div>
+      )}
+      {error && (
+        <div>{error}</div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

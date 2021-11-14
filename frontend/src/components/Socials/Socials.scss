@@ -6,14 +6,59 @@ $logo-size: 32px;
   filter: invert(58%) sepia(28%) saturate(4492%) hue-rotate(231deg) brightness(95%) contrast(99%);
 }
 
+.socialsComponent {
+  position: relative;
+  margin-top: var(--vertical-component-spacing);
+}
+
 .logoContainer {
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
   width: $logo-size;
   flex-direction: column;
+  @media screen and (max-width: 375px) {
+    flex-direction: row;
+    width: 70%;
+    margin-left: 15%;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .logo {
   height: $logo-size;
   width: $logo-size;
   margin-bottom: $logo-size;
-  @include purple-filter()
+  @include purple-filter();
+  @media screen and (max-width: 375px) {
+  }
+}
+
+.linkedin {
+  transition: 0.3s;
+  &:hover {
+    filter: invert(26%) sepia(97%) saturate(1507%) hue-rotate(197deg) brightness(94%) contrast(88%);
+  }
+}
+
+.github {
+  transition: 0.3s;
+  &:hover {
+    filter: invert(100%) sepia(0%) saturate(7491%) hue-rotate(57deg) brightness(117%) contrast(101%);
+  }
+}
+
+.lastfm {
+  transition: 0.3s;
+  &:hover {
+    filter: invert(13%) sepia(58%) saturate(5470%) hue-rotate(354deg) brightness(96%) contrast(117%);
+  }
+}
+
+.stackoverflow {
+  transition: 0.3s;
+  &:hover {
+    filter: invert(100%) sepia(0%) saturate(7491%) hue-rotate(57deg) brightness(117%) contrast(101%);
+  }
 }

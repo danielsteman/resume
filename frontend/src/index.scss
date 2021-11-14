@@ -1,4 +1,7 @@
-// reset default element styles
+@import "./global-style/spacings";
+@import "./global-style/mixins";
+@import "./global-style/size_config";
+@import "./global-style/grid_config";
 
 body {
   background-color: black;

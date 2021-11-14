@@ -11,19 +11,22 @@
   opacity: 0.87;
 }
 
-$spacing: 8px;
-
 .skillsContainer {
   border-radius: 5px;
   background-color: #1C1C1C;
-  padding: calc(#{$spacing} * 3);
+  margin-top: calc(#{var(--spacing)} * 3);
+  padding: calc(#{var(--spacing)} * 3);
+  width: fit-content;
 }
 
 .row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
+  width: fit-content;
+  &:not(:last-child) {
+    margin-bottom: calc(#{var(--spacing)} * 3);
+  }
 }
 
 .column {
@@ -31,12 +34,24 @@ $spacing: 8px;
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
-  margin: calc(#{$spacing} * 1);
+  &:not(:first-child) {
+    margin-left: calc(#{var(--spacing)} * 3);
+  }
 }
 
 .skill {
-  @include overline-font(10px, 1.5px, center);
+  @include overline-font(14px, 1.5px, center);
+  width: 150px;
+  color: white;
   background-color: #242424;
   border-radius: 5px;
-  padding: calc(#{$spacing} * 1) 0;
+  padding: calc(#{var(--spacing)} * 1) 0;
+  transition: 0.3s;
+  text-transform: uppercase;
+  @media screen and (max-width: 375px) {
+    width: 87.5px;
+  }
+  &:hover {
+    background-color: #BC6FF1;
+  }
 }

@@ -1,29 +1,27 @@
-import { FC } from "react"; 
-import "./Skills.scss"
-import { sliceArray } from "../../utils/sliceArray"
+import { FC } from 'react';
+import './Skills.scss';
+import sliceArray from '../../utils/sliceArray';
 
 export interface SkillsProps {
-  skills: string[],
-  columns: number
+  skills_: never[],
+  columns_: number
 }
 
-const Skills: FC<SkillsProps> = ({ skills, columns }): JSX.Element => {
-
-  const skillsTable: any = sliceArray(skills, columns)
-
+const Skills: FC<SkillsProps> = ({ skills_ = [], columns_ = 1 }): JSX.Element => {
+  const skillsTable = sliceArray(skills_, columns_);
   return (
     <div className="skillsContainer">
-      {skillsTable.map((skillRow: string[][], i: number) => (
-        <div className="row" key={i}>
-          {skillRow.map((skill: string[], j: number) => (
-            <div className="column" key={j}>
-              <div className="skill" key={j}>{skill}</div>
+      {skillsTable.map((skillRow: string[]) => (
+        <div className="row" key={skillRow[0]}>
+          {skillRow.map((skill: string) => (
+            <div className="column" key={skill}>
+              <div className="skill" key={skill}>{skill}</div>
             </div>
           ))}
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;
