@@ -18,13 +18,7 @@ SECRET_KEY = os.environ["DJANGOSECRET"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "192.168.2.11",
-    "0.0.0.0",
-    os.environ["WEBSITE_HOSTNAME"],
-]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "192.168.2.11", "0.0.0.0"]
 
 # Application definition
 
