@@ -18,7 +18,13 @@ SECRET_KEY = os.environ["DJANGOSECRET"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "192.168.2.11", "0.0.0.0"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "192.168.2.11",
+    "0.0.0.0",
+    "daniel-resume-webpage.herokuapp",
+]
 
 # Application definition
 
