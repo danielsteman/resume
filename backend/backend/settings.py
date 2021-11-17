@@ -23,7 +23,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "192.168.2.11",
     "0.0.0.0",
-    "daniel-resume-webpage.herokuapp",
+    "daniel-resume-webpage.herokuapp.com",
 ]
 
 # Application definition
