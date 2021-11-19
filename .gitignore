@@ -27,7 +27,6 @@ static
 
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
@@ -170,19 +169,6 @@ thumb
 sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/react,django
-
-
-# Created by https://www.toptal.com/developers/gitignore/api/strapi
-# Edit at https://www.toptal.com/developers/gitignore?templates=strapi
-
-### Strapi ###
-
-.env
-license.txt
-exports
-*.cache
-build
-.strapi-updater.json
 
 ############################
 # OS X
