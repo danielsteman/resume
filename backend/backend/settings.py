@@ -3,14 +3,12 @@ import os
 from dotenv import load_dotenv
 import mimetypes
 
-load_dotenv()
-
 mimetypes.add_type("text/css", ".css", True)
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+load_dotenv()
 
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -19,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = os.environ["DJANGOSECRET"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True if os.environ["ENVIRONMENT"] == "development" else False
 
 ALLOWED_HOSTS = [
     "localhost",
@@ -102,7 +100,7 @@ DATABASES = {
         "NAME": os.environ["DBNAME"],
         "USER": os.environ["DBUSER"],
         "PASSWORD": os.environ["DBPASS"],
-        "HOST": f"{os.environ['DBHOST']}",
+        "HOST": os.environ["DBHOST"],
         "PORT": "",  # Set to empty string for default.
         "CONN_MAX_AGE": 600,
     }
@@ -141,10 +139,10 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATIC_URL = "/static/"
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "frontend", "build", "static"),)
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_DIRS = ["../frontend/build/static"]
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, "frontend", "build", "static"),)
 
