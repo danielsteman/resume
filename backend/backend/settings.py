@@ -17,7 +17,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = os.environ["DJANGOSECRET"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True if os.environ["ENVIRONMENT"] == "development" else False
+try:
+    if os.environ["ENVIRONMENT"] == "development":
+        DEBUG = True
+    else:
+        DEBUG = False
+except KeyError:
+    DEBUG = False
+
+print(DEBUG)
 
 ALLOWED_HOSTS = [
     "localhost",
