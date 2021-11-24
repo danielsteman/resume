@@ -104,13 +104,12 @@ WSGI_APPLICATION = "backend.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": os.environ["DBNAME"],
         "USER": os.environ["DBUSER"],
         "PASSWORD": os.environ["DBPASS"],
         "HOST": os.environ["DBHOST"],
-        "PORT": "",  # Set to empty string for default.
-        "CONN_MAX_AGE": 600,
+        "PORT": "5432",
     }
 }
 
@@ -148,9 +147,9 @@ STATICFILES_FINDERS = [
 ]
 
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-STATICFILES_DIRS = ["../frontend/build/static"]
+STATICFILES_DIRS = ["frontend/build/static"]
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, "frontend", "build", "static"),)
 
