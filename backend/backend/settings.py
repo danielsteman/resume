@@ -17,15 +17,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = os.environ["DJANGOSECRET"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# try:
-#     if os.environ["ENVIRONMENT"] == "development":
-#         DEBUG = True
-#     else:
-#         DEBUG = False
-# except KeyError:
-#     DEBUG = False
-
-DEBUG = True
+try:
+    if os.environ["ENVIRONMENT"] == "development":
+        DEBUG = True
+    else:
+        DEBUG = False
+except KeyError:
+    DEBUG = False
 
 ALLOWED_HOSTS = [
     "localhost",
@@ -33,6 +31,8 @@ ALLOWED_HOSTS = [
     "192.168.2.11",
     "0.0.0.0",
     "daniels-resume.herokuapp.com",
+    "www.danielsteman.com",
+    "danielsteman.com",
 ]
 
 # Application definition
