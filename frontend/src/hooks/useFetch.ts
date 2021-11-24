@@ -4,7 +4,7 @@ const axios = require('axios').default;
 
 const baseUrl = process.env.NODE_ENV === 'development'
   ? 'http://localhost:8000/api/v2'
-  : 'http://www.danielsteman.com';
+  : 'http://www.danielsteman.com/api/v2';
 
 const useFetch = <T extends any = any>(page: string, fields: string[]) => {
   const [data, setData] = useState<T | {}>({});
