@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 
 const axios = require('axios').default;
 
-const baseUrl = 'http://localhost:8000/api/v2';
+const baseUrl = process.env.NODE_ENV === 'development'
+  ? 'http://localhost:8000/api/v2'
+  : 'http://www.danielsteman.com';
 
 const useFetch = <T extends any = any>(page: string, fields: string[]) => {
   const [data, setData] = useState<T | {}>({});
