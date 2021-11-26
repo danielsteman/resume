@@ -261,8 +261,5 @@ coverage
 # Azure
 .azure
 
-# Github
-.github
-
 # VS code
 .vscode
