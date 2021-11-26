@@ -11,6 +11,6 @@ A personal web page as a replacement for my resume, but also a sandbox to try ou
 - `SASS`
 
 ### Devops
-- `Azure devops pipeline`
+- `Github Actions`
 - `Git Hooks`
 - `Terraform`
