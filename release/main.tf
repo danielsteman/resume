@@ -1,4 +1,14 @@
-resource "azurerm_resource_group" "resume" {
-  name     = "resume-resources"
-  location = "West Europe"
+terraform {
+  backend "local" {
+    path = "terraform/terraform.tfstate"
+  }
+}
+
+provider "heroku" {
+  email   = "daniel-steman@live.nl"
+  api_key = var.heroku_api_key
+}
+
+variable heroku_api_key {
+  type = string
 }

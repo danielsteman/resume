@@ -2,4 +2,8 @@
   overflow: hidden;
   width: 500px;
   height: 450px;
+  @media screen and (max-width: 375px) {
+    width: var(--iphone-component-width);
+    height: var(--iphone-component-width);
+  }
 }

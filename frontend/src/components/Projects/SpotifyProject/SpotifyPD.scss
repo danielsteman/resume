@@ -1,6 +1,7 @@
 .spotifyProjectDescriptionComponent {
   min-width: 420px;
   @media screen and (max-width: 375px) {
-    width: 295;
+    min-width: 0;
+    max-width: var(--iphone-component-width);
   }
 }
