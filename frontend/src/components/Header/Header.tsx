@@ -10,7 +10,11 @@ const Header = () => {
       <div className="nav">
         <ul className="item">
           {data.navigation.map((item: string) => (
-            <li key={item}><a href="/">{item}</a></li>
+            <li key={item}>
+              <a href="/">
+                {item}
+              </a>
+            </li>
           ))}
         </ul>
       </div>
