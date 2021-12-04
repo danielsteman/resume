@@ -1,4 +1,4 @@
-A personal web page as a replacement for my resume, but also a sandbox to try out new stuff. I intend to keep working on this project to keep track of my development by fitting in as much tech as possible.
+A personal web page as a replacement for my resume, but also a sandbox to try out new stuff.
 
 ### Backend
 - `Python`
