@@ -44,18 +44,22 @@ class About(ComponentBase):
         ),
         size=6,
     )
-    skill_ratings = ArrayField(models.IntegerField(), size=6)
+    skill_ratings = ArrayField(
+        models.IntegerField(default=1), size=6, default=[3, 3, 3, 3, 3, 3]
+    )
     n_skills_columns = models.IntegerField(default=1)
 
     content_panels = ComponentBase.content_panels + [
         FieldPanel("body"),
         FieldPanel("skills"),
+        FieldPanel("skill_ratings"),
         FieldPanel("n_skills_columns"),
     ]
 
     api_fields = ComponentBase.api_fields + [
         APIField("body"),
         APIField("skills"),
+        APIField("skill_ratings"),
         APIField("n_skills_columns"),
     ]
 
