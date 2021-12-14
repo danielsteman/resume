@@ -30,7 +30,6 @@ const Experience: FC = () => {
                     className="employer"
                     onClick={() => setIndex(i)}
                     onKeyDown={() => setIndex(Math.min(0, i - 1))}
-                    onKeyUp={() => setIndex(Math.max(4, i + 1))}
                     key={employer}
                     role="button"
                     tabIndex={0}

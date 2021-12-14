@@ -8,3 +8,7 @@
     max-width: var(--iphone-component-width);
   }
 }
+
+.rollOut {
+  transform: translateY(calc((1em + 6px) * 3 + #{var(--spacing)} * 3 * 3));
+}

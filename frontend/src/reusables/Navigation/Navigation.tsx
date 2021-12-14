@@ -3,7 +3,7 @@ import './Navigation.scss';
 const Navigation = ({ items }: any) => (
   <div className="nav">
     <ul className="item">
-      {items.map((item: string) => (
+      {items.navigation.map((item: string) => (
         <li key={item}>
           <a href="/">
             {item}
