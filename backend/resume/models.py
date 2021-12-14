@@ -44,6 +44,7 @@ class About(ComponentBase):
         ),
         size=6,
     )
+    skill_ratings = ArrayField(models.IntegerField(), size=6)
     n_skills_columns = models.IntegerField(default=1)
 
     content_panels = ComponentBase.content_panels + [
