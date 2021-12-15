@@ -14,6 +14,7 @@ const About = () => {
     'custom_title',
     'body',
     'skills',
+    'skill_ratings',
     'n_skills_columns',
   ];
   const { data, loading, error } = useFetch('About', fields);
@@ -26,7 +27,11 @@ const About = () => {
           <Card
             text={data.body}
           >
-            <Skills skills_={data.skills} columns_={data.n_skills_columns} />
+            <Skills
+              skills_={data.skills}
+              skillRatings_={data.skill_ratings}
+              columns_={data.n_skills_columns}
+            />
           </Card>
         </div>
       )}

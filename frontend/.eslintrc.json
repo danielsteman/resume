@@ -47,6 +47,7 @@
     },
     "globals": {
         "React": true,
-        "JSX": true
+        "JSX": true,
+        "_": true
     }
 }
