@@ -1,8 +1,7 @@
 import './Header.scss';
 import useFetch from '../../hooks/useFetch';
 import Navigation from '../../reusables/Navigation/Navigation';
-
-// https://stackoverflow.com/questions/52616172/how-to-initialize-an-object-in-typescript
+import MobileNavigation from '../../reusables/Navigation/MobileNavigation';
 
 const Header: React.FC = () => {
   const { data, loading, error } = useFetch('Home', ['navigation']);
@@ -10,7 +9,9 @@ const Header: React.FC = () => {
   return (
     <div className="headerComponent">
       {data && data.navigation && (
-        <Navigation items={data} />
+        window.innerWidth > 400
+          ? <Navigation items={data} />
+          : <MobileNavigation items={data} />
       )}
       {loading && (
         <div>loading...</div>

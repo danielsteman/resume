@@ -9,6 +9,10 @@
   opacity: 0.87;
 }
 
+.titleComponent {
+  margin-bottom: calc(#{var(--spacing)} * 2);
+}
+
 .title {
   @include overline-font(14px, 2px, left);
   margin-bottom: calc(#{var(--spacing)} * 2);
@@ -18,4 +22,5 @@
 .underline {
   height: 1px;
   background-color: #BC6FF1;
+  margin-bottom: calc(#{var(--spacing)} * 2);
 }

@@ -4,7 +4,7 @@ import sliceArray from '../../utils/sliceArray';
 import arrayToMap from '../../utils/arrayToMap';
 
 export interface SkillsProps {
-  skills_: never[],
+  skills_: string[],
   skillRatings_?: never[],
   columns_: number
 }
@@ -17,13 +17,7 @@ const Skills: FC<SkillsProps> = ({
   skills_ = [], skillRatings_ = [], columns_ = 1,
 }): JSX.Element => {
   const skillsTable = sliceArray(skills_, columns_);
-  const [active, setActive] = useState<SkillsActiveMap>(arrayToMap(skills_, false));
-
-  useEffect(() => {
-    if (skills_.length !== 0) {
-      setActive(arrayToMap(skills_, false));
-    }
-  }, []);
+  const [active, setActive] = useState<SkillsActiveMap>({});
 
   useEffect(() => {
     console.log(active);
@@ -33,22 +27,27 @@ const Skills: FC<SkillsProps> = ({
     <div className="skillsContainer">
       {skillsTable.map((skillRow: string[]) => (
         <div className="row" key={skillRow[0]}>
-          {skillRow.map((skill: string) => (
+          {skillRow.map((skill: string, index: number) => (
             <div className="column" key={skill}>
               <div
                 className="skill"
                 key={skill}
                 onClick={() => {
                   console.log(active);
-                  // const tempActive = active;
-                  // tempActive[skill] = true;
-                  // setActive(tempActive);
+                  console.log(active[skill]);
+                  const temp = Object.keys(active).length === 0
+                    ? arrayToMap(skills_, false)
+                    : active;
+                  temp[skill] = !active.skill;
+                  setActive(temp);
                 }}
                 onKeyDown={() => console.log(skillRatings_)}
                 role="button"
                 tabIndex={0}
               >
-                {skill}
+                {active[skill]
+                  ? <div>{skill}</div>
+                  : <div>{skillRatings_[index]}</div>}
               </div>
             </div>
           ))}
