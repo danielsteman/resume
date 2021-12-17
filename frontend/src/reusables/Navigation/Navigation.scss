@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 
-$body2: 'Roboto Condensed', sans-serif;
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
-
 @mixin overline-font($font-size, $letter-spacing, $text-align) {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: $font-size;
@@ -20,41 +16,42 @@ $body2: 'Roboto Condensed', sans-serif;
   margin-right: calc(#{var(--spacing)} * 5);
   margin-top: calc(#{var(--spacing)} * 4);
   margin-bottom: calc(#{var(--spacing)} * 4);
-  .item {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+}
 
-    @include overline-font(16px, 0.5px, right);
-    color: #DEDEDE;
+.item {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 
-    li {
-      padding: calc(#{var(--spacing)} * 2);
-      display: inline;
-      position: relative;
-    }
-    a {
-      color: #fff;
+  @include overline-font(16px, 0.5px, right);
+  color: #DEDEDE;
 
-      display: inline-block;
-      padding: var(--spacing);
-      position: relative;
-    }
-    a:after {
-      background: none repeat scroll 0 0 transparent;
-      bottom: 0;
-      content: "";
-      display: block;
-      height: 2px;
-      left: 50%;
-      position: absolute;
-      background: #BC6FF1;
-      transition: width 0.3s ease 0s, left 0.3s ease 0s;
-      width: 0;
-    }
-    a:hover:after {
-      width: 100%;
-      left: 0;
-    }
+  li {
+    padding: calc(#{var(--spacing)} * 2);
+    display: inline;
+    position: relative;
+  }
+  a {
+    color: #fff;
+
+    display: inline-block;
+    padding: var(--spacing);
+    position: relative;
+  }
+  a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #BC6FF1;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  a:hover:after {
+    width: 100%;
+    left: 0;
   }
 }

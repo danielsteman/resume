@@ -9,25 +9,24 @@ export interface SkillsProps {
   columns_: number
 }
 
-// interface SkillsActiveMap {
-//   [key: string]: boolean
-// }
+interface SkillsActiveMap {
+  [key: string]: boolean
+}
 
 const Skills: FC<SkillsProps> = ({
   skills_ = [], skillRatings_ = [], columns_ = 1,
 }): JSX.Element => {
   const skillsTable = sliceArray(skills_, columns_);
-  const [active, setActive] = useState([]);
+  const [active, setActive] = useState<SkillsActiveMap>(arrayToMap(skills_, false));
 
   useEffect(() => {
     if (skills_.length !== 0) {
       setActive(arrayToMap(skills_, false));
-      console.log(arrayToMap(skills_, false));
     }
   }, []);
 
   useEffect(() => {
-    console.log(JSON.stringify(active));
+    console.log(active);
   }, [active]);
 
   return (
@@ -40,6 +39,7 @@ const Skills: FC<SkillsProps> = ({
                 className="skill"
                 key={skill}
                 onClick={() => {
+                  console.log(active);
                   // const tempActive = active;
                   // tempActive[skill] = true;
                   // setActive(tempActive);

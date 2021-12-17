@@ -1,7 +1,5 @@
-import _ from 'lodash';
-
-const arrayToMap = (keysArray: any[], defaultValue: any) => {
-  const object = keysArray.reduce((o, k) => _.set(o, k, defaultValue), {});
+const arrayToMap = (keysArray: string[], defaultValue: any) => {
+  const object = Object.assign(keysArray.map((k) => ({ [k]: defaultValue })));
   return object;
 };
 
