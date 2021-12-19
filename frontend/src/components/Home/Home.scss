@@ -2,7 +2,6 @@
 
 .titleComponent {
   position: relative;
-  width: 100%;
   height: calc(100vh - 100px);
   @media screen and (max-width: 375px) {
     height: 100vh;
@@ -11,10 +10,8 @@
 
 .mainTitle {
   display: block;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
   margin-top: 15vh;
+  margin-left: 38%;
   @media screen and (max-width: 375px) {
     width: 100px;
     margin-left: 35%;
