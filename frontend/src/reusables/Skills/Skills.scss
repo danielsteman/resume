@@ -52,6 +52,7 @@
   padding: calc(#{var(--spacing)} * 1) 0;
   transition: 0.3s;
   text-transform: uppercase;
+  cursor: pointer;
   @media screen and (max-width: 375px) {
     @include overline-font(12px, 1.5px, center);
     width: 87.5px;
