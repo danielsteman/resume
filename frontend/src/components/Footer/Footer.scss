@@ -12,7 +12,7 @@
 
 .footerComponent {
   margin-top: var(--vertical-component-spacing);
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     margin-top: 20px;
   }
 }
@@ -20,7 +20,7 @@
 .footerText {
   @include overline-font(14px, 1px, center);
   margin-bottom: 50px;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     margin-bottom: 30px;
   }
 }

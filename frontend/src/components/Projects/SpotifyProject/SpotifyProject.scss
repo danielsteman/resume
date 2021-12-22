@@ -3,7 +3,7 @@
   max-width: 920px;
   margin-left: auto;
   margin-right: auto;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     max-width: var(--iphone-component-width);
   }
 }
@@ -11,7 +11,7 @@
 .spotifyProjectContainer {
   display: flex;
   flex-direction: row;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     flex-direction: column;
   }
 }

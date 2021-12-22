@@ -23,7 +23,7 @@ $line-margin: 8px;
   margin-right: auto;
   position: relative;
   margin-top: var(--vertical-component-spacing);
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     margin-left: 40px;
     width: $component-width-iphone;
   }
@@ -34,7 +34,7 @@ $line-margin: 8px;
   @include overline-font(14px, 2px, left);
   margin-bottom: calc(#{var(--spacing)} * 2);
   text-transform: uppercase;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     position: relative;
     margin-bottom: calc(#{var(--spacing)} * 1);
     @include overline-font(14px, 2px, left);
@@ -45,10 +45,10 @@ $line-margin: 8px;
   height: 1px;
   background-color: #BC6FF1;
   margin-bottom: calc(#{var(--spacing)} * 1);
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     position: relative;
     margin-bottom: 0;
-    max-width: calc(375px - 40px - 40px);
+    max-width: calc(414px - 40px - 40px);
   }
 }
 
@@ -59,7 +59,7 @@ $line-margin: 8px;
   display: flex;
   flex-direction: row;
   padding: calc(#{var(--spacing)} * 3);
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     position: relative;
     overflow: hidden;
     flex-direction: column;
@@ -73,7 +73,7 @@ $line-margin: 8px;
   flex-direction: row;
   background-color: #171717;
   border-radius: 5px;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     position: relative;
     background-color: #000000;
     flex-direction: column-reverse;
@@ -86,7 +86,7 @@ $line-margin: 8px;
   margin-left: calc(#{var(--spacing)} * 2 - #{$scrollbar-width});
   background-color: #292929;
   border-radius: 5px;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     position: relative;
     margin-left: 0;
     height: $scrollbar-width;
@@ -102,7 +102,7 @@ $line-margin: 8px;
   border-radius: 5px;
   background-color: #BC6FF1;
   transition: all 0.3s;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     position: relative;
     height: $scrollbar-width;
     width: calc(#{var(--spacing)} * 2 + 100px);
@@ -111,28 +111,28 @@ $line-margin: 8px;
 
 .moveSlider1 {
   transform: translateY(calc(1em + 6px * 1 + #{var(--spacing)} * 3 * 1));
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     transform: translateX(89px);
   }
 }
 
 .moveSlider2 {
   transform: translateY(calc((1em + 6px) * 2 + #{var(--spacing)} * 3 * 2));
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     transform: translateX(calc(89px));
   }
 }
 
 .moveSlider3 {
   transform: translateY(calc((1em + 6px) * 3 + #{var(--spacing)} * 3 * 3));
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     transform: translateX(calc(89px));
   }
 }
 
 .moveSlider4 {
   transform: translateY(calc((1em + 6px) * 4 + #{var(--spacing)} * 3 * 4));
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     transform: translateX(calc(178px));
   }
 }
@@ -143,7 +143,7 @@ $line-margin: 8px;
   padding: calc(#{var(--spacing)} * 3);
   padding-left: calc(#{var(--spacing)} * 1);
   transition: all 0.3s;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     padding-left: 0;
     position: absolute;
     flex-direction: row;
@@ -153,25 +153,25 @@ $line-margin: 8px;
 // TODO: make moveList scalable by using for loop with variables
 
 .moveList1 {
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     transform: translateX(-42.5px);
   }
 }
 
 .moveList2 {
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     transform: translateX(calc(-42.5px - 100px - #{var(--spacing)} * 4));
   }
 }
 
 .moveList3 {
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     transform: translateX(calc(-42.5px - 100px * 2 - #{var(--spacing)} * 8));
   }
 }
 
 .moveList4 {
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     transform: translateX(calc(-42.5px - 100px * 2 - #{var(--spacing)} * 8 - 42.5px));
   }
 }
@@ -191,7 +191,7 @@ $line-margin: 8px;
   &:hover {
     background-color: #292929;
   }
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     @include overline-font(14px, 2px, center);
     height: 40px;
     width: 100px;
@@ -207,7 +207,7 @@ $line-margin: 8px;
   border-radius: 5px;
   margin-left: calc(#{var(--spacing)} * 3);
   padding: calc(#{var(--spacing)} * 3);
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     margin-left: 0;
   }
 }

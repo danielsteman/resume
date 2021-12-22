@@ -17,7 +17,7 @@ $logo-size: 32px;
   transform: translateY(-50%);
   width: $logo-size;
   flex-direction: column;
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
     flex-direction: row;
     width: 70%;
     margin-left: 15%;
@@ -31,7 +31,7 @@ $logo-size: 32px;
   width: $logo-size;
   margin-bottom: $logo-size;
   @include purple-filter();
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 414px) {
   }
 }
 
