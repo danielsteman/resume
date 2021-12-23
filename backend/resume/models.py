@@ -1,5 +1,6 @@
 from django.db import models
-from .fields import SkillYearsExperienceField
+
+# from .fields import SkillYearsExperienceField
 from django.contrib.postgres.fields import ArrayField
 from django.db.models.fields import CharField
 
@@ -52,7 +53,7 @@ class About(ComponentBase):
     skill_ratings = ArrayField(
         models.IntegerField(default=1), size=6, default=default_skill_ratings(3, 6)
     )
-    skill_years = ArrayField(SkillYearsExperienceField())
+    # skill_years = ArrayField(SkillYearsExperienceField())
     n_skills_columns = models.IntegerField(default=1)
 
     content_panels = ComponentBase.content_panels + [
