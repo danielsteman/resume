@@ -3,33 +3,14 @@ from django.db import models
 from datetime import datetime, timedelta
 
 
-class SkillYearsExperienceField(models.DateField):
+class SkillYearsExperienceField(models.Field):
     description = "A field that keeps track of years of experience in a skill"
+    start_date = models.DateField()
 
-    def __init__(self, default: int = None):
-        if isinstance(default, int) or default is None:
-            self.default = default
-        else:
-            raise TypeError("Default should be days deducted from today as integer")
+    def days_to_years(self, date: timedelta):
+        return math.ceil(date.days / 365)
 
-    def get_years_experience(self, date):
-        try:
-            if date is None:
-                if self.default:
-                    return datetime.today() - timedelta(days=self.default)
-                return None
-            elif isinstance(date, datetime):
-                return datetime.today() - date
-            elif isinstance(date, str):
-                try:
-                    return datetime.today() - datetime.strptime(date, "%d-%m-%Y")
-                except ValueError:
-                    print("Detected incorrectly formatted date, should be: %d-%m-%Y")
-        except TypeError:
-            print(
-                f"Wrong type, expected: {repr(datetime)} | {repr(str)} | {repr(None)}"
-            )
-            raise
-
-    def days_to_years(self, timedelta):
-        return math.ceil(timedelta.days / 365)
+    def save(self, *args, **kwargs):
+        delta = datetime.today() - self.start_date
+        self.start_date = self.days_to_years(delta)
+        super(SkillYearsExperienceField, self).save(*args, **kwargs)
