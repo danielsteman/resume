@@ -4,6 +4,13 @@ from datetime import datetime, timedelta
 
 
 class SkillYearsExperienceField(models.Field):
+
+    """
+    description: A custom field that transforms a historical date in the number of years
+        between the historical date and date on which the field is rendered.
+        To dynamically show the years of experience in a certain skill.
+    """
+
     description = "A field that keeps track of years of experience in a skill"
     start_date = models.DateField()
 

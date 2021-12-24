@@ -53,13 +53,18 @@ class About(ComponentBase):
     skill_ratings = ArrayField(
         models.IntegerField(default=1), size=6, default=default_skill_ratings(3, 6)
     )
-    # skill_years = ArrayField(SkillYearsExperienceField())
+    skill_years = ArrayField(
+        models.CharField(
+            max_length=25, blank=False, null=False, help_text="List of general skills"
+        )
+    )
     n_skills_columns = models.IntegerField(default=1)
 
     content_panels = ComponentBase.content_panels + [
         FieldPanel("body"),
         FieldPanel("skills"),
         FieldPanel("skill_ratings"),
+        FieldPanel("skill_years"),
         FieldPanel("n_skills_columns"),
     ]
 
@@ -67,6 +72,7 @@ class About(ComponentBase):
         APIField("body"),
         APIField("skills"),
         APIField("skill_ratings"),
+        APIField("skill_years"),
         APIField("n_skills_columns"),
     ]
 
