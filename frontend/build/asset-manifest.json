@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.8d121374.chunk.css",
-    "main.js": "/static/js/main.160e5824.chunk.js",
-    "main.js.map": "/static/js/main.160e5824.chunk.js.map",
+    "main.css": "/static/css/main.ff347191.chunk.css",
+    "main.js": "/static/js/main.bf8b517e.chunk.js",
+    "main.js.map": "/static/js/main.bf8b517e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ff5b8ea4.js",
     "runtime-main.js.map": "/static/js/runtime-main.ff5b8ea4.js.map",
     "static/js/2.f79205bb.chunk.js": "/static/js/2.f79205bb.chunk.js",
     "static/js/2.f79205bb.chunk.js.map": "/static/js/2.f79205bb.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.8d121374.chunk.css.map": "/static/css/main.8d121374.chunk.css.map",
+    "static/css/main.ff347191.chunk.css.map": "/static/css/main.ff347191.chunk.css.map",
     "static/js/2.f79205bb.chunk.js.LICENSE.txt": "/static/js/2.f79205bb.chunk.js.LICENSE.txt",
     "static/media/github-icon.f434f9ff.svg": "/static/media/github-icon.f434f9ff.svg",
     "static/media/lastfm-icon.9bdfda36.svg": "/static/media/lastfm-icon.9bdfda36.svg",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.ff5b8ea4.js",
     "static/js/2.f79205bb.chunk.js",
-    "static/css/main.8d121374.chunk.css",
-    "static/js/main.160e5824.chunk.js"
+    "static/css/main.ff347191.chunk.css",
+    "static/js/main.bf8b517e.chunk.js"
   ]
 }
