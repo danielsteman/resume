@@ -5,7 +5,7 @@ import arrayToMap from '../../utils/arrayToMap';
 
 export interface SkillsProps {
   skills_: string[],
-  skillRatings_?: never[],
+  skillYears_?: never[],
   columns_: number
 }
 
@@ -14,7 +14,7 @@ interface SkillsActiveMap {
 }
 
 const Skills: FC<SkillsProps> = ({
-  skills_ = [], skillRatings_ = [], columns_ = 1,
+  skills_ = [], skillYears_ = [], columns_ = 1,
 }): JSX.Element => {
   const skillsTable = sliceArray(skills_, columns_);
   const [active, setActive] = useState<SkillsActiveMap>({});
@@ -34,15 +34,15 @@ const Skills: FC<SkillsProps> = ({
           {skillRow.map((skill: string, index: number) => (
             <div className="column" key={skill}>
               <div
-                className="skill"
+                className={`skill ${active[skill]}`}
                 key={skill}
                 onClick={() => handleClick(skill)}
                 onKeyDown={() => handleClick(skill)}
                 role="button"
                 tabIndex={0}
               >
-                {active[skill]
-                  ? <div>{skillRatings_[index]}</div>
+                {active[skill] && skillYears_.length !== 0
+                  ? <div>{skillYears_[index]}</div>
                   : <div>{skill}</div>}
               </div>
             </div>

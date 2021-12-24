@@ -38,9 +38,6 @@
   &:not(:first-child) {
     margin-left: calc(#{var(--spacing)} * 3);
   }
-  &:hover {
-    transform: rotateX(180deg);
-  }
 }
 
 .skill {
@@ -58,6 +55,11 @@
     width: 87.5px;
   }
   &:hover {
-    background-color: #BC6FF1;
+    background-color: #292929;
   }
+}
+
+.true {
+  transform: rotateX(360deg);
+  background-color: #BC6FF1 !important;
 }
