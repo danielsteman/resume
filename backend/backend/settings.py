@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import mimetypes
+import django_heroku
 
 mimetypes.add_type("text/css", ".css", True)
 
@@ -193,3 +194,5 @@ TAGGIT_CASE_INSENSITIVE = True
 
 # STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+django_heroku.settings(locals())
