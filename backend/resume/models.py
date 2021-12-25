@@ -5,6 +5,7 @@ from django.contrib.postgres.fields import ArrayField
 from django.db.models.fields import CharField
 
 from wagtail.core.models import Page
+from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel
 from wagtail.api import APIField
 
@@ -43,7 +44,7 @@ def default_skill_ratings(default_rating, size):
 
 
 class About(ComponentBase):
-    body = models.CharField(max_length=750)
+    body = RichTextField()
     skills = ArrayField(
         models.CharField(
             max_length=25, blank=False, null=False, help_text="List of general skills"
@@ -78,9 +79,7 @@ class About(ComponentBase):
 
 
 class Projects(ComponentBase):
-    body = models.CharField(
-        max_length=750, blank=False, null=False, help_text="Description of project"
-    )
+    body = RichTextField()
     skills = ArrayField(
         models.CharField(max_length=25),
         size=4,
