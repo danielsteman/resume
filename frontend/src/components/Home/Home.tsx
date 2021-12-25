@@ -11,12 +11,9 @@ const Home = () => {
     <div className="titleComponent">
       {data && data.custom_title && (
         <div>
-          {window.innerWidth > 400
-            && (
-            <div className="mainTitle">
-              <Banner title={data.custom_title} />
-            </div>
-            )}
+          <div className="mainTitle">
+            <Banner title={data.custom_title} />
+          </div>
             {window.innerWidth > 400
               ? <img className="pageDivider" src={Waves} alt="waves" />
               : <img className="pageDivider" src={MobileWaves} alt="waves" />}

@@ -58,7 +58,10 @@
 }
 
 .iconPlaceHolder {
+  position: absolute;
+  right: 0px;
   height: 60px;
   width: 60px;
   background-color: #BC6FF1;
+  z-index: 1;
 }

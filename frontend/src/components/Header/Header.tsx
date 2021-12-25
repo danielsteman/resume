@@ -1,9 +1,10 @@
 import './Header.scss';
+import { forwardRef } from 'react';
 import useFetch from '../../hooks/useFetch';
 import Navigation from '../../reusables/Navigation/Navigation';
 import MobileNavigation from '../../reusables/Navigation/MobileNavigation';
 
-const Header: React.FC = () => {
+const Header = forwardRef(() => {
   const { data, loading, error } = useFetch('Home', ['navigation']);
 
   return (
@@ -21,6 +22,6 @@ const Header: React.FC = () => {
       )}
     </div>
   );
-};
+});
 
 export default Header;

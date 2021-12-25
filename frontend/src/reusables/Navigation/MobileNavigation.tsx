@@ -4,12 +4,17 @@ import './MobileNavigation.scss';
 const MobileNavigation = ({ items }: any) => {
   const [open, setOpen] = useState(false);
 
+  const handleOpen = () => {
+    setOpen(!open);
+    console.log(open);
+  };
+
   return (
     <div>
       <div
         className="iconPlaceHolder"
-        onClick={() => setOpen(!open)}
-        onKeyDown={() => setOpen(!open)}
+        onClick={handleOpen}
+        onKeyDown={handleOpen}
         role="button"
         aria-label="Go to home page"
         tabIndex={0}
