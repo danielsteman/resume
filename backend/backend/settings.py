@@ -18,13 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = os.environ["DJANGOSECRET"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-try:
-    if os.environ["ENVIRONMENT"] == "development":
-        DEBUG = True
-    else:
-        DEBUG = False
-except KeyError:
-    DEBUG = False
+DEBUG = os.environ.get("ENVIRONMENT", False)
 
 ALLOWED_HOSTS = [
     "localhost",
@@ -150,7 +144,10 @@ STATICFILES_FINDERS = [
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "frontend", "build", "static"),)
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "frontend", "build", "static"),
+    os.path.join(BASE_DIR, "static"),
+)
 
 print(f"base dir: {BASE_DIR}")
 
