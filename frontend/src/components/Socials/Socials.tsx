@@ -1,8 +1,8 @@
 import './Socials.scss';
-import LinkedIn from '../../svg/socials/linkedin-icon.svg';
-import Github from '../../svg/socials/github-icon.svg';
-import LastFm from '../../svg/socials/lastfm-icon.svg';
-import StackOverflow from '../../svg/socials/stackoverflow-icon.svg';
+import LinkedIn from '../../images/socials/linkedin-icon.svg';
+import Github from '../../images/socials/github-icon.svg';
+import LastFm from '../../images/socials/lastfm-icon.svg';
+import StackOverflow from '../../images/socials/stackoverflow-icon.svg';
 import useFetch from '../../hooks/useFetch';
 
 const Socials = () => {
