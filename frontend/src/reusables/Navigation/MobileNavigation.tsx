@@ -1,27 +1,28 @@
 import { useState } from 'react';
 import './MobileNavigation.scss';
+import { Rotate as Hamburger } from 'hamburger-react';
 
 const MobileNavigation = ({ items }: any) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
     setOpen(!open);
-    console.log(open);
   };
 
   return (
     <div>
-      <div
-        className="iconPlaceHolder"
-        onClick={handleOpen}
-        onKeyDown={handleOpen}
-        role="button"
-        aria-label="Go to home page"
-        tabIndex={0}
-      />
+      <div className="hamburgerContainer">
+        <Hamburger
+          color="#BC6FF1"
+          toggled={open}
+          toggle={handleOpen}
+          size={48}
+          rounded
+        />
+      </div>
       {open && (
-        <div className="nav">
-          <ul className="item">
+        <div className="mobileNav">
+          <ul className="mobileItem">
             {items.navigation.map((item: string) => (
               <li key={item}>
                 <a href="/">

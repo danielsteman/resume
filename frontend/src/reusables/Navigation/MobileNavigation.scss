@@ -11,57 +11,35 @@
   opacity: 0.87;
 }
 
-.nav {
+.mobileNav {
+  position: absolute;
   text-align: right;
-  margin-right: calc(#{var(--spacing)} * 5);
-  margin-top: calc(#{var(--spacing)} * 4);
-  margin-bottom: calc(#{var(--spacing)} * 4);
+  right: calc(#{var(--spacing)} * 3);
+  margin-top: calc(#{var(--spacing)} * 7);
+  z-index: 1;
 }
 
-.item {
+.mobileItem {
+  -webkit-tap-highlight-color: transparent;
   list-style-type: none;
-  margin: 0;
-  margin-left: 60%;
-  padding: 0;
-
   @include overline-font(16px, 0.5px, right);
   color: #DEDEDE;
-
   li {
-    padding: calc(#{var(--spacing)} * 2);
-    // display: inline;
+    padding: calc(#{var(--spacing)} * 1);
     position: relative;
+    text-transform: uppercase;
   }
   a {
     color: #fff;
-
     display: inline-block;
-    padding: var(--spacing);
     position: relative;
-  }
-  a:after {
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: #BC6FF1;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-  }
-  a:hover:after {
-    width: 100%;
-    left: 0;
   }
 }
 
-.iconPlaceHolder {
+.hamburgerContainer {
+  -webkit-tap-highlight-color: transparent;
   position: absolute;
   right: 0px;
-  height: 60px;
-  width: 60px;
-  background-color: #BC6FF1;
   z-index: 1;
+  margin: calc(#{var(--spacing)} * 2) calc(#{var(--spacing)} * 3);
 }

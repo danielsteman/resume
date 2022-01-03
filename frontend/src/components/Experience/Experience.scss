@@ -17,6 +17,7 @@ $n-experiences: 5;
 $line-margin: 8px;
 
 .experienceComponent {
+  min-height: 400px;
   max-width: 700px;
   display: block;
   margin-left: auto;
@@ -178,6 +179,7 @@ $line-margin: 8px;
 
 .employer {
   @include overline-font(14px, 1.5px, left);
+  -webkit-tap-highlight-color: transparent;
   width: 150px;
   background-color: #1F1F1F;
   border-radius: 5px;
