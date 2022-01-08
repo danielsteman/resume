@@ -22,7 +22,7 @@ const useFetch = <T extends any = any>(page: string, fields: string[]) => {
       } catch (e) {
         // eslint-disable-next-line no-console
         console.log(e);
-        setError('An error occurred. Awkward..');
+        setError('An error occurred');
       } finally {
         setLoading(false);
       }

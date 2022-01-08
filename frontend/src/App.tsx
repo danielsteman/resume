@@ -1,5 +1,5 @@
 import './App.scss';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import About from './components/About/About';
@@ -10,12 +10,14 @@ import Footer from './components/Footer/Footer';
 
 const App = () => {
   const ref = useRef<HTMLDivElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [loading, setLoading] = useState<any>(false);
 
   return (
     <div className="grid">
       <Header ref={ref} />
       <Home />
-      <About />
+      <About setLoading={setLoading} />
       <SpotifyProject />
       <Experience />
       <Socials />

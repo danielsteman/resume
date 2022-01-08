@@ -235,4 +235,5 @@ $line-margin: 8px;
   margin-top: calc(#{var(--spacing)} * 1);
   padding: calc(#{var(--spacing)} * 1) calc(#{var(--spacing)} * 2);
   border-radius: 5px;
-  }
+  justify-content: space-evenly;
+}

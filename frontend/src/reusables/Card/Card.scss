@@ -27,4 +27,5 @@
 .text {
   @include overline-font(var(--body-font-size), 0.5px, left);
   white-space: pre-line;
+  justify-content: space-evenly;
 }

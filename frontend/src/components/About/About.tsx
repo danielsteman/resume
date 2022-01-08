@@ -1,15 +1,15 @@
 import './About.scss';
+import { useEffect } from 'react';
 import Card from '../../reusables/Card/Card';
 import Skills from '../../reusables/Skills/Skills';
 import Title from '../../reusables/Title/Title';
 import useFetch from '../../hooks/useFetch';
 
-export interface SkillProps {
-  name: string,
-  id: number
+interface AboutProps {
+  setLoading: (arg: boolean | undefined) => void
 }
 
-const About = () => {
+const About = ({ setLoading }:AboutProps) => {
   const fields = [
     'custom_title',
     'body',
@@ -17,7 +17,10 @@ const About = () => {
     'skill_years',
     'n_skills_columns',
   ];
+
   const { data, loading, error } = useFetch('About', fields);
+
+  useEffect(() => setLoading(loading), [loading]);
 
   return (
     <div className="aboutComponent">
