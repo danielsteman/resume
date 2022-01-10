@@ -223,10 +223,12 @@ $line-margin: 8px;
 .jobTitle {
   @include overline-font(18px, 1px, left);
   margin-bottom: calc(#{var(--spacing)} * 1);
+  transition: all 0.3s;
 }
 
 .jobDuration {
   @include overline-font(14px, 1px, left);
+  transition: all 0.3s;
 }
 
 .jobDescription {
@@ -236,4 +238,5 @@ $line-margin: 8px;
   padding: calc(#{var(--spacing)} * 1) calc(#{var(--spacing)} * 2);
   border-radius: 5px;
   justify-content: space-evenly;
+  transition: all 0.3s;
 }
