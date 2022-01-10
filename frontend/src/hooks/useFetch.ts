@@ -8,7 +8,7 @@ const baseUrl = process.env.NODE_ENV === 'development'
 
 const useFetch = <T extends any = any>(page: string, fields: string[]) => {
   const [data, setData] = useState<T | {}>({});
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   const endpoint = `pages/?type=resume.${page}&fields=_,${fields.join()}`;
@@ -16,7 +16,6 @@ const useFetch = <T extends any = any>(page: string, fields: string[]) => {
   useEffect(() => {
     (async function getContent() {
       try {
-        setLoading(true);
         const res = await axios.get(`${baseUrl}/${endpoint}`);
         setData(res.data.items[0]);
       } catch (e) {

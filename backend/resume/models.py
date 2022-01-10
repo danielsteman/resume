@@ -1,6 +1,5 @@
 from django.db import models
 
-# from .fields import SkillYearsExperienceField
 from django.contrib.postgres.fields import ArrayField
 from django.db.models.fields import CharField
 
@@ -101,6 +100,13 @@ class Projects(ComponentBase):
 
 
 class Experience(ComponentBase):
+    employer_ids = ArrayField(
+        models.IntegerField(
+            blank=False, null=False, help_text="List of employers id's"
+        ),
+        size=5,
+    )
+
     employers = ArrayField(
         models.CharField(
             max_length=25,
@@ -143,6 +149,7 @@ class Experience(ComponentBase):
     )
 
     content_panels = ComponentBase.content_panels + [
+        FieldPanel("employer_ids"),
         FieldPanel("employers"),
         FieldPanel("employment_title"),
         FieldPanel("employment_duration"),
@@ -150,6 +157,7 @@ class Experience(ComponentBase):
     ]
 
     api_fields = ComponentBase.api_fields + [
+        APIField("employer_ids"),
         APIField("employers"),
         APIField("employment_title"),
         APIField("employment_duration"),

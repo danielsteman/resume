@@ -4,10 +4,7 @@ import Card from '../../reusables/Card/Card';
 import Skills from '../../reusables/Skills/Skills';
 import Title from '../../reusables/Title/Title';
 import useFetch from '../../hooks/useFetch';
-
-interface AboutProps {
-  setLoading: (arg: boolean | undefined) => void
-}
+import { AboutProps } from '../../types';
 
 const About = ({ setLoading }:AboutProps) => {
   const fields = [
@@ -37,9 +34,6 @@ const About = ({ setLoading }:AboutProps) => {
             />
           </Card>
         </div>
-      )}
-      {loading && (
-        <div>loading...</div>
       )}
       {error && (
         <div>{error}</div>

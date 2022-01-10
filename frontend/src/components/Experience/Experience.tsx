@@ -1,16 +1,22 @@
 import './Experience.scss';
-import { useState, FC } from 'react';
+import { useEffect, useState } from 'react';
 import useFetch from '../../hooks/useFetch';
 import Title from '../../reusables/Title/Title';
+import { ExperienceProps } from '../../types';
 
-const Experience: FC = () => {
-  const { data, loading, error } = useFetch('Experience', [
+const Experience = ({ setLoading }:ExperienceProps) => {
+  const fields = [
     'custom_title',
+    'employer_ids',
     'employers',
     'employment_title',
     'employment_duration',
     'employment_description',
-  ]);
+  ];
+
+  const { data, loading, error } = useFetch('Experience', fields);
+
+  useEffect(() => setLoading(loading), [loading]);
 
   const [index, setIndex] = useState(0);
 
@@ -30,7 +36,7 @@ const Experience: FC = () => {
                     className="employer"
                     onClick={() => setIndex(i)}
                     onKeyDown={() => setIndex(Math.min(0, i - 1))}
-                    key={employer}
+                    key={data.employer_ids[i]}
                     role="button"
                     tabIndex={0}
                   >
