@@ -29,9 +29,9 @@ const Skills: FC<SkillsProps> = ({
 
   return (
     <div className="skillsContainer">
-      {skillsTable.map((skillRow: string[]) => (
+      {skillsTable.map((skillRow: string[], i: number) => (
         <div className="row" key={skillRow[0]}>
-          {skillRow.map((skill: string, index: number) => (
+          {skillRow.map((skill: string, j: number) => (
             <div className="column" key={skill}>
               <div
                 className={`skill ${active[skill]}`}
@@ -42,7 +42,7 @@ const Skills: FC<SkillsProps> = ({
                 tabIndex={0}
               >
                 {active[skill] && skillYears_.length !== 0
-                  ? <div>{skillYears_[index]}</div>
+                  ? <div>{skillYears_[(i * 2) + j]}</div>
                   : <div>{skill}</div>}
               </div>
             </div>
