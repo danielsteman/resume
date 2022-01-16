@@ -42,7 +42,7 @@ const Skills: FC<SkillsProps> = ({
                 tabIndex={0}
               >
                 {active[skill] && skillYears_.length !== 0
-                  ? <div>{skillYears_[(i * 2) + j]}</div>
+                  ? <div>{skillYears_[i * columns_ + j]}</div>
                   : <div>{skill}</div>}
               </div>
             </div>
