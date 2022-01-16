@@ -1,3 +1,5 @@
+/* eslint-disable react/no-danger */
+import DOMPurify from 'dompurify';
 import './Card.scss';
 import { ReactElement } from 'react';
 
@@ -8,15 +10,18 @@ interface CardProps {
   children?: React.ReactNode
 }
 
-const Card = ({ text = '', children = null }: CardProps) => (
-  <div className="container">
-    <div className="card">
-      <div className="text">
-        {text}
-        {children}
+const Card = ({ text = '', children = null }: CardProps) => {
+  const santizer = DOMPurify.sanitize;
+  return (
+    <div className="container">
+      <div className="card">
+        <div className="text">
+          <div dangerouslySetInnerHTML={{ __html: santizer(text.toString()) }} />
+          {children}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Card;
