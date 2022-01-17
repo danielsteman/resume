@@ -1,14 +1,32 @@
+.aboutContainer {
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: 414px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.aboutAnimation {
+  width: 500px;
+  margin-right: calc(#{var(--spacing)} * 2);
+  margin-top: var(--spacing)
+}
+
+.aboutDescription {
+  max-width: 420px;
+  @media screen and (max-width: 414px) {
+    min-width: 0;
+    max-width: var(--iphone-component-width);
+  }
+}
+
 .aboutComponent {
   margin-top: var(--vertical-component-spacing);
-  max-width: calc(300px + calc(#{var(--spacing)} * 15));
+  max-width: 920px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   @media screen and (max-width: 414px) {
     max-width: var(--iphone-component-width);
   }
-}
-
-.rollOut {
-  transform: translateY(calc((1em + 6px) * 3 + #{var(--spacing)} * 3 * 3));
 }

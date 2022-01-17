@@ -1,3 +1,4 @@
+exclude: ^frontend
 repos:
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.3.0
@@ -5,8 +6,6 @@ repos:
     -   id: check-yaml
     -   id: end-of-file-fixer
     -   id: trailing-whitespace
-        exclude: frontend/build
-        exclude-types: [^.ts, ^tsx]
 -   repo: https://github.com/psf/black
     rev: 19.3b0
     hooks:
@@ -15,4 +14,3 @@ repos:
     rev: 382cc91040d2aa7523d808c03c678ae9f6b68482
     hooks:
     -   id: flake8
-        exclude: frontend/build

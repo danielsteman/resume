@@ -5,6 +5,8 @@ import Skills from '../../reusables/Skills/Skills';
 import Title from '../../reusables/Title/Title';
 import useFetch from '../../hooks/useFetch';
 import { AboutProps } from '../../types';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import Terminal from '../../animations/terminal.svg';
 
 const About = ({ setLoading }:AboutProps) => {
   const fields = [
@@ -19,25 +21,34 @@ const About = ({ setLoading }:AboutProps) => {
 
   useEffect(() => setLoading(loading), [loading]);
 
+  // customize terminal animation: https://github.com/marionebl/svg-term
+
   return (
     <div className="aboutComponent">
-      {data && (
-        <div>
-          <Title title={data.custom_title} />
-          <Card
-            text={data.body}
-          >
-            <Skills
-              skills_={data.skills}
-              skillYears_={data.skill_years}
-              columns_={data.n_skills_columns}
-            />
-          </Card>
+      <Title title={data.custom_title} />
+      <div className="aboutContainer">
+        <div className="aboutAnimation">
+          <img src={Terminal} alt="terminal" />
         </div>
-      )}
-      {error && (
-        <div>{error}</div>
-      )}
+        <div className="aboutDescription">
+          {data && (
+          <div>
+            <Card
+              text={data.body}
+            >
+              <Skills
+                skills_={data.skills}
+                skillYears_={data.skill_years}
+                columns_={data.n_skills_columns}
+              />
+            </Card>
+          </div>
+          )}
+          {error && (
+          <div>{error}</div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
