@@ -5,6 +5,7 @@ import MobileWaves from '../../images/mobile-waves.svg';
 import useFetch from '../../hooks/useFetch';
 import Memoji from '../../images/memoji.png';
 import { HomeProps } from '../../types';
+import TypeWriter from '../../reusables/TypeWriter/TypeWriter';
 
 const Home = ({ setLoading }:HomeProps) => {
   const { data, loading, error } = useFetch('Home', ['custom_title']);
@@ -16,6 +17,7 @@ const Home = ({ setLoading }:HomeProps) => {
       {data && data.custom_title && (
         <div>
           <img src={Memoji} alt="memoji" className="memoji" />
+          <TypeWriter />
             {window.innerWidth > 400
               ? <img className="pageDivider" src={Waves} alt="waves" />
               : <img className="pageDivider" src={MobileWaves} alt="waves" />}
@@ -32,3 +34,6 @@ const Home = ({ setLoading }:HomeProps) => {
 };
 
 export default Home;
+
+// https://tympanus.net/Development/DistortedPixels/index.html
+// https://codepen.io/yaclive/pen/EayLYO

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 
 @mixin overline-font($font-size, $letter-spacing, $text-align) {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'NerdFont';
   font-size: $font-size;
   color: #FFFFFF;
   letter-spacing: 0.25px;

@@ -1,27 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.eb0f1550.chunk.css",
-    "main.js": "/static/js/main.53fe3ae9.chunk.js",
-    "main.js.map": "/static/js/main.53fe3ae9.chunk.js.map",
+    "main.css": "/static/css/main.826ed3af.chunk.css",
+    "main.js": "/static/js/main.20a62f29.chunk.js",
+    "main.js.map": "/static/js/main.20a62f29.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ff5b8ea4.js",
     "runtime-main.js.map": "/static/js/runtime-main.ff5b8ea4.js.map",
-    "static/js/2.bcad50ed.chunk.js": "/static/js/2.bcad50ed.chunk.js",
-    "static/js/2.bcad50ed.chunk.js.map": "/static/js/2.bcad50ed.chunk.js.map",
+    "static/js/2.5cf80f30.chunk.js": "/static/js/2.5cf80f30.chunk.js",
+    "static/js/2.5cf80f30.chunk.js.map": "/static/js/2.5cf80f30.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.eb0f1550.chunk.css.map": "/static/css/main.eb0f1550.chunk.css.map",
-    "static/js/2.bcad50ed.chunk.js.LICENSE.txt": "/static/js/2.bcad50ed.chunk.js.LICENSE.txt",
+    "static/css/main.826ed3af.chunk.css.map": "/static/css/main.826ed3af.chunk.css.map",
+    "static/js/2.5cf80f30.chunk.js.LICENSE.txt": "/static/js/2.5cf80f30.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/static/media/MesloLgMRegularNerdFontComplete.2fa6bbe6.ttf",
     "static/media/github-icon.f434f9ff.svg": "/static/media/github-icon.f434f9ff.svg",
     "static/media/lastfm-icon.9bdfda36.svg": "/static/media/lastfm-icon.9bdfda36.svg",
     "static/media/layered-waves-haikei.fa39e680.svg": "/static/media/layered-waves-haikei.fa39e680.svg",
     "static/media/linkedin-icon.786559cf.svg": "/static/media/linkedin-icon.786559cf.svg",
     "static/media/memoji.bc90a67d.png": "/static/media/memoji.bc90a67d.png",
     "static/media/mobile-waves.b6b47dee.svg": "/static/media/mobile-waves.b6b47dee.svg",
-    "static/media/stackoverflow-icon.121f2485.svg": "/static/media/stackoverflow-icon.121f2485.svg"
+    "static/media/spinner.3d4e231b.svg": "/static/media/spinner.3d4e231b.svg",
+    "static/media/stackoverflow-icon.121f2485.svg": "/static/media/stackoverflow-icon.121f2485.svg",
+    "static/media/terminal.7c616ac1.svg": "/static/media/terminal.7c616ac1.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.ff5b8ea4.js",
-    "static/js/2.bcad50ed.chunk.js",
-    "static/css/main.eb0f1550.chunk.css",
-    "static/js/main.53fe3ae9.chunk.js"
+    "static/js/2.5cf80f30.chunk.js",
+    "static/css/main.826ed3af.chunk.css",
+    "static/js/main.20a62f29.chunk.js"
   ]
 }

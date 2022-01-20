@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 
 @mixin overline-font($font-size, $letter-spacing, $text-align) {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'NerdFont';
   font-size: $font-size;
   color: #FFFFFF;
-  letter-spacing: 0.25px;
   text-align: $text-align;
   line-height: calc(#{$font-size} + #{$line-margin});
   letter-spacing: $letter-spacing;
@@ -18,7 +17,7 @@ $line-margin: 8px;
 
 .experienceComponent {
   min-height: 400px;
-  max-width: 700px;
+  max-width: var(--component-max-width);
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -232,7 +231,7 @@ $line-margin: 8px;
 }
 
 .jobDescription {
-  @include overline-font(var(--body-font-size), 0.5px, left);
+  @include overline-font(var(--body-font-size), 0px, left);
   background-color: #1F1F1F;
   margin-top: calc(#{var(--spacing)} * 1);
   padding: calc(#{var(--spacing)} * 1) calc(#{var(--spacing)} * 2);

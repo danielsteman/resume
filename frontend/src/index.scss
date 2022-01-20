@@ -3,6 +3,11 @@
 @import "./style/size_config";
 @import "./style/grid_config";
 
+@font-face {
+  font-family: 'NerdFont';
+  src: local('NerdFont'), url(./fonts/MesloLgMRegularNerdFontComplete.ttf) format('truetype');
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -17,7 +22,6 @@ body {
 
 a {
   text-decoration: none;
-  color: inherit;
 }
 
 h1 {

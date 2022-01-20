@@ -1,1 +1,1 @@
-sudo svg-term --cast=W1BK0kqRoOWytcs0C7ae2sOgf --out src/animations/terminal.svg --window --width=35 --height=20
+sudo svg-term --cast 3Gm9V40ci4sNKwkLKTPbwaUgV --out src/animations/terminal.svg --width=43 --height=23 --padding-x=20 --padding-y=18

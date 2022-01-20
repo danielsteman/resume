@@ -1,8 +1,7 @@
 @mixin overline-font($font-size, $letter-spacing, $text-align) {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'NerdFont';
   font-size: $font-size;
   color: #FFFFFF;
-  letter-spacing: 0.25px;
   text-align: $text-align;
   line-height: calc(#{$font-size} + 6px);
   letter-spacing: $letter-spacing;
