@@ -1,5 +1,6 @@
 import './Experience.scss';
 import { useEffect, useState } from 'react';
+import { TransitionGroup } from 'react-transition-group';
 import useFetch from '../../hooks/useFetch';
 import Title from '../../reusables/Title/Title';
 import { ExperienceProps } from '../../types';
@@ -48,7 +49,13 @@ const Experience = ({ setLoading }:ExperienceProps) => {
             <div className="jobContainer">
               <div className="jobTitleContainer">
                 <div className="jobTitle">
-                  {data.employment_title[index]}
+                  <TransitionGroup
+                    transitionName="jobTitleTransition"
+                    transitionEnterTimeout={300}
+                    transitionLeaveTimeout={300}
+                  >
+                    {data.employment_title[index]}
+                  </TransitionGroup>
                 </div>
                 <div className="jobDuration">
                   {data.employment_duration[index]}
