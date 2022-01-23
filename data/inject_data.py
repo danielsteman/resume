@@ -12,7 +12,10 @@ logging.getLogger("sqlalchemy.engine").setLevel(logging.DEBUG)
 load_dotenv()
 
 df = pd.read_csv("cluster-data.csv", delimiter=";", decimal=",")
+
 df[["artist", "track_name"]] = df[["artist", "track_name"]].astype(str)
+print(df.dtypes)
+print(df.loc[1:1])
 
 db_credentials = {
     "dbname": os.environ["DBNAME"],
@@ -23,7 +26,9 @@ db_credentials = {
 
 
 def connect(credentials: Dict):
+
     """ Connect to the PostgreSQL database server """
+
     conn = None
     try:
         print("Connecting to the PostgreSQL database...")
@@ -36,27 +41,24 @@ def connect(credentials: Dict):
 
 
 def execute_many(conn, df, table):
+
     """
     Using cursor.executemany() to insert the dataframe
     """
-    # Create a list of tuples from the dataframe values
+
     tuples = [tuple(x) for x in df.to_numpy()]
-    # Comma-separated dataframe columns
     cols = ",".join(list(df.columns))
-    # SQL quert to execute
     query = "INSERT INTO %s(%s) VALUES(%%s,%%s,%%s,%%s,%%s,%%s)" % (table, cols)
     cursor = conn.cursor()
-    for t in tuples:
-        try:
-            cursor.executemany(query, [t])
-            conn.commit()
-        except (Exception, psycopg2.DatabaseError) as error:
-            print("Error: %s" % error)
-            print(f"Error line: {t}")
-            conn.rollback()
-            cursor.close()
-            return 1
-        print("execute_many() done")
+    try:
+        cursor.executemany(query, tuples)
+        conn.commit()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print("Error: %s" % error)
+        conn.rollback()
+        cursor.close()
+        return 1
+    print("execute_many() done")
     cursor.close()
 
 
