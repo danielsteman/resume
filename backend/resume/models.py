@@ -181,3 +181,12 @@ class Footer(Page):
     content_panels = Page.content_panels + [FieldPanel("footer_text")]
 
     api_fields = [APIField("footer_text")]
+
+
+class ClusterData(models.Model):
+    cluster = models.IntegerField()
+    x_dim = models.DecimalField(max_digits=20, decimal_places=5)
+    y_dim = models.DecimalField(max_digits=20, decimal_places=5)
+    z_dim = models.DecimalField(max_digits=20, decimal_places=5)
+    track_name = CharField(max_length=255)
+    artist = CharField(max_length=255)
