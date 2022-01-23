@@ -10,12 +10,14 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 from .api import content_api_router
+from .views import ClusterModelResultsView
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("api/v2/", content_api_router.urls),
+    path("api/v2/mlresults", ClusterModelResultsView.as_view()),
 ]
 
 if settings.DEBUG:
