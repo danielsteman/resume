@@ -1,9 +1,10 @@
 from rest_framework.views import APIView
-from django.http import JsonResponse
+from rest_framework.response import Response
+from django.core import serializers
 from resume.models import ClusterData
 
 
 class ClusterModelResultsView(APIView):
     def get(self, request, format=None):
-        data = list(ClusterData.objects.values())
-        return JsonResponse({"data": data})
+        data = serializers.serialize("json", ClusterData.objects.all())
+        return Response(data)
