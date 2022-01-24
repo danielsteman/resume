@@ -8,7 +8,7 @@ import { HomeProps } from '../../types';
 import TypeWriter from '../../reusables/TypeWriter/TypeWriter';
 
 const Home = ({ setLoading }:HomeProps) => {
-  const { data, loading, error } = useFetch('Home', ['custom_title']);
+  const { data, loading, error } = useFetch('content', 'Home', ['custom_title']);
 
   useEffect(() => setLoading(loading), [loading]);
 

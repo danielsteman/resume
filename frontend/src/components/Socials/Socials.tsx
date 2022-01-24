@@ -6,7 +6,7 @@ import StackOverflow from '../../images/socials/stackoverflow-icon.svg';
 import useFetch from '../../hooks/useFetch';
 
 const Socials = () => {
-  const { data, loading, error } = useFetch('Socials', ['social_links']);
+  const { data, loading, error } = useFetch('content', 'Socials', ['social_links']);
 
   return (
     <div className="socialsComponent">

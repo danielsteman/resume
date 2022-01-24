@@ -15,7 +15,7 @@ const Experience = ({ setLoading }:ExperienceProps) => {
     'employment_description',
   ];
 
-  const { data, loading, error } = useFetch('Experience', fields);
+  const { data, loading, error } = useFetch('content', 'Experience', fields);
 
   useEffect(() => setLoading(loading), [loading]);
 

@@ -4,7 +4,7 @@ import Card from '../../../reusables/Card/Card';
 import useFetch from '../../../hooks/useFetch';
 
 const SpotifyPD = () => {
-  const { data, loading, error } = useFetch('Projects', ['custom_title', 'body', 'skills']);
+  const { data, loading, error } = useFetch('content', 'Projects', ['custom_title', 'body', 'skills']);
 
   const columns: number = 2;
 

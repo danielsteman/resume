@@ -4,7 +4,7 @@ import { FooterProps } from '../../types';
 import './Footer.scss';
 
 const Footer = ({ setLoading }:FooterProps) => {
-  const { data, loading, error } = useFetch('Footer', ['footer_text']);
+  const { data, loading, error } = useFetch('content', 'Footer', ['footer_text']);
 
   useEffect(() => setLoading(loading), [loading]);
 

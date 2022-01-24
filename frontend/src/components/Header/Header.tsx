@@ -5,7 +5,7 @@ import Navigation from '../../reusables/Navigation/Navigation';
 import MobileNavigation from '../../reusables/Navigation/MobileNavigation';
 
 const Header = forwardRef(() => {
-  const { data, loading, error } = useFetch('Home', ['navigation']);
+  const { data, loading, error } = useFetch('content', 'Home', ['navigation']);
 
   return (
     <div className="headerComponent">

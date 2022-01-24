@@ -17,7 +17,7 @@ const About = ({ setLoading }:AboutProps) => {
     'n_skills_columns',
   ];
 
-  const { data, loading, error } = useFetch('About', fields);
+  const { data, loading, error } = useFetch('content', 'About', fields);
 
   useEffect(() => setLoading(loading), [loading]);
 
