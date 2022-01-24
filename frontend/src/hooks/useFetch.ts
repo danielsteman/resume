@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import urlExtractor from '../utils/urlExtractor';
 
 const axios = require('axios').default;
 
@@ -6,12 +7,12 @@ const baseUrl = process.env.NODE_ENV === 'development'
   ? 'http://localhost:8000/api/v2'
   : 'https://www.danielsteman.com/api/v2';
 
-const useFetch = <T extends any = any>(page: string, fields: string[]) => {
+const useFetch = <T extends any = any>(api: string, page: string, fields: string[]) => {
   const [data, setData] = useState<T | {}>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  const endpoint = `pages/?type=resume.${page}&fields=_,${fields.join()}`;
+  const endpoint = urlExtractor(api, page, fields);
 
   useEffect(() => {
     (async function getContent() {
@@ -19,9 +20,7 @@ const useFetch = <T extends any = any>(page: string, fields: string[]) => {
         const res = await axios.get(`${baseUrl}/${endpoint}`);
         setData(res.data.items[0]);
       } catch (e) {
-        // eslint-disable-next-line no-console
-        console.log(e);
-        setError('An error occurred');
+        setError(`An error occurred: ${e}`);
       } finally {
         setLoading(false);
       }
