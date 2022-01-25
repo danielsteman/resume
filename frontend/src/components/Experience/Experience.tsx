@@ -49,11 +49,7 @@ const Experience = ({ setLoading }:ExperienceProps) => {
             <div className="jobContainer">
               <div className="jobTitleContainer">
                 <div className="jobTitle">
-                  <TransitionGroup
-                    transitionName="jobTitleTransition"
-                    transitionEnterTimeout={300}
-                    transitionLeaveTimeout={300}
-                  >
+                  <TransitionGroup>
                     {data.employment_title[index]}
                   </TransitionGroup>
                 </div>

@@ -7,7 +7,7 @@ const urlExtractor = (api: string, page?: string, fields?: string[] | undefined)
         throw new Error('Provide `page` and `fields` parameters to consume `content` api');
       }
     case 'mlresults':
-      return api;
+      return `${api}/`;
     default:
       throw new Error('Provide a valid api endpoint');
   }

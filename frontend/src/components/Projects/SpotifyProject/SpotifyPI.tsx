@@ -4,9 +4,27 @@ import { useCallback, useEffect, useState } from 'react';
 import useFetch from '../../../hooks/useFetch';
 import { SpotifyPIProps } from '../../../types';
 
+// interface IPlotData {
+//   data: Array<IPlotDataRow>;
+// }
+
+// interface IPlotDataRow {
+//   fields: IPlotDataFields
+// }
+
+// interface IPlotDataFields {
+//   cluster: number,
+//   xDim: number,
+//   yDim: number,
+//   zDim: number,
+//   trackName: string,
+//   artist: string
+// }
+
 const SpotifyPI = ({ setLoading }: SpotifyPIProps) => {
   const [height, setHeight] = useState(undefined);
   const [width, setWidth] = useState(undefined);
+  const [plotData, setPlotData] = useState<any>();
   const plotDiv = useCallback((node) => {
     if (node !== null) {
       setHeight(node.getBoundingClientRect().height);
@@ -16,6 +34,10 @@ const SpotifyPI = ({ setLoading }: SpotifyPIProps) => {
 
   const { data, loading, error } = useFetch('mlresults');
   useEffect(() => setLoading(loading), [loading]);
+  useEffect(() => {
+    console.log(data);
+    setPlotData(data);
+  }, [data]);
 
   const axesStyle = {
     tick0: 0,
@@ -27,11 +49,18 @@ const SpotifyPI = ({ setLoading }: SpotifyPIProps) => {
     zerolinewidth: 2,
   };
 
-  const Xdim = [1, 2, 3];
-  const Ydim = [1, 2, 3];
-  const Zdim = [1, 2, 3];
-  const labelColors = [1, 2, 3];
-  const dataPointLabels = ['1', '2', '3'];
+  const colorMap: any = {
+    // 1: 'rgb:(66, 135, 245)',
+    // 2: 'rgb:(156, 66, 245)',
+    // 3: 'rgb:(0, 245, 57)',
+    // 4: 'rgb:(208, 245, 0)',
+    // 5: 'rgb:(245, 0, 0)',
+    1: 'aliceblue',
+    2: 256,
+    3: 128,
+    4: 64,
+    5: 192,
+  };
 
   const layout = {
     width,
@@ -52,28 +81,27 @@ const SpotifyPI = ({ setLoading }: SpotifyPIProps) => {
     },
   };
 
-  // TODO:
-  // three series of mock data for dimensions
-  // one series for label colors
-  // one series for data point labels
-
   return (
     <div className="spotifyProjectGraphComponent">
-      {data && (
+      {plotData && plotData.data && (
         <div className="plotDiv" ref={plotDiv}>
           <Plot
             config={{ displayModeBar: false }}
             data={[
               {
-                x: Xdim,
-                y: Ydim,
-                z: Zdim,
+                x: plotData.data.map((obj: any) => obj.fields.xDim),
+                y: plotData.data.map((obj: any) => obj.fields.yDim),
+                z: plotData.data.map((obj: any) => obj.fields.zDim),
                 type: 'scatter3d',
                 mode: 'markers',
-                marker: { color: labelColors, symbol: 'circle' },
+                marker: {
+                  color: plotData.data.map((obj: any) => colorMap[obj.fields.cluster]),
+                  symbol: 'circle',
+                  opacity: 0.8,
+                },
                 hoverlabel: { bgcolor: 'grey' },
                 hoverinfo: 'text',
-                text: dataPointLabels,
+                text: plotData.data.map((obj: any) => obj.fields.trackName),
               },
             ]}
             layout={layout}

@@ -16,8 +16,8 @@ urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
-    path("api/v2/", content_api_router.urls),
     path("api/v2/mlresults/", ClusterModelResultsView.as_view()),
+    path("api/v2/", content_api_router.urls),
 ]
 
 if settings.DEBUG:
