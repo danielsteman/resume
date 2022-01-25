@@ -21,8 +21,6 @@ const About = ({ setLoading }:AboutProps) => {
 
   useEffect(() => setLoading(loading), [loading]);
 
-  // customize terminal animation: https://github.com/marionebl/svg-term
-
   return (
     <div className="aboutComponent">
       <Title title={data.custom_title} />

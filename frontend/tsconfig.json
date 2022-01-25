@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
-    "types": ["@types/jest", "node"],
-    "typeRoots": [ "../node_modules/@types" ],
+    "types": [
+      "@types/jest",
+      "node"
+    ],
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
     "target": "es5",
     "lib": [
       "dom",
@@ -21,13 +26,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "noUnusedLocals": false,
-    "jsx": "react-jsx",
-    "paths": {
-      "@": ["./src"],
-    }
+    "jsx": "react-jsx"
   },
   "include": [
     "src",
-    "__tests__"  
-  ],
+    "__tests__"
+  ]
 }
