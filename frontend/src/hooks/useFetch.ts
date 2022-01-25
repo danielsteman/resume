@@ -7,7 +7,7 @@ const baseUrl = process.env.NODE_ENV === 'development'
   ? 'http://localhost:8000/api/v2'
   : 'https://www.danielsteman.com/api/v2';
 
-const useFetch = <T extends any = any>(api: string, page: string, fields: string[]) => {
+const useFetch = <T extends any = any>(api: string, page?: string, fields?: string[]) => {
   const [data, setData] = useState<T | {}>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');

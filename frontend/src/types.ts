@@ -15,3 +15,9 @@ export interface HomeProps extends ComponentProps {}
 export interface ExperienceProps extends ComponentProps {}
 
 export interface FooterProps extends ComponentProps {}
+
+export interface SpotifyProjectProps extends ComponentProps {}
+
+export interface SpotifyPIProps extends ComponentProps {}
+
+export interface SpotifyPDProps extends ComponentProps {}

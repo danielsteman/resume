@@ -20,7 +20,7 @@ const App = () => {
         <Header ref={ref} />
         <Home setLoading={setLoading} />
         <About setLoading={setLoading} />
-        <SpotifyProject />
+        <SpotifyProject setLoading={setLoading} />
         <Experience setLoading={setLoading} />
         <Socials />
         <Footer setLoading={setLoading} />

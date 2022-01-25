@@ -1,8 +1,10 @@
 import Plot from 'react-plotly.js';
 import './SpotifyPI.scss';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import useFetch from '../../../hooks/useFetch';
+import { SpotifyPIProps } from '../../../types';
 
-const SpotifyPI = () => {
+const SpotifyPI = ({ setLoading }: SpotifyPIProps) => {
   const [height, setHeight] = useState(undefined);
   const [width, setWidth] = useState(undefined);
   const plotDiv = useCallback((node) => {
@@ -11,6 +13,9 @@ const SpotifyPI = () => {
       setWidth(node.getBoundingClientRect().width);
     }
   }, []);
+
+  const { data, loading, error } = useFetch('mlresults');
+  useEffect(() => setLoading(loading), [loading]);
 
   const axesStyle = {
     tick0: 0,
@@ -54,25 +59,30 @@ const SpotifyPI = () => {
 
   return (
     <div className="spotifyProjectGraphComponent">
-      <div className="plotDiv" ref={plotDiv}>
-        <Plot
-          config={{ displayModeBar: false }}
-          data={[
-            {
-              x: Xdim,
-              y: Ydim,
-              z: Zdim,
-              type: 'scatter3d',
-              mode: 'markers',
-              marker: { color: labelColors, symbol: 'circle' },
-              hoverlabel: { bgcolor: 'grey' },
-              hoverinfo: 'text',
-              text: dataPointLabels,
-            },
-          ]}
-          layout={layout}
-        />
-      </div>
+      {data && (
+        <div className="plotDiv" ref={plotDiv}>
+          <Plot
+            config={{ displayModeBar: false }}
+            data={[
+              {
+                x: Xdim,
+                y: Ydim,
+                z: Zdim,
+                type: 'scatter3d',
+                mode: 'markers',
+                marker: { color: labelColors, symbol: 'circle' },
+                hoverlabel: { bgcolor: 'grey' },
+                hoverinfo: 'text',
+                text: dataPointLabels,
+              },
+            ]}
+            layout={layout}
+          />
+        </div>
+      )}
+      {error && (
+        <div>{error}</div>
+      )}
     </div>
   );
 };
