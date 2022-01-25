@@ -27,6 +27,7 @@
   @include overline-font(var(--body-font-size), 0px, left);
   white-space: pre-line;
   justify-content: space-evenly;
+  user-select: none;
 }
 
 .text div p a {

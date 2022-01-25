@@ -186,6 +186,7 @@ $line-margin: 8px;
   padding: calc(#{var(--spacing)} * 1);
   transition: 0.3s;
   text-transform: uppercase;
+  user-select: none;
   &:not(:last-child) {
     margin-bottom: calc(#{var(--spacing)} * 1);
   }
