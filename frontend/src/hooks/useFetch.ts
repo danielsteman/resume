@@ -32,9 +32,6 @@ const useFetch = <T extends any = any>(namespace: string, page?: string, fields?
   }, []);
 
   if (error) return { errorMessage: `Failed to fetch ${JSON.stringify(fields)} from ${page}` };
-  if (namespace === 'mlresults') {
-    console.log(data);
-  }
   return { data, loading, error };
 };
 

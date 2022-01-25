@@ -35,7 +35,6 @@ const SpotifyPI = ({ setLoading }: SpotifyPIProps) => {
   const { data, loading, error } = useFetch('mlresults');
   useEffect(() => setLoading(loading), [loading]);
   useEffect(() => {
-    console.log(data);
     setPlotData(data);
   }, [data]);
 
