@@ -48,19 +48,6 @@ const SpotifyPI = ({ setLoading }: SpotifyPIProps) => {
     zerolinewidth: 2,
   };
 
-  const colorMap: any = {
-    // 1: 'rgb:(66, 135, 245)',
-    // 2: 'rgb:(156, 66, 245)',
-    // 3: 'rgb:(0, 245, 57)',
-    // 4: 'rgb:(208, 245, 0)',
-    // 5: 'rgb:(245, 0, 0)',
-    1: 'aliceblue',
-    2: 256,
-    3: 128,
-    4: 64,
-    5: 192,
-  };
-
   const layout = {
     width,
     height,
@@ -94,13 +81,20 @@ const SpotifyPI = ({ setLoading }: SpotifyPIProps) => {
                 type: 'scatter3d',
                 mode: 'markers',
                 marker: {
-                  color: plotData.data.map((obj: any) => colorMap[obj.fields.cluster]),
+                  color: plotData.data.map((obj: any) => obj.fields.cluster),
                   symbol: 'circle',
                   opacity: 0.8,
+                  size: 5,
                 },
-                hoverlabel: { bgcolor: 'grey' },
+                hoverlabel: {
+                  font: {
+                    color: '#FFFFFF',
+                  },
+                  bgcolor: '#242424',
+                  bordercolor: '#242424',
+                },
                 hoverinfo: 'text',
-                text: plotData.data.map((obj: any) => obj.fields.trackName),
+                text: plotData.data.map((obj: any) => `${obj.fields.artist} - ${obj.fields.trackName}`),
               },
             ]}
             layout={layout}

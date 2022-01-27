@@ -38,8 +38,8 @@ class Home(ComponentBase):
     api_fields = ComponentBase.api_fields + [APIField("navigation")]
 
 
-def default_skill_ratings(default_rating, size):
-    return [default_rating] * size
+def default_skill_ratings():
+    return [3] * 6
 
 
 class About(ComponentBase):
@@ -51,7 +51,7 @@ class About(ComponentBase):
         size=6,
     )
     skill_ratings = ArrayField(
-        models.IntegerField(default=1), size=6, default=default_skill_ratings(3, 6)
+        models.IntegerField(default=1), size=6, default=default_skill_ratings
     )
     skill_years = ArrayField(
         models.CharField(
