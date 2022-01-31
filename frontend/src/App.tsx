@@ -10,18 +10,31 @@ import Footer from './components/Footer/Footer';
 import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 
 const App = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const projectRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState<any>(true);
+
+  const handleRef = () => {
+    if (experienceRef.current !== null) {
+      experienceRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div>
       {loading && <LoadingScreen />}
       <div className="grid">
-        <Header ref={ref} />
+        <Header handleRef={handleRef} />
         <Home setLoading={setLoading} />
         <About setLoading={setLoading} />
-        <SpotifyProject setLoading={setLoading} />
-        <Experience setLoading={setLoading} />
+        <SpotifyProject
+          setLoading={setLoading}
+          projectRef={projectRef}
+        />
+        <Experience
+          setLoading={setLoading}
+          ref={experienceRef}
+        />
         <Socials />
         <Footer setLoading={setLoading} />
       </div>

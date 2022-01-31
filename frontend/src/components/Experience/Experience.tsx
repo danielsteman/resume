@@ -1,11 +1,14 @@
 import './Experience.scss';
-import { useEffect, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import { TransitionGroup } from 'react-transition-group';
 import useFetch from '../../hooks/useFetch';
 import Title from '../../reusables/Title/Title';
 import { ExperienceProps } from '../../types';
 
-const Experience = ({ setLoading }:ExperienceProps) => {
+const Experience = forwardRef((
+  { setLoading }:ExperienceProps,
+  ref: any,
+) => {
   const fields = [
     'custom_title',
     'employer_ids',
@@ -22,7 +25,7 @@ const Experience = ({ setLoading }:ExperienceProps) => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="experienceComponent">
+    <div className="experienceComponent" ref={ref}>
       {data && data.employers && (
         <div>
           <Title title={data.custom_title} />
@@ -72,6 +75,6 @@ const Experience = ({ setLoading }:ExperienceProps) => {
       )}
     </div>
   );
-};
+});
 
 export default Experience;

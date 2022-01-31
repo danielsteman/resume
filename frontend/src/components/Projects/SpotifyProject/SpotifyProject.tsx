@@ -1,17 +1,20 @@
 import './SpotifyProject.scss';
+import { forwardRef } from 'react';
 import Title from '../../../reusables/Title/Title';
 import SpotifyPD from './SpotifyPD';
 import SpotifyPI from './SpotifyPI';
-import { SpotifyPIProps } from '../../../types';
+import { SpotifyProjectProps } from '../../../types';
 
-const SpotifyProject = ({ setLoading }: SpotifyPIProps) => (
-  <div className="spotifyProjectComponent">
+const SpotifyProject = forwardRef((
+  { setLoading, projectRef }: SpotifyProjectProps,
+) => (
+  <div className="spotifyProjectComponent" ref={projectRef}>
     <Title title="PROJECTS" />
     <div className="spotifyProjectContainer">
       <SpotifyPD setLoading={setLoading} />
       <SpotifyPI setLoading={setLoading} />
     </div>
   </div>
-);
+));
 
 export default SpotifyProject;

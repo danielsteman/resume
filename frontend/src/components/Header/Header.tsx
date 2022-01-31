@@ -1,17 +1,16 @@
 import './Header.scss';
-import { forwardRef } from 'react';
 import useFetch from '../../hooks/useFetch';
 import Navigation from '../../reusables/Navigation/Navigation';
 import MobileNavigation from '../../reusables/Navigation/MobileNavigation';
 
-const Header = forwardRef(() => {
+const Header = ({ handleRef }: any) => {
   const { data, loading, error } = useFetch('content', 'Home', ['navigation']);
 
   return (
     <div className="headerComponent">
       {data && data.navigation && (
         window.innerWidth > 400
-          ? <Navigation items={data} />
+          ? <Navigation items={data} handleRef={handleRef} />
           : <MobileNavigation items={data} />
       )}
       {loading && (
@@ -22,6 +21,6 @@ const Header = forwardRef(() => {
       )}
     </div>
   );
-});
+};
 
 export default Header;
