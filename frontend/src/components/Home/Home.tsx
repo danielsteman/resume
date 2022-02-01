@@ -6,9 +6,11 @@ import useFetch from '../../hooks/useFetch';
 import Memoji from '../../images/memoji.png';
 import { HomeProps } from '../../types';
 import TypeWriter from '../../reusables/TypeWriter/TypeWriter';
+import useWindowDimensions from '../../hooks/useWindowSize';
 
 const Home = ({ setLoading }:HomeProps) => {
   const { data, loading, error } = useFetch('content', 'Home', ['custom_title']);
+  const { height, width } = useWindowDimensions();
 
   useEffect(() => setLoading(loading), [loading]);
 
@@ -18,9 +20,9 @@ const Home = ({ setLoading }:HomeProps) => {
         <div>
           <img src={Memoji} alt="memoji" className="memoji" />
           <TypeWriter />
-            {window.innerWidth > 400
+            {width > 400 && height
               ? <img className="pageDivider" src={Waves} alt="waves" />
-              : <img className="pageDivider" src={MobileWaves} alt="waves" />}
+              : <img className="pageDivider" src={MobileWaves} alt="mobilewaves" />}
         </div>
       )}
       {loading && (
