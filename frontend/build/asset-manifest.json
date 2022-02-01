@@ -1,14 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.8f347f7c.chunk.css",
-    "main.js": "/static/js/main.70934c3d.chunk.js",
-    "main.js.map": "/static/js/main.70934c3d.chunk.js.map",
+    "main.css": "/static/css/main.5ea70df6.chunk.css",
+    "main.js": "/static/js/main.f0eebd93.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.ff5b8ea4.js",
-    "runtime-main.js.map": "/static/js/runtime-main.ff5b8ea4.js.map",
     "static/js/2.33b52fb1.chunk.js": "/static/js/2.33b52fb1.chunk.js",
-    "static/js/2.33b52fb1.chunk.js.map": "/static/js/2.33b52fb1.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.8f347f7c.chunk.css.map": "/static/css/main.8f347f7c.chunk.css.map",
     "static/js/2.33b52fb1.chunk.js.LICENSE.txt": "/static/js/2.33b52fb1.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/MesloLgMRegularNerdFontComplete.2fa6bbe6.ttf",
     "static/media/github-icon.f434f9ff.svg": "/static/media/github-icon.f434f9ff.svg",
@@ -19,12 +15,12 @@
     "static/media/mobile-waves.b6b47dee.svg": "/static/media/mobile-waves.b6b47dee.svg",
     "static/media/spinner.3d4e231b.svg": "/static/media/spinner.3d4e231b.svg",
     "static/media/stackoverflow-icon.121f2485.svg": "/static/media/stackoverflow-icon.121f2485.svg",
-    "static/media/terminal.59df686c.svg": "/static/media/terminal.59df686c.svg"
+    "static/media/terminal.6b684bca.svg": "/static/media/terminal.6b684bca.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.ff5b8ea4.js",
     "static/js/2.33b52fb1.chunk.js",
-    "static/css/main.8f347f7c.chunk.css",
-    "static/js/main.70934c3d.chunk.js"
+    "static/css/main.5ea70df6.chunk.css",
+    "static/js/main.f0eebd93.chunk.js"
   ]
 }
