@@ -1,4 +1,5 @@
 import './Navigation.scss';
+import { RefMap } from '../../types';
 
 interface NavigationItemProps {
   navigation: Array<string | undefined>
@@ -7,10 +8,10 @@ interface NavigationItemProps {
 interface NavigationProps {
   items: NavigationItemProps
   handleRef: (ref: any) => void
-  experienceRef: any
+  refs: RefMap
 }
 
-const Navigation = ({ items, handleRef, experienceRef }: NavigationProps) => (
+const Navigation = ({ items, handleRef, refs }: NavigationProps) => (
   <div className="nav">
     <ul className="item">
       {items.navigation.map(((item) => (
@@ -18,10 +19,10 @@ const Navigation = ({ items, handleRef, experienceRef }: NavigationProps) => (
           <div
             className="navigationItem"
             onClick={() => {
-              handleRef(experienceRef);
+              handleRef(refs[item!]);
             }}
             onKeyDown={() => {
-              handleRef(experienceRef);
+              handleRef(refs[item!]);
             }}
             role="button"
             tabIndex={0}

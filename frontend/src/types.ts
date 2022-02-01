@@ -1,11 +1,10 @@
-import { RefObject } from 'react';
-
 interface ComponentProps {
   setLoading: (arg: boolean | undefined) => void
 }
 
 export interface HeaderProps extends ComponentProps {
-  ref: RefObject<HTMLDivElement>
+  refs: RefMap
+  handleRef: (ref: any) => void
 }
 
 export interface AboutProps extends ComponentProps {}
@@ -23,3 +22,7 @@ export interface SpotifyProjectProps extends ComponentProps {
 export interface SpotifyPIProps extends ComponentProps {}
 
 export interface SpotifyPDProps extends ComponentProps {}
+
+export interface RefMap {
+  [key: string]: React.RefObject<HTMLDivElement>;
+}

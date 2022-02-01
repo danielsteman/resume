@@ -8,6 +8,7 @@ import Experience from './components/Experience/Experience';
 import SpotifyProject from './components/Projects/SpotifyProject/SpotifyProject';
 import Footer from './components/Footer/Footer';
 import LoadingScreen from './components/LoadingScreen/LoadingScreen';
+import { RefMap } from './types';
 
 const App = () => {
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -20,30 +21,20 @@ const App = () => {
     }
   };
 
-  // interface RefMap {
-  //   [key: string]: React.RefObject<HTMLDivElement>;
-  // }
-
-  // const refMap: RefMap = {
-  //   experience: experienceRef,
-  //   projects: projectsRef,
-  // };
+  const refMap: RefMap = {
+    experience: experienceRef,
+    projects: projectsRef,
+  };
 
   return (
     <div>
       {loading && <LoadingScreen />}
       <div className="grid">
-        <Header handleRef={handleRef} experienceRef={experienceRef} />
+        <Header setLoading={setLoading} handleRef={handleRef} refs={refMap} />
         <Home setLoading={setLoading} />
         <About setLoading={setLoading} />
-        <SpotifyProject
-          setLoading={setLoading}
-          projectsRef={projectsRef}
-        />
-        <Experience
-          setLoading={setLoading}
-          ref={experienceRef}
-        />
+        <SpotifyProject setLoading={setLoading} projectsRef={projectsRef} />
+        <Experience setLoading={setLoading} ref={experienceRef} />
         <Socials />
         <Footer setLoading={setLoading} />
       </div>
