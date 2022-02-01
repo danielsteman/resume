@@ -240,21 +240,3 @@ $line-margin: 8px;
   justify-content: space-evenly;
   transition: all 0.3s;
 }
-
-.jobTitleTransition-enter {
-  opacity: 0.01;
-}
-
-.jobTitleTransition-enter.jobTitleTransition-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.jobTitleTransition-leave {
-  opacity: 1;
-}
-
-.jobTitleTransition-leave.jobTitleTransition-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
