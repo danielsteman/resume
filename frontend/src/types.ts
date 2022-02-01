@@ -26,3 +26,13 @@ export interface SpotifyPDProps extends ComponentProps {}
 export interface RefMap {
   [key: string]: React.RefObject<HTMLDivElement>;
 }
+
+interface NavigationItemProps {
+  navigation: Array<string | undefined>
+}
+
+export interface NavigationProps {
+  items: NavigationItemProps
+  handleRef: (ref: any) => void
+  refs: RefMap
+}

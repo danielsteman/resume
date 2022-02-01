@@ -12,7 +12,7 @@ const Header = ({ handleRef, refs }: HeaderProps) => {
       {data && data.navigation && (
         window.innerWidth > 400
           ? <Navigation items={data} handleRef={handleRef} refs={refs} />
-          : <MobileNavigation items={data} />
+          : <MobileNavigation items={data} handleRef={handleRef} refs={refs} />
       )}
       {loading && (
         <div>loading...</div>

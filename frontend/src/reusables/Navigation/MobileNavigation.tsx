@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import './MobileNavigation.scss';
 import { Rotate as Hamburger } from 'hamburger-react';
+import { NavigationProps } from '../../types';
 
-const MobileNavigation = ({ items }: any) => {
+const MobileNavigation = ({ items, handleRef, refs }: NavigationProps) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -23,11 +24,21 @@ const MobileNavigation = ({ items }: any) => {
       {open && (
         <div className="mobileNav">
           <ul className="mobileItem">
-            {items.navigation.map((item: string) => (
+            {items.navigation.map((item) => (
               <li key={item}>
-                <a href="/">
+                <div
+                  className="mobileNavigationItem"
+                  onClick={() => {
+                    handleRef(refs[item!]);
+                  }}
+                  onKeyDown={() => {
+                    handleRef(refs[item!]);
+                  }}
+                  role="button"
+                  tabIndex={0}
+                >
                   {item}
-                </a>
+                </div>
               </li>
             ))}
           </ul>

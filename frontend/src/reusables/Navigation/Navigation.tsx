@@ -1,15 +1,5 @@
 import './Navigation.scss';
-import { RefMap } from '../../types';
-
-interface NavigationItemProps {
-  navigation: Array<string | undefined>
-}
-
-interface NavigationProps {
-  items: NavigationItemProps
-  handleRef: (ref: any) => void
-  refs: RefMap
-}
+import { NavigationProps } from '../../types';
 
 const Navigation = ({ items, handleRef, refs }: NavigationProps) => (
   <div className="nav">
