@@ -10,26 +10,35 @@ import Footer from './components/Footer/Footer';
 import LoadingScreen from './components/LoadingScreen/LoadingScreen';
 
 const App = () => {
-  const projectRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState<any>(true);
 
-  const handleRef = () => {
-    if (experienceRef.current !== null) {
-      experienceRef.current.scrollIntoView({ behavior: 'smooth' });
+  const handleRef = (ref: any) => {
+    if (ref.current !== null) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  // interface RefMap {
+  //   [key: string]: React.RefObject<HTMLDivElement>;
+  // }
+
+  // const refMap: RefMap = {
+  //   experience: experienceRef,
+  //   projects: projectsRef,
+  // };
 
   return (
     <div>
       {loading && <LoadingScreen />}
       <div className="grid">
-        <Header handleRef={handleRef} />
+        <Header handleRef={handleRef} experienceRef={experienceRef} />
         <Home setLoading={setLoading} />
         <About setLoading={setLoading} />
         <SpotifyProject
           setLoading={setLoading}
-          projectRef={projectRef}
+          projectsRef={projectsRef}
         />
         <Experience
           setLoading={setLoading}

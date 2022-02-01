@@ -17,7 +17,7 @@ export interface ExperienceProps extends ComponentProps {}
 export interface FooterProps extends ComponentProps {}
 
 export interface SpotifyProjectProps extends ComponentProps {
-  projectRef: React.RefObject<HTMLDivElement>
+  projectsRef: React.RefObject<HTMLDivElement>
 }
 
 export interface SpotifyPIProps extends ComponentProps {}

@@ -6,9 +6,9 @@ import SpotifyPI from './SpotifyPI';
 import { SpotifyProjectProps } from '../../../types';
 
 const SpotifyProject = forwardRef((
-  { setLoading, projectRef }: SpotifyProjectProps,
+  { setLoading, projectsRef }: SpotifyProjectProps,
 ) => (
-  <div className="spotifyProjectComponent" ref={projectRef}>
+  <div className="spotifyProjectComponent" ref={projectsRef}>
     <Title title="PROJECTS" />
     <div className="spotifyProjectContainer">
       <SpotifyPD setLoading={setLoading} />

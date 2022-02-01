@@ -6,10 +6,11 @@ interface NavigationItemProps {
 
 interface NavigationProps {
   items: NavigationItemProps
-  handleRef: () => void
+  handleRef: (ref: any) => void
+  experienceRef: any
 }
 
-const Navigation = ({ items, handleRef }: NavigationProps) => (
+const Navigation = ({ items, handleRef, experienceRef }: NavigationProps) => (
   <div className="nav">
     <ul className="item">
       {items.navigation.map(((item) => (
@@ -17,9 +18,11 @@ const Navigation = ({ items, handleRef }: NavigationProps) => (
           <div
             className="navigationItem"
             onClick={() => {
-              handleRef();
+              handleRef(experienceRef);
             }}
-            onKeyDown={handleRef}
+            onKeyDown={() => {
+              handleRef(experienceRef);
+            }}
             role="button"
             tabIndex={0}
           >

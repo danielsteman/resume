@@ -3,14 +3,14 @@ import useFetch from '../../hooks/useFetch';
 import Navigation from '../../reusables/Navigation/Navigation';
 import MobileNavigation from '../../reusables/Navigation/MobileNavigation';
 
-const Header = ({ handleRef }: any) => {
+const Header = ({ handleRef, experienceRef }: any) => {
   const { data, loading, error } = useFetch('content', 'Home', ['navigation']);
 
   return (
     <div className="headerComponent">
       {data && data.navigation && (
         window.innerWidth > 400
-          ? <Navigation items={data} handleRef={handleRef} />
+          ? <Navigation items={data} handleRef={handleRef} experienceRef={experienceRef} />
           : <MobileNavigation items={data} />
       )}
       {loading && (
