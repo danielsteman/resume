@@ -23,6 +23,8 @@ export interface SpotifyPIProps extends ComponentProps {}
 
 export interface SpotifyPDProps extends ComponentProps {}
 
+export interface SocialsProps extends ComponentProps {}
+
 export interface RefMap {
   [key: string]: React.RefObject<HTMLDivElement>;
 }

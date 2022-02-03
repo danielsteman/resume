@@ -35,7 +35,7 @@ const App = () => {
         <About setLoading={setLoading} />
         <SpotifyProject setLoading={setLoading} projectsRef={projectsRef} />
         <Experience setLoading={setLoading} ref={experienceRef} />
-        <Socials />
+        <Socials setLoading={setLoading} />
         <Footer setLoading={setLoading} />
       </div>
     </div>

@@ -25,9 +25,6 @@ const Home = ({ setLoading }:HomeProps) => {
               : <img className="pageDivider" src={MobileWaves} alt="mobilewaves" />}
         </div>
       )}
-      {loading && (
-        <div>loading...</div>
-      )}
       {error && (
         <div>{error}</div>
       )}

@@ -1,12 +1,16 @@
 import './Socials.scss';
+import { useEffect } from 'react';
 import LinkedIn from '../../images/socials/linkedin-icon.svg';
 import Github from '../../images/socials/github-icon.svg';
 import LastFm from '../../images/socials/lastfm-icon.svg';
 import StackOverflow from '../../images/socials/stackoverflow-icon.svg';
 import useFetch from '../../hooks/useFetch';
+import { SocialsProps } from '../../types';
 
-const Socials = () => {
+const Socials = ({ setLoading }:SocialsProps) => {
   const { data, loading, error } = useFetch('content', 'Socials', ['social_links']);
+
+  useEffect(() => setLoading(loading), [loading]);
 
   return (
     <div className="socialsComponent">
@@ -26,14 +30,10 @@ const Socials = () => {
         </a>
       </div>
       )}
-      {loading && (
-        <div>loading...</div>
-      )}
       {error && (
         <div>{error}</div>
       )}
     </div>
-
   );
 };
 
