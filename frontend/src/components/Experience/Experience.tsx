@@ -39,7 +39,6 @@ const Experience = forwardRef((
                   <div
                     className="employer"
                     onClick={() => setIndex(i)}
-                    onKeyDown={() => setIndex(Math.min(0, i - 1))}
                     key={data.employer_ids[i]}
                     role="button"
                     tabIndex={0}

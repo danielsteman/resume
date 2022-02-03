@@ -31,9 +31,6 @@ const MobileNavigation = ({ items, handleRef, refs }: NavigationProps) => {
                   onClick={() => {
                     handleRef(refs[item!]);
                   }}
-                  onKeyDown={() => {
-                    handleRef(refs[item!]);
-                  }}
                   role="button"
                   tabIndex={0}
                 >

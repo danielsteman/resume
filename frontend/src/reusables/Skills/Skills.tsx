@@ -37,7 +37,6 @@ const Skills: FC<SkillsProps> = ({
                 className={`skill ${active[skill]}`}
                 key={skill}
                 onClick={() => handleClick(skill)}
-                onKeyDown={() => handleClick(skill)}
                 role="button"
                 tabIndex={0}
               >
