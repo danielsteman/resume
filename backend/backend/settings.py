@@ -23,7 +23,7 @@ DEBUG = os.environ.get("ENVIRONMENT", False)
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "192.168.2.11",
+    "192.168.2.6",
     "0.0.0.0",
     "daniels-resume.herokuapp.com",
     "www.danielsteman.com",
@@ -86,7 +86,7 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
-CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_ALLOW_ALL = True if DEBUG else False
 
 CORS_ORIGIN_WHITELIST = ["http://localhost:3000", "http://localhost:8000"]
 

@@ -26,6 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-local-network": "HOST=0.0.0.0 npm run start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build&&npm run post-build",
     "post-build": "cp build/icon.svg build/static/icon.svg&&cp build/manifest.json build/static/manifest.json",
     "test": "jest",
