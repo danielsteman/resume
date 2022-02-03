@@ -26,8 +26,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "pre-build": "cp build/icon.svg build/static/icon.svg&&cp build/manifest.json build/static/manifest.json",
-    "build": "npm run pre-build&&GENERATE_SOURCEMAP=false react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build&&npm run post-build",
+    "post-build": "cp build/icon.svg build/static/icon.svg&&cp build/manifest.json build/static/manifest.json",
     "test": "jest",
     "test:watch": "jest --watch",
     "eject": "react-scripts eject"
