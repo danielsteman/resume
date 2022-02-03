@@ -66,9 +66,6 @@ const Experience = forwardRef((
           </div>
         </div>
       )}
-      {loading && (
-        <div>loading...</div>
-      )}
       {error && (
         <div>{error}</div>
       )}
