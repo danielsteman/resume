@@ -52,7 +52,7 @@
   cursor: pointer;
   @media screen and (max-width: 414px) {
     @include overline-font(12px, 1.5px, center);
-    width: 87.5px;
+    width: 97.5px;
   }
   &:hover {
     background-color: #292929;
