@@ -15,6 +15,13 @@
   font-weight: 800;
   border-right: 10px solid white;
   box-sizing: border-box;
+  @media screen and (max-width: 414px) {
+    font-size: 14px;
+    width: 395px;
+    word-wrap: break-word;
+    position: relative;
+    z-index: 4;
+  }
 }
 
 @keyframes typing {

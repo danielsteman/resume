@@ -3,7 +3,7 @@
   width: 500px;
   height: 450px;
   @media screen and (max-width: 414px) {
-    width: var(--iphone-component-width);
-    height: var(--iphone-component-width);
+    width: var(--component-width-iphone);
+    height: var(--component-width-iphone);
   }
 }

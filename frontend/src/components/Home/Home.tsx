@@ -20,7 +20,7 @@ const Home = ({ setLoading }:HomeProps) => {
         <div>
           <img src={Memoji} alt="memoji" className="memoji" />
           <TypeWriter />
-            {width > 400 && height
+            {width > 414 && height
               ? <img className="pageDivider" src={Waves} alt="waves" />
               : <img className="pageDivider" src={MobileWaves} alt="mobilewaves" />}
         </div>

@@ -5,8 +5,9 @@ import Skills from '../../reusables/Skills/Skills';
 import Title from '../../reusables/Title/Title';
 import useFetch from '../../hooks/useFetch';
 import { AboutProps } from '../../types';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Terminal from '../../animations/terminal.svg';
+import MobileTerminal from '../../animations/mobile-terminal.svg';
+import useWindowDimensions from '../../hooks/useWindowSize';
 
 const About = ({ setLoading }:AboutProps) => {
   const fields = [
@@ -18,6 +19,7 @@ const About = ({ setLoading }:AboutProps) => {
   ];
 
   const { data, loading, error } = useFetch('content', 'About', fields);
+  const { height, width } = useWindowDimensions();
 
   useEffect(() => setLoading(loading), [loading]);
 
@@ -26,7 +28,9 @@ const About = ({ setLoading }:AboutProps) => {
       <Title title={data.custom_title} />
       <div className="aboutContainer">
         <div className="aboutAnimation">
-          <img src={Terminal} alt="terminal" />
+          {width > 414 && height
+            ? <img src={Terminal} alt="terminal" />
+            : <img src={MobileTerminal} alt="terminal" />}
         </div>
         <div className="aboutDescription">
           {data && (

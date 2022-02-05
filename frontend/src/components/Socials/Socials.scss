@@ -9,6 +9,9 @@ $logo-size: 32px;
 .socialsComponent {
   position: relative;
   margin-top: var(--vertical-component-spacing);
+  @media screen and (max-width: 414px) {
+    margin-top: calc(var(--spacing) * 38);
+  }
 }
 
 .logoContainer {

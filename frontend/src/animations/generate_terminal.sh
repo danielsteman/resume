@@ -1,1 +1,2 @@
-sudo svg-term --cast d2rvweSQl4MLazhJ5QHMFiLLn --out src/animations/terminal.svg --width=43 --height=22 --padding-x=5 --window
+sudo svg-term --cast Qdzodl7tM4vjoJ9S8DR3IVRUi --out src/animations/terminal.svg --width=43 --height=22 --padding-x=5 --window
+sudo svg-term --cast Qdzodl7tM4vjoJ9S8DR3IVRUi --out src/animations/mobile-terminal.svg --width=43 --height=22 --padding-x=5 --window

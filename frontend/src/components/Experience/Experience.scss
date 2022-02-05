@@ -10,7 +10,6 @@
   opacity: 0.87;
 }
 
-$component-width-iphone: 295px;
 $scrollbar-width: 5px;
 $n-experiences: 5;
 $line-margin: 8px;
@@ -25,7 +24,7 @@ $line-margin: 8px;
   margin-top: var(--vertical-component-spacing);
   @media screen and (max-width: 414px) {
     margin-left: 40px;
-    width: $component-width-iphone;
+    width: var(--component-width-iphone);
   }
 }
 
