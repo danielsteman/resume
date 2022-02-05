@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5ea70df6.chunk.css",
-    "main.js": "/static/js/main.7f64d5e4.chunk.js",
+    "main.css": "/static/css/main.c008f89d.chunk.css",
+    "main.js": "/static/js/main.cc260655.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.ff5b8ea4.js",
     "static/js/2.33b52fb1.chunk.js": "/static/js/2.33b52fb1.chunk.js",
     "index.html": "/index.html",
@@ -12,15 +12,16 @@
     "static/media/layered-waves-haikei.fa39e680.svg": "/static/media/layered-waves-haikei.fa39e680.svg",
     "static/media/linkedin-icon.786559cf.svg": "/static/media/linkedin-icon.786559cf.svg",
     "static/media/memoji.bc90a67d.png": "/static/media/memoji.bc90a67d.png",
+    "static/media/mobile-terminal.240cf4ff.svg": "/static/media/mobile-terminal.240cf4ff.svg",
     "static/media/mobile-waves.b6b47dee.svg": "/static/media/mobile-waves.b6b47dee.svg",
     "static/media/spinner.3d4e231b.svg": "/static/media/spinner.3d4e231b.svg",
     "static/media/stackoverflow-icon.121f2485.svg": "/static/media/stackoverflow-icon.121f2485.svg",
-    "static/media/terminal.6b684bca.svg": "/static/media/terminal.6b684bca.svg"
+    "static/media/terminal.03a62e52.svg": "/static/media/terminal.03a62e52.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.ff5b8ea4.js",
     "static/js/2.33b52fb1.chunk.js",
-    "static/css/main.5ea70df6.chunk.css",
-    "static/js/main.7f64d5e4.chunk.js"
+    "static/css/main.c008f89d.chunk.css",
+    "static/js/main.cc260655.chunk.js"
   ]
 }
