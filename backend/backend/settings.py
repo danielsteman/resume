@@ -59,6 +59,10 @@ INSTALLED_APPS = [
     "resume",
     "backend",
     "core",
+    "django_otp",
+    "django_otp.plugins.otp_static",
+    "django_otp.plugins.otp_totp",
+    "two_factor",
 ]
 
 REST_FRAMEWORK = {
@@ -84,6 +88,8 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django_otp.middleware.OTPMiddleware",
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True if DEBUG else False
@@ -193,3 +199,9 @@ WAGTAIL_SITE_NAME = "resume"
 TAGGIT_CASE_INSENSITIVE = True
 
 django_heroku.settings(locals())
+
+# two factor auth
+LOGIN_URL = "two_factor:login"
+
+# this one is optional
+LOGIN_REDIRECT_URL = "two_factor:profile"

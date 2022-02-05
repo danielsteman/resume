@@ -12,7 +12,12 @@ from wagtail.documents import urls as wagtaildocs_urls
 from .api import content_api_router
 from .views import ClusterModelResultsView
 
+from two_factor.urls import urlpatterns as tf_urls
+
+# https://django-two-factor-auth.readthedocs.io/en/1.12.1/installation.html#setup
+
 urlpatterns = [
+    path(r"", include(tf_urls)),
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
