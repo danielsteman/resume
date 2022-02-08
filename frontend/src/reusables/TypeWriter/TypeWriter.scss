@@ -4,32 +4,64 @@
   transform: translateX(-50%);
   margin-top: calc(var(--spacing) * 3);
   font-family: "NerdFont";
+  @media screen and (max-width: 414px) {
+    position: absolute;
+  }
+}
+
+.typewriter-text-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .typewriter-text {
   display: inline-block;
   overflow: hidden;
-  animation: typing 2s steps(30, end), blink .75s step-end infinite;
   white-space: nowrap;
   font-size: 20px;
   font-weight: 800;
   border-right: 10px solid white;
   box-sizing: border-box;
+  animation: typing 2s steps(30, end), blink .75s step-end infinite;
+  animation-fill-mode: forwards;
+  &:last-child { 
+    animation: typing-last-sentence 4s steps(30, end), blink .75s step-end infinite;
+  }
   @media screen and (max-width: 414px) {
-    font-size: 14px;
-    width: 395px;
-    word-wrap: break-word;
+    font-size: 18px;
     position: relative;
     z-index: 4;
+    margin-bottom: var(--spacing);
   }
 }
 
 @keyframes typing {
-  from { 
-    width: 0%
+  0% { 
+    width: 0%;
+    border-right: 10px solid white;
   }
-  to { 
-    width: 100%
+  99% { 
+    width: 100%;
+    border-right: 10px solid white;
+  }
+  100% { 
+    width: 100%;
+    border-right: 0px solid white;
+  }
+}
+
+@keyframes typing-last-sentence {
+  0% { 
+    width: 0%;
+    border-right: 0px;
+  }
+  50% { 
+    width: 0%;
+    border-right: 10px solid white;
+  }
+  100% { 
+    width: 100%;
+    border-right: 10px solid white;
   }
 }
 

@@ -17,7 +17,7 @@ const Home = ({ setLoading }:HomeProps) => {
   return (
     <div className="titleComponent">
       {data && data.custom_title && (
-        <div>
+        <div className="typewriter-container">
           <img src={Memoji} alt="memoji" className="memoji" />
           <TypeWriter />
             {width > 414 && height

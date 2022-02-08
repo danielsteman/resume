@@ -4,6 +4,7 @@
   position: relative;
   height: calc(100vh - 100px);
   @media screen and (max-width: 414px) {
+    position: relative;
     height: 100vh;
   }
 }
@@ -16,9 +17,15 @@
   transform: translateX(-50%);
   @media screen and (max-width: 414px) {
     width: 150px;
-    margin-top: 55%;
+    margin-top: 45%;
     position: relative;
     z-index: 3;
+  }
+}
+
+.typewriter-container {
+  @media screen and (max-width: 414px) {
+    position: relative;
   }
 }
 
@@ -26,4 +33,8 @@
   width: 100%;
   position: absolute;
   bottom: 0;
+  @media screen and (max-width: 414px) {
+    top: 100%;
+    z-index: -1;
+  }
 }

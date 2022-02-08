@@ -9,7 +9,10 @@
 .aboutAnimation {
   width: 500px;
   margin-right: calc(#{var(--spacing)} * 2);
-  margin-top: var(--spacing)
+  margin-top: var(--spacing);
+  @media screen and (max-width: 414px) {
+    width: 100vw;
+  }
 }
 
 .aboutDescription {
