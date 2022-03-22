@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.4e4dd405.chunk.css",
-    "main.js": "/static/js/main.beb8eb49.chunk.js",
-    "runtime-main.js": "/static/js/runtime-main.ff5b8ea4.js",
-    "static/js/2.33b52fb1.chunk.js": "/static/js/2.33b52fb1.chunk.js",
+    "main.css": "/static/css/main.df7447d5.chunk.css",
+    "main.js": "/static/js/main.f9c00310.chunk.js",
+    "runtime-main.js": "/static/js/runtime-main.75b9ad82.js",
+    "static/js/2.06718121.chunk.js": "/static/js/2.06718121.chunk.js",
     "index.html": "/index.html",
-    "static/js/2.33b52fb1.chunk.js.LICENSE.txt": "/static/js/2.33b52fb1.chunk.js.LICENSE.txt",
+    "static/js/2.06718121.chunk.js.LICENSE.txt": "/static/js/2.06718121.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/MesloLgMRegularNerdFontComplete.2fa6bbe6.ttf",
     "static/media/github-icon.f434f9ff.svg": "/static/media/github-icon.f434f9ff.svg",
     "static/media/lastfm-icon.9bdfda36.svg": "/static/media/lastfm-icon.9bdfda36.svg",
@@ -19,9 +19,9 @@
     "static/media/terminal.03a62e52.svg": "/static/media/terminal.03a62e52.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ff5b8ea4.js",
-    "static/js/2.33b52fb1.chunk.js",
-    "static/css/main.4e4dd405.chunk.css",
-    "static/js/main.beb8eb49.chunk.js"
+    "static/js/runtime-main.75b9ad82.js",
+    "static/js/2.06718121.chunk.js",
+    "static/css/main.df7447d5.chunk.css",
+    "static/js/main.f9c00310.chunk.js"
   ]
 }

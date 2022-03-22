@@ -52,4 +52,8 @@ const Skills: FC<SkillsProps> = ({
   );
 };
 
+Skills.defaultProps = {
+  skillYears_: [],
+};
+
 export default Skills;

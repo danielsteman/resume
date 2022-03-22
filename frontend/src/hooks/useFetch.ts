@@ -4,7 +4,7 @@ import urlExtractor from '../utils/urlExtractor';
 const axios = require('axios').default;
 
 const baseUrl = process.env.NODE_ENV === 'development'
-  ? 'http://192.168.2.6:8000/api/v2'
+  ? 'http://localhost:8000/api/v2'
   : 'https://www.danielsteman.com/api/v2';
 
 const useFetch = <T extends any = any>(namespace: string, page?: string, fields?: string[]) => {

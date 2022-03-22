@@ -23,7 +23,7 @@
   border-right: 10px solid white;
   box-sizing: border-box;
   animation: typing 2s steps(30, end), blink .75s step-end infinite;
-  animation-fill-mode: forwards;
+  // animation-fill-mode: forwards;
   &:last-child { 
     animation: typing-last-sentence 4s steps(30, end), blink .75s step-end infinite;
   }
